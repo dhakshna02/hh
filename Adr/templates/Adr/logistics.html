@@ -1,0 +1,410 @@
+{% extends "Adr/base.html" %}
+
+{% block content %}
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+  <title>ADR | Logistics</title>
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+ 
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    /* Basic Reset */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+ :root {
+  --primary-color: #03377f;
+  --secondary-color: #567cc3;
+  --text-light: #f9fafc;
+  --white: #ffffff;}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.hero {
+    background-image:url(http://127.0.0.1:8000/media/logistic_bg.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.hero .container {
+    max-width: 1200px;
+    padding: 20px;
+}
+.hero h1{
+    font-size: 3rem;
+    font-weight: 2rem;
+    margin-bottom: 40px;
+    color: var(--text-light);
+}
+.hero h2{
+  font-size: 2.6rem;
+  color: var(--secondary-color);
+}
+.para{
+  margin-top: 25px;
+  font-size: 1.8rem;
+  color: var(--text-light);
+  text-align: justify;
+}
+.benefits {
+    background-color:rgb(9, 9, 9);;
+    padding: 40px;
+    min-height: 70vh;
+    color: #fff;
+}
+
+.benefits .container {
+    max-width: 1150px; /* Increase max-width for a larger container */
+    margin: 0 auto;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider grid columns */
+    gap: 40px;
+}
+
+.benefits-list li {
+    padding: 20px; /* Increase padding for larger boxes */
+    background-color:  #52ae9800;;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 157, 230, 0.934);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color:var(--secondary-color);
+    overflow: hidden; /* Ensures the content stays inside the box */
+    position: relative;
+    text-align: center;
+
+}
+
+.benefits-list li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgb(108, 160, 228);
+}
+
+.benefits-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), rgba(9, 9, 9, 0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.benefits-list li:hover::before {
+    opacity: 1;
+}
+
+.benefits-list li i {
+    font-size: 36px; /* Increase icon size */
+    margin-bottom: 20px;
+    color: #007bff;
+    z-index: 2; /* Ensure it appears above the hover effect */
+    position: relative;
+}
+
+.benefits-list li h3 {
+    font-size: 22px; /* Increase font size for headers */
+    font-weight: bold;
+    margin-bottom: 15px;
+    z-index: 2;
+    position: relative;
+}
+
+.benefits-list li p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+.benefits h2{
+    font-size: 3rem;
+    font-weight: 3rem;
+    color: #f9fafc;
+}
+
+.card-btn{
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid var(--secondary-color);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #f9fafc;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+
+ }
+ .card-btn:hover{
+  background: var(--secondary-color);
+  box-shadow: 0 0 30px 5px rgba(163, 172, 244, 0.7);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+
+ }
+ .card-btn:hover::before {
+  -webkit-animation: sh02 0.3s 0s linear;
+  -moz-animation: sh02 0.3s 0s linear;
+  animation: sh02 0.3s 0s linear;
+}
+.card-btn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: rgb(240, 240, 240);
+  box-shadow: 0 0 50px 30px #e9edef;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+  .para {
+    font-family: 'Poppins',sans-serif;
+    font-size: 1rem;
+    
+  }
+  .last {
+  background-color: #f9f9f9;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.last-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.last h1 {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #121212;
+}
+
+.para1 {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+.head{
+animation: head-animation 5s ease-in-out infinite alternate;}
+      
+@keyframes head-animation {
+  0% {
+      transform: translateX(0) scale(1);
+      color: var(--text-light);
+      text-shadow: 0 0 10px var(--primary-color);
+  }
+  50% {
+      transform: translateX(10px) scale(1.1);
+      color: var(--primary-color);
+      text-shadow: 0 0 20px var(--secondary-color) ;
+  }
+  75% {
+      transform: translateX(0) scale(1);
+      color: var(--secondary-color);
+      text-shadow: 0 0 10px var(--primary-color);
+  }
+}
+.content-container{
+    padding: 10%;
+    background-color:  #52ae9800;;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 157, 230, 0.934);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color:var(--secondary-color);
+    overflow: hidden; /* Ensures the content stays inside the box */
+    position: relative;
+    text-align: center;
+    background:  linear-gradient(135deg, var(--primary-color), rgb(9, 9, 9));
+
+}
+
+  </style>
+</head>
+<body>
+  <section class="hero" data-aos="fade-in">
+    <div class="container">
+         <h1>Logistics Solutions</h1>  
+        <h2>Optimize your logistics operations, with ADR Group's ERP Expertise</h2>
+                
+        <p class="para">In today's fast-paced logistics industry, efficiency, agility, and scalability are crucial for maintaining a competitive edge. ADR Group offers tailored SAP and Odoo solutions designed to streamline and optimize your logistics operations, ensuring enhanced efficiency, visibility, and control across your entire supply chain network.</p>
+        <a href="http://127.0.0.1:8000/"><button class="card-btn">Get Start Today</button></a>
+    </div>
+</section>
+
+<section class="features">
+  <div class="container" style="display: flex; justify-content: space-between; width: 100%; font-size: 2.5rem; margin-top:10%;margin-bottom:10%; ">
+    
+    <!-- Left Section -->
+    <div style="width:50%; order: 1; font-size: 1.5rem; "  class="content-container">
+      <h2 class="head" style="color:#03377f; font-size:2rem; font-weight:2rem; margin-top: 10%;margin-bottom:10%;  ">SAP Solutions for Logistics</h2>
+    
+          <div data-aos="fade-in" data-aos-delay="100">
+            <p style="color: white; font-size: 1.3rem; margin-top: 30px; text-align:justify;">Enhance operational efficiency and visibility with ADR Group's SAP solutions tailored for logistics.At ADR Group, we harness SAP's advanced capabilities to deliver comprehensive solutions for the logistics sector.</p>
+          
+          </div>
+       
+        
+    </div>
+
+    <!-- Right Section -->
+    <div style="width:50%; order: 1; font-size: 1.5rem; text-align:justify; margin-left:10%;" >
+      <ul>
+        <li   data-aos="fade-right" data-aos-delay="100" style="margin-top: 10%;">  
+            <h3 style="color:#03377f; font-size: 1.5rem; font-weight: 1rem;">Supply Chain Management</h3>
+            <p style="color:black; font-size: 1.3rem;">Optimize your supply chain with integrated tools for demand planning, supplier collaboration, and real-time visibility.</p>
+        <li   data-aos="fade-left" data-aos-delay="200"> 
+            <h3 style="color:#03377f; font-size: 1.5rem; font-weight: 1rem;">Warehouse Management</h3>
+            <p style="color:black; font-size: 1.3rem;">Streamline warehouse operations with SAP's robust warehouse management solutions.</p>
+        <li   data-aos="fade-right" data-aos-delay="300">     
+           <h3 style="color:#03377f; font-size: 1.5rem; font-weight: 1rem;">Transportation Management</h3>
+            <p style="color:black; font-size: 1.3rem;">Optimize transportation logistics with SAP's transportation management system.</p>
+          
+            
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+  <section class="features">
+    <div class="container" style="display: flex; justify-content: space-between; width: 100%; font-size: 2.5rem;">
+      
+      <!-- Left Section -->
+      <div style="width:50%; order: 1; font-size: 1.5rem; text-align:justify" >
+        <ul>
+          <li   data-aos="fade-right" data-aos-delay="100">  
+              <h3 style="color:#03377f; font-size: 1.5rem; font-weight: 1rem;">Warehouse Management System (WMS)</h3>
+              <p style="color:black; font-size: 1.3rem;">Streamline warehouse operations with Odoo's user-friendly WMS, integrated with inventory management and order fulfillment.</p>
+          <li   data-aos="fade-left" data-aos-delay="200"> 
+              <h3 style="color:#03377f; font-size: 1.5rem; font-weight: 1rem;">Transportation Management System (TMS)</h3>
+              <p style="color:black; font-size: 1.3rem;">Ensure transparency and compliance with robust financial management tools tailored for automotive businesses.</p>
+          <li   data-aos="fade-right" data-aos-delay="300">     
+             <h3 style="color:#03377f; font-size: 1.5rem; font-weight: 1rem;">Inventory Management</h3>
+              <p style="color:black; font-size: 1.3rem;">Optimize inventory control with Odoo's advanced inventory management features, ensuring efficient space utilization and order accuracy.</p>
+            
+              
+          </li>
+        </ul>
+      </div>
+      <!-- Right Section -->
+      
+  
+      <div style="width:50%; order: 1; font-size: 1.5rem; margin-left: 10%;margin-bottom:10%; "  class="content-container">
+        <h2 class="head" style="color:#03377f; font-size:2rem; font-weight:2rem; margin-top: 10%; margin-bottom:10%; ">SAP Solutions for Logistics</h2>
+      
+            <div data-aos="fade-in" data-aos-delay="100">
+              <p style="color:white; font-size: 1.3rem; margin-top: 30px; text-align: justify;">Enhance operational efficiency and visibility with ADR Group's SAP solutions tailored for logistics.At ADR Group, we harness SAP's advanced capabilities to deliver comprehensive solutions for the logistics sector.</p>
+            
+            </div>
+         
+          
+      </div>
+</section>
+<section class="benefits">
+          
+  <div class="container">
+      <h2 style="color: var(--secondary-color); text-align: center;">Why Choose ADR Group?</h2>
+      <ul class="benefits-list">
+          <li data-aos="zoom-in">
+              
+              <h3 >Industry Expertise</h3>
+              <p>Benefit from our deep understanding of automotive industry dynamics and our proven track record in ERP implementation.</p>
+          </li>
+          <li data-aos="zoom-in">
+              
+              <h3>Scalable Support</h3>
+              <p>From initial consultation through implementation and ongoing support, ADR Group ensures a seamless digital transformation journey.</p>
+          </li>
+          <li data-aos="zoom-in">
+            
+              <h3>Customized Solutions</h3>
+              <p>Tailored SAP and Odoo solutions that address specific challenges and opportunities unique to automotive operations.</p>
+          </li>
+          <li  data-aos="zoom-in">
+         
+              <h3>Comprehensive Support</h3>
+              <p>From initial consultation to ongoing maintenance, ensuring seamless integration and continuous improvement.</p>
+          </li>
+      </ul>
+  </div>
+</section>
+
+<section class="last" data-aos="fade-in">
+  <div class="last-container">
+     <h1  style="color:#03377f">Contact and More Information</h1>
+      <p class="para1">For more details on how ADR Group can enhance your automotive manufacturing operations with SAP and Odoo solutions, please contact us.</p>
+      <a href="#knowmore" target="_blank"><button class="card-btn" style="color:#03377f">Know More..</button></a>
+  </div>
+</section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({
+    duration: 1200,
+    once: true,
+});
+</script>
+</body>
+
+{% endblock %}

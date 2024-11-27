@@ -1,0 +1,490 @@
+{% extends "Adr/base.html" %}
+
+{% block content %}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <title>ADR | SuccessFactors </title>
+  <style>
+
+  :root{
+  --primary-color: #0a3043;
+  --secondary-color: #58909a;
+  --text-light: #f9fafc;
+  }
+  body, html {
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+   
+  }
+  
+  
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    position: relative;
+  
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  }
+  .bgimg-1 {
+    background-image: url("http://127.0.0.1:8000/media/succesfactor.jpg");
+    min-height: 100%;
+  }
+  
+   
+  .caption {
+    position: absolute;
+    left: 0 ;
+    top: 15%;
+    margin-left:50%;
+    margin-right:20px;
+
+    color: #070000f5;
+    text-align:right;
+    
+  }
+  
+  .caption span.border {
+    background-color:#0a3043 ;
+    color: #188895;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+  }
+  
+  h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    color:#f9fafc ;
+    text-align:center;
+    margin-top: 40px;
+    
+
+  }
+  
+  /* Turn off parallax scrolling for tablets and phones */
+  @media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+      background-attachment: scroll;
+    }
+  }
+  .card-btn{
+  align-item:center;
+  margin-right:30%;
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgba(82, 174, 154, 0.7);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #f9fafc;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+
+ }
+ .card-btn:hover{
+  background: rgba(82, 174, 152, 0.998);
+  box-shadow: 0 0 30px 5px rgba(82, 174, 153, 0.7);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+
+ }
+ .card-btn:hover::before {
+  -webkit-animation: sh02 0.3s 0s linear;
+  -moz-animation: sh02 0.3s 0s linear;
+  animation: sh02 0.3s 0s linear;
+}
+.card-btn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: rgb(240, 240, 240);
+  box-shadow: 0 0 50px 30px #e9edef;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+ 
+    background: linear-gradient(135deg,#0a3043 , rgba(9, 9, 9, 0.7));
+    
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 450px;
+    border: none;
+    top: 0;
+    left: 100%;
+}
+
+.carousel-item.active {
+    left: 0;
+    transition: all 0.5s linear;
+}
+
+.carousel-item div {
+    height: 100%;
+}
+.carousel-head{
+  color: #58909a;
+  font-size:2.5rem;
+  text-align:center;
+}
+.carousel-content{
+ 
+  color: #f9fafc;
+  font-size: 1.3rem;
+  margin-top: 10px;
+  margin-left:90px;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+.carousel-content span{
+  font-size: 1.8rem;
+  color:#58909a;
+}
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.384);
+  border: none;
+  color:white;
+
+  font-size: 20px;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-nav.prev {
+  left: 0;
+}
+
+.carousel-nav.next {
+  right: 0;
+}
+
+.carousel-nav:hover {
+  background-color: rgba(83, 157, 176, 0);
+}
+.carousel-btn{
+  font-size: 1rem;
+
+  align-items: center;
+  background-color:  #f9fafc;
+  margin-left:540px;
+  border-radius: 20px;
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  display: flex;
+  
+}
+.carousel-btn:hover{
+  
+  align-items: center;
+  background-color:  #f9fafc;
+}
+.benefits {
+    background-color:#282E34;
+    padding: 40px;
+    min-height: 70vh;
+    color: #fff;
+}
+
+.benefits .container {
+    max-width: 1150px; /* Increase max-width for a larger container */
+    margin: 0 auto;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider grid columns */
+    gap: 40px;
+}
+
+.benefits-list li {
+    padding: 20px; /* Increase padding for larger boxes */
+    background-color:  linear-gradient(135deg, var(--primary-color), rgba(9, 9, 9, 0.7));
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--secondary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #f7f7f7;
+    overflow: hidden; /* Ensures the content stays inside the box */
+    position: relative;
+
+}
+
+.benefits-list li:hover {
+    transform: translateY(-10px);
+   box-shadow: 0 4px 8px rgba(224, 234, 236, 0.934);
+}
+
+.benefits-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(135deg, var(--secondary-color), rgba(9, 9, 9, 0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.benefits-list li:hover::before {
+    opacity: 1;
+}
+
+.benefits-list li i {
+    font-size: 36px; /* Increase icon size */
+    margin-bottom: 20px;
+   
+    z-index: 2; /* Ensure it appears above the hover effect */
+    position: relative;
+}
+
+.benefits-list li h3 {
+    font-size: 22px; /* Increase font size for headers */
+    font-weight: bold;
+    margin-bottom: 15px;
+    z-index: 2;
+    position: relative;
+}
+
+.benefits-list li p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-light);
+    z-index: 2;
+    position: relative;
+}
+.benefits h2{
+    font-size: 3rem;
+    font-weight: 3rem;
+    color: #f9fafc;
+}
+  </style>
+  </head>
+  <body>
+  
+  <div class="bgimg-1" style="margin-top:50px;">
+    <div class="caption">
+    <span class="border" data-aos="zoom-in" style="margin-left: 50px; color:#f9fafc;" >SAP SUCCESS FACTORS</span>
+    <h3 style="margin-left: 50px;">Elevate Your HR Experience</h3>
+    <h2 style="text-align:justify; margin-left:50px; color:#58909a;word-spacing:-5px;" data-aos="zoom-left">In today's dynamic business environment, managing human resources efficiently is crucial to staying competitive.  ADR Group   is proud to offer comprehensive successfactors solutions that empower organizations to streamline HR processes, enhance employee engagement, and drive business success.</h2>
+    <a href = itstaffing><button class="card-btn" data-aos="zoom-in">Get Start Today</button></a>
+  
+  
+    </div>
+  </div>
+  
+  <div style=" ;background-color:#58909a;text-align:center;padding:50px 80px;text-align: justify;">
+    <h2 style="color: #0a3043; text-align:center;" data-aos="zoom-right">End-to-End Implementation and Support</h2>
+    <h3 style="text-align:center;color:#f9fafc; " data-aos="zoom-in">Tailored Solutions for Your Business Needs</h3>
+    <p style="color: #0a3043; font-weight:2rem; font-size:1.4rem;">We understand that every organization is unique. ADR Group provides customized SuccessFactors solutions that align with your specific business objectives, ensuring maximum return on investment. We work closely with you to understand your needs and design solutions that fit perfectly. From initial consultation to post-implementation support, ADR Group offers a full spectrum of services:</p>
+  
+  </div>
+  
+  <div class="carousel" >
+    <div class="carousel-item" style="margin-top:80px;">
+       <h2 class="carousel-head" data-aos="zoom-in">Implementation Services</h2>
+       <p class="carousel-content"><span>Comprehensive Planning:</span> Detailed project planning and scoping to ensure alignment with business goals.<br>
+        <span>Data Migration: </span>Ensuring accurate and secure migration of data from legacy systems.<br>
+        <span>System Configuration: </span>Tailoring the system to meet your specific requirements.<br>
+        <span>User Manuals and Documentation: </span>Creating detailed documentation to support users.</p>
+    </div>
+    <div class="carousel-item" style="margin-top:80px;">
+      <h2 class="carousel-head">Customization and Configuration</h2>
+      <p class="carousel-content"><span>Tailored Solutions: </span>Customizing SuccessFactors modules to fit your organizational needs.<br>
+        <span>Workflow Configuration:</span> Designing and implementing workflows that streamline HR processes.<br>
+        <span>Reports and Dashboards:</span> Creating customized reports and dashboards for better insights and decision-making.<br>
+        <span>Change Management Strategies: </span>Developing strategies to ensure smooth adoption and minimize resistance.</p>
+    </div>
+    <div class="carousel-item" style="justify-content: space-between;margin-top:80px;">
+      <h2 class="carousel-head">Ongoing Support and Maintenance</h2> 
+      <p class="carousel-content"><span>Proactive Monitoring: </span>Continuous monitoring of your SuccessFactors environment to ensure optimal performance.<br>
+        <span>Regular Updates: </span>Keeping your system up-to-date with the latest features and security patches.<br>
+        <span>24/7 Support: </span>Providing round-the-clock support to address any issues or concerns.<br>
+          <span> Continuous Improvement: </span>Regular assessments to identify areas for improvement. Ensuring your SuccessFactors system operates at peak efficiency.</p>
+    </div>
+    <div>
+      <button class="carousel-nav prev">❮</button>
+      <button class="carousel-nav next">❯</button>
+    </div>
+</div>
+<script>window.onload = function () {
+  let slides = document.getElementsByClassName('carousel-item');
+  let currentIndex = 0;
+  let interval;
+
+  function addActive(slide) {
+      slide.classList.add('active');
+  }
+
+  function removeActive(slide) {
+      slide.classList.remove('active');
+  }
+
+  function showSlide(index) {
+      removeActive(slides[currentIndex]);
+      currentIndex = index;
+      addActive(slides[currentIndex]);
+  }
+
+  function nextSlide() {
+      let nextIndex = (currentIndex + 1) % slides.length;
+      showSlide(nextIndex);
+  }
+
+  function prevSlide() {
+      let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(prevIndex);
+  }
+
+  function startAutoSlide() {
+      interval = setInterval(nextSlide, 7000);
+  }
+
+  function stopAutoSlide() {
+      clearInterval(interval);
+  }
+
+  // Initial display
+  addActive(slides[0]);
+  startAutoSlide();
+
+  // Event listeners for navigation buttons
+  document.querySelector('.next').addEventListener('click', function () {
+      stopAutoSlide();
+      nextSlide();
+      startAutoSlide();
+  });
+
+  document.querySelector('.prev').addEventListener('click', function () {
+      stopAutoSlide();
+      prevSlide();
+      startAutoSlide();
+  });
+};
+</script>
+
+  <div style="position:relative;">
+    <div style="color:#58909a;background-color:#282E34; text-align:center; padding:10px 80px;text-align: justify; text-align: left; font-size:2.5em;">
+    <p style="text-align:center;">Why Choose ADR Group for Success Factors?</p>
+    </div>
+  </div>
+  <section class="benefits">
+    <div class="container" style="display: flex; justify-content: space-between; width: 100%;">
+      
+      <!-- Left side (3 divisions) -->
+      <div style="width: 45%;">
+       
+        <ul class="benefits-list">
+            <li data-aos="zoom-in">
+                <h3>Employee Central</h3>
+                <p>Centralized core HR functions, employee data management, and organizational management.</p>
+            </li>
+            <li data-aos="zoom-in">
+                <h3>Learning Management</h3>
+                <p>Comprehensive learning management systems, training programs, and development plans.</p>
+            </li>
+            <li data-aos="zoom-in">
+                <h3>Compensation</h3>
+                <p>Compensation planning, salary structuring, and incentive management</p>
+            </li>
+        </ul>
+      </div>
+      
+      <!-- Right side (3 divisions) -->
+      <div style="width: 45%;">
+        
+        <ul class="benefits-list">
+            <li data-aos="zoom-in">
+                <h3>Performance & Goals</h3>
+                <p>Performance management, goal setting, and continuous feedback.</p>
+            </li>
+            <li data-aos="zoom-in">
+                <h3>Recruiting</h3>
+                <p>Streamlined recruitment processes, applicant tracking, and onboarding.</p>
+            </li>
+            <li data-aos="zoom-in">
+                <h3>Succession & Development</h3>
+                <p>Talent review, succession planning, and career development.</p>
+            </li>
+        </ul>
+      </div>
+      
+    </div>
+  </section>
+  
+  
+  
+
+  
+  <div class="bgimg-1" style='margin-top:-3%'>
+    <div style="color:#ddd;text-align:center;text-align: justify;" data-aos="zoom-in">
+      <h2 style="text-align:center; font-size:2.5rem; padding-top: 10%; color:#58909a; margin-left:50%;">Partner with ADR Group</h2>
+      <p style="text-align: justify; color:#f9fafc;font-size:  1.3rem; margin-top: 2%; font-weight: 3rem; margin-right:5%;margin-left:55%;" data-aos="zoom-in">Transform your HR operations and drive business growth with ADR Group's SuccessFactors solutions. Our expertise, commitment, and innovative approach make us the ideal partner for your HR technology needs. We pride ourselves on delivering solutions that not only meet but exceed your expectations. Contact us today to learn more about how we can help you achieve your HR goals and take your organization to the next level.</p>
+      
+      </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true,
+        });
+    </script>
+  
+  </body>
+{% endblock %}

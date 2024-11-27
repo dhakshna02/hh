@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+        <link rel="stylesheet" >
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" type= "image/x-icon" href = 'http://127.0.0.1:8000/media/resume/ADR_logo-removebg_1.png' >  
+        
+     
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+
+         :root {
+          --color-primary: #58909a;
+          --color-white: #e9e9e9;
+          --color-black: #0a3043;
+          --color-black-1: #95a311;
+        }
+        
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: 'Poppins', sans-serif;
+         
+        }
+        
+        .logo {
+          width:200px;
+        }
+        
+        .menu-bar {
+          background-color: var(--color-black);
+          height: 80px;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 5%;
+          font-size: 1.3vw;
+          position:fixed;
+          top:0;
+          z-index: 999;
+          font-family: 'Poppins', sans-serif;
+    
+        }
+        
+        .menu-bar ul {
+          list-style: none;
+          display: flex;
+        }
+        
+        .menu-bar ul li {
+          /* width: 120px; */
+          padding: 0px 30px;
+          /* text-align: center; */
+          font-family: 'Poppins', sans-serif;
+          position: relative;
+        }
+        
+        .menu-bar ul li a {
+          font-size: 1.3vw;
+          color: var(--color-white);
+          text-decoration: none;
+          font-family: 'Poppins', sans-serif;
+          transition: all 0.3s;
+        }
+        
+        .menu-bar ul li a:hover {
+          color: var(--color-primary);
+      
+        }
+        
+        .fas {
+          float: right;
+          margin-left: 10px;
+          padding-top: 3px;
+        }
+        
+        /* dropdown menu style */
+        .dropdown-menu {
+          display: none;
+          
+        }
+        
+        .menu-bar ul li:hover .dropdown-menu {
+          display:block;
+          position: absolute;
+          left: 0;
+          top: 100%;
+          background-color: var(--color-black);
+          transition-duration: 5s ;
+          transition-timing-function:ease-out;
+          border-radius: 15px;
+        }
+        
+        .menu-bar ul li:hover .dropdown-menu ul {
+          display: block;
+          margin: 10px;
+          
+        }
+        
+        .menu-bar ul li:hover .dropdown-menu ul li {
+          width: 150px;
+          padding: 10px;
+        }
+        
+        .dropdown-menu-1 {
+          display: none;
+      
+        }
+        
+        .dropdown-menu ul li:hover .dropdown-menu-1 {
+          display: block;
+          position: absolute;
+          left: 150px;
+          top: 0;
+          background-color: var(--color-black);
+          border-radius: 15px;
+        }
+        
+        .man{
+          display:flex;
+          justify-content: end;
+        }
+         
+        footer {
+          background-color:black;
+          padding: 40px 0;
+          font-family: 'Poppins', sans-serif;
+          font-weight: 20px;
+        }
+        
+        
+        footer .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 50px 50px;
+        }
+        
+        footer .row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        
+        footer .col-md-3 {
+         
+          color:white;
+          width: 25%;
+          margin: 20px;
+          vertical-align: center;
+         
+        }
+        
+        footer h4 {
+          color:#1bc1b6dd;
+          font-weight: 500;
+          font-size: large;
+          margin-top: 20px;
+        
+        }
+        
+        footer ul {
+          font-size: small;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        
+        footer li {
+          margin-bottom: 10px;
+        }
+        
+        footer li a {
+          color: white;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+        
+        footer li a:hover {
+          color: white;
+        }
+        
+        footer .fa {
+          font-size: 18px;
+          margin-right: 10px;
+        }
+        .img{
+          display: block;
+          width: 20%;
+          margin-top: 55px;
+          margin-left: 15px;
+          margin-bottom: 15px;
+        }
+         
+        ul {
+          list-style: none;
+        }
+        
+        .example-2 {
+          display: flex;
+          justify-content: center;
+          align-items: start;
+          flex-direction: column;
+          row-gap: 1rem;
+          margin-top: 20px;
+        }
+        .example-2 .icon-content {
+          margin: 0 10px;
+          position: relative;
+        }
+        .example-2 .icon-content .tooltip {
+          position: absolute;
+          top: 20px;
+          left: 40%;
+          transform: translateX(50%);
+          color: #fff;
+          padding: 6px 10px;
+          border-radius: 5px;
+          opacity: 0;
+          visibility: hidden;
+          font-size: 14px;
+          transition: all 0.3s ease;
+        }
+        .example-2 .icon-content:hover .tooltip {
+          opacity: 1;
+          visibility: visible;
+          top: 5px;
+        }
+        .example-2 .icon-content a {
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          color: #4d4d4d;
+          background-color: #fff;
+          transition: all 0.3s ease-in-out;
+        }
+        .example-2 .icon-content a:hover {
+          box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+        }
+        .example-2 .icon-content a svg {
+          position: relative;
+          z-index: 1;
+          width: 20px;
+          height: 20px;
+        }
+        .example-2 .icon-content a:hover {
+          color: white;
+        }
+        .example-2 .icon-content a .filled {
+          position: absolute;
+          top: auto;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0;
+          background-color: #000;
+          transition: all 0.3s ease-in-out;
+        }
+        .example-2 .icon-content a:hover .filled {
+          height: 100%;
+        }
+        
+        .example-2 .icon-content a[data-social="linkedin"] .filled,
+        .example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+          background-color: #0274b3;
+        }
+        
+        .example-2 .icon-content a[data-social="github"] .filled,
+        .example-2 .icon-content a[data-social="github"] ~ .tooltip {
+          background-color: #24262a;
+        }
+        .example-2 .icon-content a[data-social="X"] .filled,
+        .example-2 .icon-content a[data-social="X"] ~ .tool {
+          background-color: #131010;
+        }
+        
+        .example-2 .icon-content .tool {
+          position: absolute;
+          top: 20px;
+          left: 40%;
+          transform: translateX(50%);
+          color: #fff;
+          padding: 6px 10px;
+          border-radius: 5px;
+          opacity: 0;
+          visibility: hidden;
+          font-size: 14px;
+          transition: all 0.3s ease;
+        }
+        .example-2 .icon-content:hover .tool {
+          opacity: 1;
+          visibility: visible;
+          top: 5px;
+          margin-left: 20px;
+        }
+        
+        #scroll-up-btn {
+          position: fixed;
+          display: grid;
+          width: 40px;
+          height: 40px;
+          bottom: 20px;
+          left: 20px;
+          z-index: 999;
+          background-color: #333;
+          color: #fff;
+          cursor: pointer;
+          border-radius: 50%;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+        }
+    
+        #scroll-up-btn.show {
+          opacity: 1;
+        }
+    
+        #scroll-up-btn:hover {
+          background-color: #444;
+        }
+        /* Chatbot Button Styling */
+        #init {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            background: rgb(151, 191, 198);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        #init:hover {
+            background: rgb(131, 171, 178);
+            transform: scale(1.1);
+        }
+
+        #init .fa {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        /* Chatbot Container Styling */
+        #test {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+        }
+
+        .child {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 370px;
+            max-height: 600px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgb(37, 65, 65);
+            color: #f9fafc;
+            padding: 10px;
+        }
+
+        .header .h-child {
+            display: flex;
+            align-items: center;
+        }
+
+        .header img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 1px solid #e7e7e7;
+            padding: 5px;
+            background: #fff;
+        }
+
+        .header .name {
+            font-weight: 600;
+        }
+
+        .header .status {
+            font-size: 12px;
+            color: lawngreen;
+        }
+
+        .header .refBtn, .header .closeBtn {
+            background: none;
+            border: none;
+            color: #f9fafc;
+            cursor: pointer;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
+        #chat-box {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+            overflow-y: auto;
+            background: #f0f0f0;
+            text-align: left;
+        }
+
+        .footer {
+            background: rgb(37, 65, 65);
+            color: #f9fcfcab;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        /* Chat Messages Styling */
+        .msg {
+            background: rgba(176, 228, 222, 0.874);
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 70%;
+            margin-bottom: 10px;
+            box-shadow: 0 0 5px rgba(130, 220, 211, 0.5);
+            font-size: 14px;
+            color: #2d4f49;
+            word-wrap: break-word;
+        }
+
+        .rep {
+            background: rgb(253, 243, 224);
+            color: rgb(7, 64, 55);
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 70%;
+            margin-bottom: 10px;
+            box-shadow: 0 0 5px rgba(211, 211, 211, 0.5);
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+
+        .opt {
+            padding: 10px 20px;
+            border: 1px solid rgb(213, 230, 229);
+            border-radius: 1rem;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;
+            font-weight: 500;
+            background: white;
+            text-align: center;
+            font-size: 14px;
+            color: rgb(22, 49, 50);
+            box-shadow: 0 0 3px rgba(0,0,0,0.1);
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .opt:hover {
+            background: #e6f7f7;
+            transform: scale(1.05);
+        }
+
+        .subtitle {
+            font-size: 16px;
+            font-weight: bold;
+            color: #FF6347;
+            background-color: #f0f0f0;
+            padding: 5px;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 400px) {
+            .child {
+                width: 90vw;
+            }
+        }
+      
+
+  
+</style>
+           
+    <!-- Chatbot Button as Icon -->
+    <button id="init" aria-label="Chat with ADR Bot">
+      <i class="fa fa-comments"></i>
+  </button>
+
+  <!-- Chatbot container -->
+  <div id="test">
+      <div class="child" id="chatbot">
+          <div class="header">
+              <div class="h-child">
+                  <img src="http://127.0.0.1:8000/media/chatbot.jpg" alt="avatar" id="avatar">
+                  <div>
+                      <span class="name">Chatbot</span>
+                      <br>
+                      <span class="status">online</span>
+                  </div>
+              </div>
+              <div>
+                  <button class="refBtn" aria-label="Refresh Chat"><i class="fa fa-refresh"></i></button>
+                  <button class="closeBtn" aria-label="Close Chat"><i class="fa fa-times"></i></button>
+              </div>
+          </div>
+
+          <div id="chat-box">
+              <!-- Chat content goes here -->
+          </div>
+
+          <div class="footer">
+              <span>Powered by @adrgrp</span>
+          </div>
+      </div>
+  </div>
+<script>
+
+  var data = {
+    chatinit: {
+        title: ["Hello <span class='emoji'> &#128075;</span>", "I am Mr. ADR'bot", "How can I help you?"],
+        options: ["About Us", "Products", "Services", "Industries", "Job Openings", "Contact Us", "Others", "Close Chat"]  // Added "Close Chat"
+    },
+
+    about: {
+        title:[' "Welcome to ADR Group!"  <br>We excel in digital transformation, with a strong focus on SAP solutions like SAP B1, Hybris, and S4/HANA. Explore our products, including Fotopia and Smart Boat, and our comprehensive services from web design to IoT and cloud consulting. We cater to industries like manufacturing, healthcare, automotive, and more. Choose ADR Group for unparalleled expertise and future-ready technologies',"<a href='http://127.0.0.1:8000/about'> 'Click Me'</a> for more information."],
+        options:["Products","Services","Industries","Job Openings","Contact Us","Close Chat"],
+        url : {}
+    },
+    
+    products: {
+        title:["Thank you for your response!","At ADR Group, our product lineup includes Fotopia, a powerful digital solution, Smart Boat, an IoT-enabled innovation and ADR ERP. These products are designed to enhance efficiency and connectivity in your business. How can I assist you with learning more about them?"],
+        options:["Fotopia","Smart Boat","ADR ERP","Close Chat" ],
+        url : {}
+    },
+    fotopia:{
+        title:["Thank you for your response!","Fotopia by ADR Group is your all-in-one app for managing real estate photo shoots. It simplifies scheduling with real-time photographer calendar integration, automated notifications, and an easy booking process. View availability, select your photographer, and secure your slot seamlessly. Ideal for real estate professionals, Fotopia streamlines the entire process, saving you time and enhancing efficiency. For more details, visit our product page!","<a href='http://127.0.0.1:8000/fotopia'> 'Click Me'</a> for more information."],
+        options:["Smart Boat","ADR ERP","About Us","Contact Us","Close Chat"],
+        url : {}
+    },
+    smart: {
+        title:["Thank you for your response!",
+   "Welcome to Smart Boat IoT by ADR Group! Our platform provides real-time boat monitoring with features like battery health tracking, GPS location and geo-fencing, water level monitoring, bilge pump checks, and security with motion detection and video surveillance. It also includes temperature, humidity, and smoke monitoring, plus remote control for your boat's appliances. Designed to enhance safety, security, and efficiency, Smart Boat IoT keeps you connected and in control. For more details, visit our product page!","<a href='http://127.0.0.1:8000/smartboat'> 'Click Me'</a> for more information."],
+        options:["Fotopia","ADR ERP","About Us","Contact Us","Close Chat"],
+        url : {}
+    },
+    adr: {
+        title:["Than you for your response!","ADR ERP, powered by Odoo, is a fast, secure, and user-friendly solution tailored for all your business needs. With cutting-edge Python technology and Odoo Enterprise Version 17, it ensures top performance and seamless integration across modules like CRM, Sales, Inventory, and Financial Management. Enjoy customizable features, advanced security, multi-user support, and global functionality with multilingual and multi-currency capabilities. Manage your business efficiently with ADR ERP—your all-in-one solution for streamlined operations.  For more details, visit our product page!","<a href='http://127.0.0.1:8000/erp'> 'Click Me'</a> for more information."],
+        options:["Smart Boat","Fotopia","About Us","Contact Us","Close Chat"],
+        url : {}
+    },
+    services: {
+        title:["Thank you for your response!", "We provide a comprehensive range of services, including IT staffing to ensure you have the right talent, IT-enabled services (ITeS) and 24/7 global support to keep your operations running seamlessly, and big data solutions to help you manage and analyze large datasets for informed decision-making. Additionally, our Master Data Management services ensure your data remains accurate, consistent, and easily accessible across your organization. Let ADR Group support your business with our expertise!","<a href='http://127.0.0.1:8000/itstaffing'> 'Click Me'</a> for more information."],
+        options:["IT Staffing","ITeS & Global Support","Big Data","Master Data Management","About Us","Contact Us","Close Chat"],
+        url : {}
+    },
+    it: {
+        title:["Thank you for your response!","ADR Group offers expert IT staffing solutions to help you achieve your business goals faster and more efficiently. We connect you with top-tier talent, from SAP consultants to cybersecurity experts, through tailored, flexible staffing options. Whether you need temporary or permanent staff, our rigorous selection process ensures you get the right professionals to drive your projects forward. Partner with ADR for unmatched market reach, tailored service, and guaranteed placements.","<a href='http://127.0.0.1:8000/itstaffing'> 'Click Me'</a> for more information."],
+        options:["ITeS & Global Support","Big Data","Master Data Management","About Us","Contact Us","Close Chat"],
+        url : {}
+    },
+    ites: {
+        title:["Thank you for your response!", "The Content is currently unavailable, to know more about Mater Data Management, feel free to contact us!"],
+        options:["IT Staffing","Big Data","Master Data Management","About Us","Contact Us","Close Chat"],
+        url : {}
+    },
+    big: {
+        title:["Thank you for your response!","At ADR Group, our Big Data Management services empower your business with advanced data handling and analytics. We help you manage and analyze large datasets to drive better decision-making. With our expertise, you'll gain valuable insights, optimize operations, and achieve your strategic goals. Our tailored solutions ensure your data is accurate, accessible, and ready to propel your business forward. Partner with ADR Group to unlock the full potential of your data!","<a href='http://127.0.0.1:8000/bigdat'> 'Click Me'</a> for more information."],
+        options: ["IT Staffing","ITeS & Global Support","Master Data Management","About Us","Contact Us","Close Chat"],
+        url : {}
+    },
+    master: {
+        title: ["Thank you for your response!", "The Content is currently unavailable, to know more about Mater Data Management, feel free to contact us!"],
+        options: ["IT Staffing","ITeS & Global Support","Big Data","About Us","Contact Us","Close Chat"],
+        url: {}
+    },
+
+    industries: {
+        title: ["Thank you for your response!","ADR Group serves a wide range of industries, including Manufacturing, Healthcare, Automotive, Logistics, Retail, and Education. Our tailored solutions and expertise help businesses in these sectors optimize operations, improve efficiency, and drive success. No matter your industry, ADR Group is here to support your growth and innovation!","<a href='http://127.0.0.1:8000/manufacturing'> 'Click Me'</a> for more information."],
+        options: ["Manufacturing","Automotive","Logistics","Education","Retail","About Us","Contact Us","Close Chat"],
+        url: {}
+    },
+    manufacturing: {
+        title: ["Thank you for your response!","At ADR Group, we specialize in providing tailored SAP and Odoo ERP solutions for the automotive and manufacturing industries. Our expert team focuses on seamlessly integrating these solutions into your existing systems to optimize your production processes and enhance efficiency. With a deep understanding of industry challenges, we customize our services to meet your unique business needs, ensuring minimal disruption during implementation. Our proven track record demonstrates significant improvements in operational efficiency and productivity for manufacturers. From initial consultation to deployment and ongoing support, we are committed to ensuring a smooth transition and continuous optimization. By leveraging the latest technologies and best practices, ADR Group helps you stay competitive in a rapidly evolving industry. If you’re looking to transform your operations and drive excellence, we’re here to assist you every step of the way.","<a href='http://127.0.0.1:8000/manufacturing'> 'Click Me'</a> for more information."],
+        options: ["Automotive","Logistics","Education","Retail","About Us","Contact Us","Close Chat"],
+        url: {}
+    },
+    automotive: {
+        title: ["Thank you for your response!","Welcome! 🚗 At ADR Group, we specialize in transforming automotive businesses with our tailored SAP and Odoo ERP solutions. Whether you need to streamline your supply chain, optimize production, or enhance customer engagement, our industry-specific expertise ensures your operations run smoothly and efficiently. We offer customized solutions designed to address the unique challenges of automotive manufacturing, backed by comprehensive support from consultation to ongoing maintenance. Interested in learning more? Feel free to ask—we’re here to help accelerate your automotive excellence!","<a href='http://127.0.0.1:8000/automotive'> 'Click Me'</a> for more information."],
+        options: ["Manufacturing","Logistics","Education","Retail","About Us","Contact Us","Close Chat"],
+        url: {}
+    },
+    logistics: {
+        title: ["Thank you for your response!","Hello! 🚚 ADR Group specializes in optimizing logistics operations with our tailored SAP and Odoo ERP solutions. Whether you need to enhance supply chain management, streamline warehouse operations, or optimize transportation logistics, our customized solutions are designed to improve efficiency, visibility, and control across your entire supply chain. With deep industry expertise and comprehensive support, we ensure seamless integration and scalability for your logistics business. Want to learn more? Contact us today to discover how ADR Group can elevate your logistics operations","<a href='http://127.0.0.1:8000/logistics'> 'Click Me'</a> for more information."],
+        options: ["Manufacturing","Automotive","Education","Retail","About Us","Contact Us","Close Chat"],
+        url: {}
+    },
+    education: {
+        title: ["Thank you for your response!","At ADR Group, we specialize in delivering innovative IT solutions tailored for the education sector. From Learning Management Systems (LMS) to Student Information Systems (SIS), our customized solutions enhance learning experiences, streamline administrative processes, and support data-driven decision-making. With deep expertise in education, scalable solutions, and a commitment to continuous innovation, ADR Group is your trusted partner in digital transformation. Ready to elevate your institution? Let’s discuss how we can help you achieve your educational goals!","<a href='http://127.0.0.1:8000/education'> 'Click Me'</a> for more information."],
+        options: ["Manufacturing","Automotive","Logistics","Retail","About Us","Contact Us","Close Chat"],
+        url: {}
+    },
+    retail: {
+        title: ["Thank you for your response!","Welcome! 🛍 At ADR Group, we empower retail businesses with tailored SAP and Odoo ERP solutions designed to optimize your operations, enhance customer experiences, and drive growth. Whether you need to streamline inventory management, improve sales performance, or elevate customer engagement, our customized solutions ensure your retail operations stay agile and efficient. With our deep industry expertise and comprehensive support, ADR Group helps you stay ahead in the competitive retail landscape. Interested in transforming your retail business? Let’s chat about how we can help!","<a href='http://127.0.0.1:8000/retail'> 'Click Me'</a> for more information."],
+        options: ["Manufacturing","Automotive","Logistics","Education","About Us","Contact Us","Close Chat"],
+        url: {}
+    },
+    contact: {
+        title: [
+            "You can reach ADR Group through the following contact details:",
+            `📧 Email: <span style="color: blue;">info@adrgroup.com</span> <br>
+             📞 Phone: <span style="color: green;">+1 770-415-1003</span> <br> 
+             <span style="color: green;">+91 444854 5680</span> <br>
+             🏢 Indian-Office Address: <span style="color: purple;">ADR Group LLC, 5510 Ivy Nole, Cumming, Georgia 30040.</span><br>
+             E-Mail: <span style="color: blue;">info@adrgrp.com</span> <br>
+             Tel: <span style="color: green;">+1 770-415-1003</span><br>
+             🏢 USA-Office Address: <span style="color: purple;">AnDnR Soft Solutions Pvt Ltd, No.15, 3rd Floor, 2nd Main Road New Colony, Chrompet, Chennai – 600044</span><br>
+             E-Mail: <span style="color: blue;">info@adrgrp.com</span><br>
+             Tel: <span style="color: green;">+91 444854 5680</span><br>
+             Website: <a href="http://127.0.0.1:8000" style="color: blue;">http://127.0.0.1:8000/contact</a>`,
+            "<a href='http://127.0.0.1:8000/contact' style='color: blue;'>Click Me</a> for more information."
+        ],
+        options: ["About Us","Close Chat"],
+        url: {}
+    },
+    job: {
+        title: ["Welcome to ADR Group's Career Portal!","Are you ready to take the next step in your career?<br> Explore our exciting job openings across various departments. We’re looking for passionate, innovative, and driven professionals like you to join our team!","To see the job openings in ADR Group, kindly <a href='http://127.0.0.1:8000/career'> 'Click Me'</a> for more information.","If you have any questions or need assistance, feel free to ask! We're here to help you find the right opportunity at ADR Group."],
+        options: ["About Us", "Contact Us","Close Chat"],
+        url: {}
+    }, 
+    others: {
+        title: [ "For other queries visit this page ! <a href='http://127.0.0.1:8000/contact'> 'Click Me'</a> "],
+        options: ["About Us", "Contact Us","Close Chat"],
+        url: {}
+    },
+
+}
+
+document.getElementById("init").addEventListener("click", showChatBot);
+var cbot = document.getElementById("chat-box");
+var len1 = data.chatinit.title.length;
+
+function showChatBot() {
+    if (test.style.display === 'none' || test.style.display === '') {
+        document.getElementById('test').style.display = 'block';
+        document.getElementById('init').innerHTML = '<i class="fa fa-times"></i>';
+        initChat();
+    } else {
+        closeChat();
+    }
+}
+
+function initChat() {
+    j = 0;
+    cbot.innerHTML = '';
+    for (var i = 0; i < len1; i++) {
+        setTimeout(handleChat, (i * 500));
+    }
+    setTimeout(function () {
+        showOptions(data.chatinit.options)
+    }, ((len1 + 1) * 500))
+}
+
+var j = 0;
+function handleChat() {
+    var elm = document.createElement("p");
+    elm.innerHTML = data.chatinit.title[j];
+    elm.setAttribute("class", "msg");
+    cbot.appendChild(elm);
+    j++;
+    handleScroll();
+}
+
+function showOptions(options) {
+    for (var i = 0; i < options.length; i++) {
+        var opt = document.createElement("span");
+        opt.innerHTML = options[i];
+        opt.setAttribute("class", "opt");
+        opt.addEventListener("click", handleOpt);
+        cbot.appendChild(opt);
+        handleScroll();
+    }
+}
+
+function handleOpt() {
+    var str = this.innerText;
+    var textArr = str.split(" ");
+    var findText = textArr[0];
+
+    if (findText.toLowerCase() === 'close') {
+        closeChat();
+        return;
+    }
+
+    document.querySelectorAll(".opt").forEach(el => {
+        el.remove();
+    });
+
+    var elm = document.createElement("p");
+    elm.setAttribute("class", "rep");
+    elm.innerHTML = this.innerText;
+    cbot.appendChild(elm);
+
+    var tempObj = data[findText.toLowerCase()];
+    if (tempObj) {
+        handleResults(tempObj.title, tempObj.options, tempObj.url);
+    } else {
+        // Handle cases where the option doesn't have corresponding data
+        var unknownMsg = document.createElement("p");
+        unknownMsg.setAttribute("class", "msg");
+        unknownMsg.innerText = "I'm sorry, I didn't understand that. Please choose another option.";
+        cbot.appendChild(unknownMsg);
+        showOptions(data.chatinit.options);
+    }
+}
+
+function handleDelay(title) {
+    var elm = document.createElement("p");
+    elm.innerHTML = title;
+    elm.setAttribute("class", "msg");
+    cbot.appendChild(elm);
+}
+
+function handleResults(title, options, url) {
+    for (let i = 0; i < title.length; i++) {
+        setTimeout(function () {
+            handleDelay(title[i]);
+        }, i * 500)
+    }
+
+    const isObjectEmpty = (obj) => {
+        return Object.keys(obj).length === 0;
+    }
+
+    if (isObjectEmpty(url)) {
+        setTimeout(function () {
+            showOptions(options);
+        }, title.length * 500)
+    } else {
+        setTimeout(function () {
+            handleOptions(options, url);
+        }, title.length * 500)
+    }
+}
+
+function handleOptions(options, url) {
+    for (var i = 0; i < options.length; i++) {
+        var opt = document.createElement("span");
+        var inp = '<a class="m-link" href="' + (url.link ? url.link[i] : '#') + '">' + options[i] + '</a>';
+        opt.innerHTML = inp;
+        opt.setAttribute("class", "opt");
+        cbot.appendChild(opt);
+    }
+    var opt = document.createElement("span");
+    var inp = '<a class="m-link" href="' + (url.more ? url.more : '#') + '">See more</a>';
+
+    opt.innerHTML = inp;
+    opt.setAttribute("class", "opt link");
+    cbot.appendChild(opt);
+    handleScroll();
+}
+
+function handleScroll() {
+    var elem = document.getElementById('chat-box');
+    elem.scrollTop = elem.scrollHeight;
+}
+
+function closeChat() {
+    document.getElementById('test').style.display = 'none';
+    document.getElementById('init').innerHTML = '<i class="fa fa-comments"></i>';
+    cbot.innerHTML = '';
+}
+
+// Attach event listeners to refresh and close buttons
+document.querySelector(".refBtn").addEventListener("click", function(e) {
+    e.stopPropagation();
+    initChat();
+});
+
+document.querySelector(".closeBtn").addEventListener("click", function(e) {
+    e.stopPropagation();
+    closeChat();
+});
+</script>
+
+
+ 
+
+        <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+                
+  </head>
+<body>
+  <header>
+   <div class="menu-bar">
+    <a href = "http://127.0.0.1:8000/"><img class="logo" src="http://127.0.0.1:8000/media/resume/ADR_logo-removebg_1.png" ></a>
+    <ul class="man">
+      <li><a href="about">About</a></li>
+      <li><a href="">What we do <i class="fas fa-caret-down"></i></a>
+
+          <div class="dropdown-menu">
+              <ul>
+                <li>  
+                  <a href="Products">Products<i class="fas fa-caret-right"></i></a>
+                  
+                  <div class="dropdown-menu-1">
+                    <ul>
+                      <li><a href="fotopia">Fotopia</a></li>
+                      <li><a href="smartboat">Smartboat</a></li>
+                      <li><a href="erp">ADR ERP</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <a href="Services">Services <i class="fas fa-caret-right"></i></a>
+                  
+                  <div class="dropdown-menu-1">
+                    <ul>
+                      <li><a href="itstaffing">IT Staffing</a></li>
+                      <li><a href="itesandglobalsupport">ITes and Global Support</a></li>
+                      <li><a href="bigdat">Big Data</a></li>
+                      <li><a href="masterdata">Master Data Management</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+      </li>
+      <li><a href="sap">SAP <i class="fas fa-caret-down"></i></a>
+          <div class="dropdown-menu">
+              <ul>
+                <li><a href="s4hana">SAP S4HANA</a></li>
+                <li><a href="successfactors">SAP SuccessFactors</a></li>
+                <li><a href="sapb1">SAP B1</a></li>
+                <li><a href="hybris">SAP Hybris</a></li> 
+              </ul>
+            </div>
+      </li>
+      <li><a href ="">Industries<i class="fas fa-caret-down"></i></a>
+          <div class="dropdown-menu">
+              <ul>
+                <li><a href="manufacturing">Manufacturing</a></li>
+                <li><a href="automotive">Automotive</a></li>
+                <li><a href="logistics">Logistics</a></li>
+                <li><a href="retail">Retail</a></li>
+                <li><a href="education">Education</a></li> 
+              </ul>
+            </div>
+      </li>
+      <li><a href="career">Career</a>
+      </li>
+      <li><a href="contact">Contact us</a></li>
+    </ul>
+  </div> 
+</header> 
+
+
+	<div id="scroll-up-btn" title="Scroll to top">
+		<i class="fas fa-arrow-up" style="place-self: center;"></i>
+	</div>
+
+   
+{% block content %}
+{% endblock %}
+
+<footer>
+  <img  class="img" src="http://127.0.0.1:8000/media/resume/ADR_logo-removebg_1.png">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h4><u>Quick Links</u></h4>
+        <ul>
+          <li><a href="about">About</a></li>
+          <li><a href="sap">SAP</a></li>
+          <li><a href="career">Career</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h4><u>Our Services</u></h4>
+        <ul>
+          <li><a href="itstaffing">IT Staffing</a></li>
+          <li><a href="sapimplementation">SAP Implementation</a></li>
+          <li><a href="odoodevelopment">Odoo Development</a></li>
+          <li><a href="mobileappdevelopment">Mobile App Development</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h4><u>Industries We Serve</u></h4>
+        <ul>
+          <li><a href="manufacturing">Manufacturing</a></li>
+          <li><a href="automotive">Automotive</a></li>
+          <li><a href="logistics">Logistics</a></li>
+          <li><a href="retail">Retail</a></li>
+          <li><a href="education">Education</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul>
+        <h4><u>Follow us for more</u></h4>
+        <ul class="example-2">
+          <li class="icon-content">
+            <a data-social="github" aria-label="GitHub" href="https://www.github.com/">
+              <div class="filled"></div>
+              <svg
+                xml:space="preserve"
+                viewBox="0 0 16 16"
+                class="bi bi-github"
+                fill="currentColor"
+                height="16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="currentColor"
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                ></path>
+              </svg>
+            </a>
+            <div class="tooltip">GitHub</div>
+          </li>
+          <li class="icon-content">
+            <a
+              data-social="linkedin"
+              aria-label="LinkedIn"
+              href="https://linkedin.com/"
+              target="_blank"
+            >
+              <div class="filled"></div>
+              <svg
+                xml:space="preserve"
+                viewBox="0 0 16 16"
+                class="bi bi-linkedin"
+                fill="currentColor"
+                height="16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="currentColor"
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                ></path>
+              </svg>
+            </a>
+            <div class="tooltip">LinkedIn</div>
+          </li>
+          <li class="icon-content">
+            <a
+              data-social="X"
+              aria-label="X"
+              href="https://www.instagram.com/"
+            >
+              <div class="filled"></div>
+              <svg
+              xml:space="preserve"
+              viewBox="0 0 16 16"
+              class="bi bi-X"
+              fill="currentColor"
+              height="16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+              </svg>
+            </a>
+            <div class="tool">X</div>
+          </li>
+        </ul>
+        
+        </ul>
+      </div>
+      <div class="col-md-3">
+        
+        <h4><u><i class="fas fa-map-marker-alt"></i>&nbsp;INDIAN ADDRESS</h4></u>
+        <a href="https://www.google.com/maps/search/AnDnR+Soft+Solutions+Pvt+Ltd+No.15,+3rd+Floor,+2nd+Main+Road+New+Colony,+Chrompet,+Chennai+%E2%80%93+600044+E-Mail:+info@adrgrp.com+Tel%2B91+444854+5680/@12.9544834,80.1302469,16z/data=!3m1!4b1?entry=ttu"target="_blank">
+          <p>Address: AnDnR Soft Solutions Pvt Ltd
+          No.15, 3rd Floor,
+          2nd Main Road New Colony,
+          Chrompet, Chennai &#8209; 600044
+          E-Mail: info@adrgrp.com
+          Tel+91 444854 5680</p></a>
+      </div>  
+      <div class="col-md-3">
+        <h4><u><i class="fas fa-map-marker-alt"></i>&nbsp;USA &#8209; ADDRESS</h4></u>
+        <a href="https://www.google.com/maps/search/ADR+Group+LLC%0D%0A%0D%0A5510+Ivy+Nole%0D%0A%0D%0ACumming,%0D%0A%0D%0AGeorgia+30040%0D%0A%0D%0AE-Mail:+info@adrgrp.com%0D%0A%0D%0ATel+%2B1+770-415-1003/@34.1874939,-84.1926246,17z?entry=ttu"target="_blank">
+          <p>ADR Group LLC
+          5510 Ivy Nole
+          Cumming,
+          Georgia 30040
+          E-Mail: info@adrgrp.com
+          Tel +1 770-415-1003</p></a>
+      </div>
+      
+    </div>
+  </div>
+ </footer>
+ <script>
+  const scrollUpBtn = document.getElementById("scroll-up-btn");
+
+  scrollUpBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 200) {
+      scrollUpBtn.classList.add("show");
+    } else {
+      scrollUpBtn.classList.remove("show");
+    }
+  });
+</script>
+</body>
+</html>
+
+    

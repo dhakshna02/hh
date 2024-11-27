@@ -1,0 +1,396 @@
+{% extends "Adr/base.html" %}
+
+{% block content %}
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADR | Retail</title>
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+ 
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    /* Basic Reset */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.hero {
+    background-color: #656868;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero .container {
+    max-width: 1200px;
+    padding: 20px;
+}
+.hero h1{
+    font-size: 2.5rem;
+    font-weight: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.features {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+.features h2{
+    font-size: 2.5rem;
+    font-weight: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.features h3{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 2.5rem;
+    color: #333;
+    margin-bottom: 100px;
+}
+
+.feature-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.feature-left .feature-content {
+    order: 1;
+}
+
+.feature-left .feature-image {
+    order: 2;
+    box-shadow:0 4px 15px rgba(0, 0, 0, 0.2); ;
+}
+
+.feature-right .feature-content {
+    order: 2;
+}
+
+.feature-right .feature-image {
+    order: 1;
+    box-shadow:0 4px 15px rgba(0, 0, 0, 0.2); ;
+    margin-right: 100PXss;
+}
+
+.feature-content {
+    flex: 1;
+    max-width: 45%;
+    line-height: 1.6;
+    margin-bottom: 150px;
+    font-size: large;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.feature-image {
+    flex: 1;
+    max-width: 70%;
+    text-align: center;
+    margin-left: 100px;
+    max-height: 100%;
+    margin-bottom: 150px;
+}
+
+.feature-images {
+    flex: 1;
+    max-width: 70%;
+    text-align: center;
+    max-height: 100%;
+    margin-right: 80px;
+}
+
+.feature-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+   
+}
+.feature-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+   margin-right: 100px;
+}
+.feature-item-feature-right{
+    margin-right: 100px;
+}
+@media (max-width: 768px) {
+    .feature-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .feature-content, .feature-image {
+        max-width: 100%;
+    }
+} 
+.benefits {
+    background-color:rgba(9, 9, 9, 0.7);;
+    padding: 40px;
+    min-height: 70vh;
+    color: #fff;
+}
+.benefits .container {
+    max-width: 1150px; /* Increase max-width for a larger container */
+    margin: 0 auto;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider grid columns */
+    gap: 40px;
+}
+
+.benefits-list li {
+    padding: 20px; /* Increase padding for larger boxes */
+    background-color:  #656868;;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(224, 234, 236, 0.934);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #f7f7f7;
+    overflow: hidden; /* Ensures the content stays inside the box */
+    position: relative;
+
+}
+
+.benefits-list li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.benefits-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(176, 181, 181, 0.7), rgba(9, 9, 9, 0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.benefits-list li:hover::before {
+    opacity: 1;
+}
+
+.benefits-list li i {
+    font-size: 36px; /* Increase icon size */
+    margin-bottom: 20px;
+   
+    z-index: 2; /* Ensure it appears above the hover effect */
+    position: relative;
+}
+
+.benefits-list li h3 {
+    font-size: 22px; /* Increase font size for headers */
+    font-weight: bold;
+    margin-bottom: 15px;
+    z-index: 2;
+    position: relative;
+}
+
+.benefits-list li p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+.benefits h2{
+    font-size: 3rem;
+    font-weight: 3rem;
+    color: #f9fafc;
+}
+
+.btn-gradient {
+  background: linear-gradient(45deg, #20c2cd,#357c7e);
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(45deg, #144346, #57cace);
+}
+
+  
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+  .para {
+    font-family: 'Poppins',sans-serif;
+    font-size: 1rem;
+    
+  }
+  .last {
+  background-color: #f9f9f9;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.last-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.last h1 {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #121212;
+}
+
+.para1 {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+  </style>
+</head>
+<body>
+  <section class="hero" data-aos="fade-in">
+    <div class="container">
+        
+        <h1>Revolutionize Retail with ADR Group's SAP and Odoo Solutions</h1>
+        <p class="para">In the fast-paced world of retail, staying ahead of the competition requires more than just great products. It demands streamlined operations, superior customer experiences, and the ability to adapt quickly to market changes. At ADR Group, we specialize in providing cutting-edge SAP and Odoo solutions that empower retail businesses to achieve all this and more</p>
+        <a href="http://127.0.0.1:8000/" ><button class="btn-gradient">Know More..</button></a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2>SAP Solutions for Retail</h2>
+        <ul>
+            <li class="feature-item feature-left" data-aos="fade-right">
+                <div class="feature-content">
+                    <p>Enhance your retail operations with ADR Group's tailored SAP solutions, designed to optimize every aspect of your business from supply chain management to customer engagement.At ADR Group, we leverage SAP's advanced capabilities to deliver comprehensive solutions for the retail industry:</p>
+                    <p>Inventory and Supply Chain Management:
+                      Maintain optimal inventory levels and streamline supply chain processes to ensure timely product availability and reduced costs.
+                      
+                      <br><br>Customer Experience
+                      Elevate the shopping experience with SAP's CRM solutions, offering personalized customer interactions and loyalty programs.
+                      
+                      <br><br>Sales and Distribution
+                      Improve sales performance and order fulfillment with SAP's integrated sales and distribution modules, enabling efficient management of retail channels</p>
+                </div>
+                <div class="feature-image">
+                    <img class="img-2" src="http://127.0.0.1:8000/media/Retail_1.jpg" alt="Real-Time Analytics">
+                </div>
+            </li>
+            <li class="feature-item feature-right" data-aos="fade-left">
+                <div class="feature-images">
+                    <img class="img-3" src="http://127.0.0.1:8000/media/Retail_2.jpg" alt="Simplified User Experience">
+                </div>
+                <div class="feature-content">
+                    <h3>Odoo Solutions for Retail</h3>
+                    <p>Maximize efficiency and growth with ADR Group's customized Odoo solutions, offering unparalleled flexibility and scalability for retail businesses of all sizes. In an industry where rapid changes and customer expectations shape success, our Odoo solutions are designed to adapt and grow with your business
+<br>With ADR Group's expertise, you can ensure that your business remains agile, efficient, and customer-focused.</p>
+                    <p>Point of Sale (POS):
+                      Streamline in-store transactions with Odoo's user-friendly POS system, integrated with inventory and sales managements.
+                      
+                      <br><br>E-commerce Integration:
+                      Ensure transparency and compliance with robust financial management tools tailored for automotive businesses
+                      
+                      <br><br>Inventory Management:
+                      Optimize inventory levels and reduce wastage with Odoo's advanced inventory management features, ensuring real-time tracking and control</p>
+                </div>
+            </li>
+           
+        </ul>
+    </div>
+</section>
+
+<section class="benefits">
+    <div class="container">
+        <h2>Why Choose ADR Group?</h2>
+        <ul class="benefits-list">
+            <li data-aos="zoom-in">
+                <i class="fas fa-money-bill-wave"></i>
+                <h3>Industry Expertise</h3>
+                <p> Leverage our extensive experience in implementing ERP solutions tailored for the retail industry, ensuring optimal performance and efficiency</p>
+            </li>
+            <li data-aos="zoom-in">
+                <i class="fas fa-clock"></i>
+                <h3>Scalable Support</h3>
+                <p>From initial consultation through implementation and ongoing support, ADR Group ensures a seamless digital transformation journey.</p>
+            </li>
+            <li data-aos="zoom-in">
+                <i class="fas fa-globe"></i>
+                <h3>Customized Solutions:</h3>
+                <p>Tailored SAP and Odoo solutions that address specific challenges and opportunities unique to automotive operations</p>
+            </li>
+            <li  data-aos="zoom-in">
+                <i class="fas fa-users"></i>
+                <h3>Comprehensive Support</h3>
+                <p>From initial consultation to ongoing maintenance, ensuring seamless integration and continuous improvement</p>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="last" data-aos="fade-in">
+  <div class="last-container">
+     <h1>Contact and More Information</h1>
+      <p class="para1">For more details on how ADR Group can enhance your automotive manufacturing operations with SAP and Odoo solutions, please contact us.</p>
+      <a href="#knowmore" target="_blank"><button class="btn-gradient">Know More..</button></a>
+  </div>
+</section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({
+    duration: 1200,
+    once: true,
+});
+</script>
+</body>
+{% endblock %}

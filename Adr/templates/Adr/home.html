@@ -1,0 +1,1160 @@
+{% extends "Adr/base.html" %}
+{% block content %}
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+--primary-color: #0a3043;
+--secondary-color: #58909a;
+--text-light: #f9fafc;
+--white: #ffffff;
+--max-width: 1200px;
+
+
+}
+
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+
+}
+
+a {
+text-decoration: none;
+transition: 0.3s;
+}
+
+ul {
+list-style: none;
+}
+
+body {
+font-family: "Poppins", sans-serif;
+background-image: url(http://127.0.0.1:8000/media/img2.png);
+
+background-position: center center;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+
+.header__container {
+max-width: var(--max-width);
+margin-inline: auto;
+padding-block: 5rem 2rem;
+padding-inline: 1rem;
+display: grid;
+gap: 2rem;
+}
+
+.header-image {
+width: 100%;
+max-width: 500px;
+margin-inline: auto;
+display: flex;
+}
+
+.header__content {
+overflow: hidden;
+text-align: center;
+}
+
+.header__content h2 {
+position: relative;
+isolation: isolate;
+max-width: fit-content;
+margin-left: auto;
+margin-bottom: 1rem;
+font-size: 1.5rem;
+font-weight: 500;
+color: var(--secondary-color);
+text-align: right;
+}
+
+.header__content h2::before {
+position: absolute;
+content: "";
+top: 50%;
+left: 0;
+transform: translate(calc(-100% - 1rem), -50%);
+height: 2px;
+width: 150%;
+background-color: var(--white);
+}
+
+.header__content h1 {
+font-size: 5rem;
+font-weight: 600;
+color: var(--white);
+line-height: 5rem;
+animation: text 3s;
+letter-spacing: 6px;
+text-align: center;
+}
+
+.text2{
+font-size: 2.5rem;
+color: var(--secondary-color);
+animation: text 2s 1;
+text-align: center;
+
+}
+
+
+
+.header__content p {
+margin-bottom: 3.5rem;
+margin-top: 1rem;
+color: var(--text-light);
+text-align: justify;
+font-size: 1.4rem;
+}
+
+
+
+
+@media (width > 768px) {
+nav {
+position: static;
+padding: 2rem 1rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 2rem;
+}
+.header__container {
+grid-template-columns: repeat(2, 1fr);
+align-items: center;
+padding-block: 2rem;
+}
+
+.header__image {
+grid-area: 1/2/2/3;
+}
+
+.header__content {
+text-align: left;
+}
+
+.socials {
+justify-content: flex-start;
+}
+.summary{
+margin-bottom: px;
+}
+}
+@keyframes text{
+35%{
+letter-spacing: 8px;
+}
+
+85%{
+letter-spacing: 8px;
+margin-bottom: -0px;
+
+}
+}
+@keyframes text2{
+0%{
+color:#0a3043;
+margin-bottom: -0px;
+}
+
+85%{
+letter-spacing: 8px;
+margin-bottom: -0px;
+
+}
+}
+.card-container{
+position: relative;
+width: 100%;
+height:350px;
+margin-top: 1rem;
+perspective: 1000px;
+}
+.card{
+position:absolute;
+width:100%;
+height:100%;
+transform-style:preserve-3d;
+
+background-color: #2a282800;
+transition: transform 0.6s ease-in-out;
+}
+.card-front,
+.card-back{
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+background-image:url(http://127.0.0.1:8000/media/img_1.png);
+color: var(--text-light);
+background-color: #05050500;
+}
+
+
+.card-back{
+transform: rotateY(180deg);
+}
+.card-text{
+margin-top:30px;
+color:white;
+font-size:2rem;
+font-weight: bold;
+text-align: center; 
+
+}
+.card-text-span{
+color:#58909a;
+font-size: 2rem
+}
+.card-text-p{
+color: white;
+font-size: large;
+margin: 40px;
+}
+.card-btn{
+position: relative;
+padding: 10px 20px;
+border-radius: 7px;
+border: 1px solid rgba(82, 174, 154, 0.7);
+font-size: 14px;
+text-transform: uppercase;
+font-weight: 600;
+letter-spacing: 2px;
+background: transparent;
+color: #f9fafc;
+overflow: hidden;
+box-shadow: 0 0 0 0 transparent;
+-webkit-transition: all 0.2s ease-in;
+-moz-transition: all 0.2s ease-in;
+transition: all 0.2s ease-in;
+
+}
+.card-btn:hover{
+background: rgba(82, 174, 152, 0.998);
+box-shadow: 0 0 30px 5px rgba(82, 174, 153, 0.7);
+-webkit-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+transition: all 0.5s ease-out;
+
+}
+.card-btn:hover::before {
+-webkit-animation: sh02 0.3s 0s linear;
+-moz-animation: sh02 0.3s 0s linear;
+animation: sh02 0.3s 0s linear;
+}
+.card-btn::before {
+content: '';
+display: block;
+width: 0px;
+height: 86%;
+position: absolute;
+top: 7%;
+left: 0%;
+opacity: 0;
+background: rgb(240, 240, 240);
+box-shadow: 0 0 50px 30px #e9edef;
+-webkit-transform: skewX(-20deg);
+-moz-transform: skewX(-20deg);
+-ms-transform: skewX(-20deg);
+-o-transform: skewX(-20deg);
+transform: skewX(-20deg);
+}
+@keyframes sh02 {
+from {
+opacity: 0;
+left: 0%;
+}
+
+50% {
+opacity: 1;
+}
+
+to {
+opacity: 0;
+left: 100%;
+}
+}
+button:active {
+box-shadow: 0 0 0 0 transparent;
+-webkit-transition: box-shadow 0.2s ease-in;
+-moz-transition: box-shadow 0.2s ease-in;
+transition: box-shadow 0.2s ease-in;
+}
+
+
+.is-flipped {
+transform: rotateY(180deg);
+}
+.progress-bars{
+list-style-type:none;
+padding: 1.5em;
+color: #fff;
+background: #111;
+border-radius: 15px;
+
+box-shadow: 0 0 15px #050505;
+margin: 1em auto;
+
+
+}
+.progress-bars h3{
+color: var(--text-light);
+font-weight: 500;
+font-size: 1.3rem;
+margin-left: 30px;
+
+}
+.progress-bars li{
+width:100%;
+position: relative;
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+.bar{
+width: 100%;
+height: 1em;
+background: #111;
+box-shadow:
+inset -1p -1px #5c5c5c,
+inset 1px 4px 8px #050505;
+border-radius: 10px;
+margin: 1rem 0;
+margin-left: 2em;
+}
+.progress {
+background: linear-gradient(90deg, #30919c, #78ebfa);
+width: 0%; /* Default width for animation */
+height: 100%;
+border-radius: inherit;
+position: relative;
+box-shadow: 0 0 3px #70adff;
+transition: width 2s ease-out; /* Ensure transition is applied */
+}
+
+.progress::before {
+content: '';
+position: absolute;
+right: 0;
+top: 50%;
+transform: translateY(-50%);
+width: 1em;
+height: 1em;
+background: #fff;
+border-radius: 50%;
+box-shadow: 0 0 20px #fff;
+filter: blur(2px);
+}
+
+.percentage {
+font-weight: 700;
+color: #f1f1f1;
+text-shadow: 0 0 5px #75c1ce;
+position: absolute;
+right: 10px; /* Adjust based on layout */
+font-size: 1rem; /* Ensure text size fits the design */
+}
+
+.progress-bars {
+list-style-type: none;
+padding: 1.5em;
+color: #fff;
+background: #21585a11;
+border-radius: 15px;
+width: 700px;
+box-shadow: 0 0 15px #69c0daed;
+margin: 1em auto;
+margin-left: 10px;
+}
+
+.progress-bars h3 {
+color: #f9fafc;
+font-weight: 500;
+font-size: 1.3rem;
+margin-left: 30px;
+}
+
+.progress-bars li {
+width: 100%;
+position: relative;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.bar {
+width: 100%;
+height: 1em;
+background: #11111100;
+box-shadow: inset -1px -1px #5c5c5c, inset 1px 4px 8px #050505;
+border-radius: 10px;
+margin: 1rem 0;
+margin-left: 2em;
+}
+
+@media screen and (max-width: 800px) {
+.progress-bars {
+width: 80%;
+}
+}
+
+
+.highlight-text{
+margin: 30px;
+color:white;
+font-size: 1.5rem;
+font-weight: bold;
+text-align: center;
+}
+.highlight-text-span{
+color:#58909a;
+margin-left: 10%;
+font-size: 2rem;
+margin-top: 30px;
+}
+.highlight-text-p{
+color: white;
+font-size: large;
+margin: 40px;
+display: flex;
+text-align: justify;
+margin-left:60px;
+align-items: center;
+}
+.carousel-title {
+font-size: 2em;
+color: var(--text-light);
+margin-bottom: 20px;
+margin-left: 600px;
+}
+
+.carousel-head {
+font-size: 2.5em;
+color:var(--secondary-color);
+font-weight: bold;
+animation: head-animation 5s ease-in-out infinite alternate;
+margin-left:600px;
+}
+
+@keyframes head-animation {
+0% {
+  transform: translateX(0) scale(1);
+  color: var(--text-light);
+  text-shadow: 0 0 10px var(--primary-color);
+}
+50% {
+  transform: translateX(10px) scale(1.1);
+  color: var(--primary-color);
+  text-shadow: 0 0 20px var(--secondary-color) ;
+}
+75% {
+  transform: translateX(0) scale(1);
+  color: var(--secondary-color);
+  text-shadow: 0 0 10px var(--primary-color);
+}
+}
+
+.card2-container {
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+height: 500px;
+gap: 10px;
+
+> div {
+flex: 0 0 120px;
+border-radius: 0.5rem;
+transition: 0.5s ease-in-out;
+cursor: pointer;
+box-shadow: 1px 5px 15px #1e0e3e;
+position: relative;
+overflow: hidden;
+
+&:nth-of-type(1) {
+  background: rgba(18, 59, 69, 0.619);
+    
+}
+&:nth-of-type(2) {
+  background: rgb(98, 147, 160);
+   
+}
+&:nth-of-type(3) {
+  background:rgba(18, 59, 69, 0.619);
+   
+}
+
+
+
+.card2-content{
+  text-align: justify;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+  
+.card2-title{
+  margin:30px;
+  color:white;
+  font-size:2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top:50px;
+  justify-items: center;
+}
+.card2-expansion{
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+ text-align: center;
+
+ height: 700px;
+
+}
+&:hover {
+  flex: 0 0 250px;
+  box-shadow: 1px 3px 15px #7ec1e4;
+  transform: translatey(-10px);
+}
+
+&:hover .content {
+  opacity: 1;
+  transform: translatey(0%);
+  visibility: visible;
+}
+}
+}
+
+.carousel {
+margin-top:40px;
+position: relative;
+width: 100%;
+height: 450px;
+overflow: hidden;
+background-color: #cdcdcd00;
+}
+
+.carousel-item {
+position: absolute;
+width: 100%;
+height: 270px;
+border: none;
+top: 0;
+left: 100%;
+}
+
+.carousel-item.active {
+left: 0;
+transition: all 1s linear;
+}
+
+.carousel-item div {
+height: 100%;
+}
+.carousel2-title{
+color: var(--text-light);  
+font-size:1.7rem;
+text-align: center;
+margin-top:20px;
+}
+.carousel2-head{
+color:var(--secondary-color);
+font-size:2.5rem;
+text-align:center;
+}
+.carousel-content{
+color: var(--text-light);
+font-size: 1.3rem;
+text-align:justify;
+margin: 40px;
+display: flex;
+margin-left:60px;
+align-items: center
+
+
+}
+.carousel-nav {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: rgba(0, 0, 0, 0.016);
+border: none;
+color:white;
+text-shadow: 1px 5px 15px #71afcb;;
+font-size: 20px;
+padding: 8px;
+cursor: pointer;
+z-index: 10;
+}
+
+.carousel-nav.prev {
+left: 0;
+}
+
+.carousel-nav.next {
+right: 0;
+}
+
+.carousel-nav:hover {
+background-color: rgba(83, 157, 176, 0.511);
+}
+.carousel-btn{
+font-size: 1rem;
+color: var(--text-light);
+align-items: center;
+background-color: var(--secondary-color);
+margin-left:540px;
+border-radius: 20px;
+padding: 0.75rem 1.5rem;
+outline: none;
+border: none;
+font-size: 1rem;
+display: flex;
+
+}
+.carousel-btn:hover{
+color: var(--secondary-color);
+align-items: center;
+background-color: var(--text-light);
+}
+.counter-box {
+width: 230px;
+padding: 50px;
+background-color: #f1f1f100;
+box-shadow: 0px 4px 8px rgba(62, 128, 133, 0.836);
+border-radius: 10px;
+text-align: center;
+vertical-align:top;
+}
+.counter {
+font-size: 24px;
+font-weight: bold;
+color: #85e8e8ed;
+transition: transform 2s ease-in-out;
+}
+.counter.animate {
+transform: scale(1.1);
+}
+.caption{
+color:var(--text-light);
+font-size:1.5rem;
+margin-bottom: 20px;
+text-align: center;
+margin-right:300px;
+
+}
+.counter-title{
+color: var(--secondary-color);
+font-size: 2.5rem;
+text-align: center;
+}
+.counter-head{
+color:var(--text-light);
+font-size: 1.5rem;
+}
+
+
+/* customer slide*/
+.logos {
+overflow: hidden;
+padding: 30px 0px;
+white-space: nowrap;
+position: relative;
+justify-content: space-evenly;
+background: #0a304300;
+
+}
+
+.logos:before, .logos:after {
+position: absolute;
+top: 0;
+content: '';
+width: 250px;
+height: 100%;
+z-index: 2;
+}
+
+.logos:before {
+left: 0;
+background: linear-gradient(to left, rgba(255,255,255,0), rgba(255, 255, 255, 0));
+}
+
+.logos:after {
+right: 0;
+background: linear-gradient(to right, rgba(48, 150, 152, 0), rgba(8, 198, 212, 0));
+}
+
+.logo_items {
+
+display: inline-block;
+animation: 10000s slides infinite linear;
+}
+
+.logos:hover .logo_items {
+animation-play-state: paused;
+}
+
+.logo_items img{
+height: 100px;
+margin-left:50px;
+margin-right: 50px ;
+}
+.clients-title{
+
+color: var(--secondary-color);
+font-size: 1.5rem;
+text-align: center;
+
+}
+.clients-head{
+color:var(--text-light);
+font-size: 2rem;
+margin-bottom: 20px;
+text-align: center;
+
+
+}
+@keyframes slides {
+from {
+transform: translateX(0);
+}
+to {
+transform: translateX(-100%);
+}
+}
+.scene {
+width: 100px;
+height: 100px;
+perspective: 600px;
+}
+
+.cube {
+width: 100%;
+height: 100%;
+margin-top: 15  0px;
+position: relative;
+transform-style: preserve-3d;
+transform: rotateX(0deg) rotateY(0deg);
+animation: rotateCube 5s infinite linear;
+}
+
+.face {
+position: absolute;
+width: 100px;
+height: 100px;
+background-image: radial-gradient( #0f7284,#16434b);
+border: 2px solid #cccccc00;
+border-radius:30px;
+box-sizing: border-box;
+text-align: center;
+line-height: 200px;
+font-size: 24px;
+font-weight: 500PX;
+color: #63c1d8;
+
+}
+
+/* Position the faces */
+.front  { transform: rotateY(  0deg) translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.right  { transform: rotateY( 90deg) translateZ(100px); }
+.top    { transform: rotateX( 90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+@keyframes rotateCube {
+from {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+to {
+  transform: rotateX(360deg) rotateY(360deg);
+}
+}
+
+</style>
+</head>
+
+
+<body >     
+<<header class="header__container" style= "margin-top:135px;"> 
+      
+  <div class="header__content">
+   
+    <h2>IT Staffing and IT services</h2>
+    <h1 class="text">
+      ADR GROUP</h1><h3 class="text2">The Better Choice
+      </h3>
+    
+    
+    <p  data-aos="fade-up" data-aos-delay="100">
+      Explore ADR Group for automotive and manufacturing solutions with SAP and Odoo ERP to enhance your business performance, provide alternative dispute resolution, and offer SAP and IT staffing.
+    </p>
+      <a href=erp>
+      <button class="card-btn"
+       style="margin-left: 200px;">Know More..</button></a>
+  
+  </div>
+  <div class="header-image">
+    <div class="cube">
+      <div class="face front"></div>
+      <div class="face back"></div>
+      <div class="face left"></div>
+      <div class="face right"></div>
+      <div class="face top"></div>
+      <div class="face bottom"></div>
+    </div>
+  </div>
+  
+
+  </div>
+  
+
+
+</header>
+<div class="card-container">
+<div class="card" id="card">
+<div class="card-front">
+  <h2 class="card-text">ADR Group SAP and Odoo Services<br><span class="card-text-span">Explore SAP and Odoo</span>
+    <p class="card-text-p">Explore ADR Group for automotive and manufacturing ERP solutions to enhance your business performance.</p> 
+    <a href=erp> <button class="card-btn">know more</button> </a>
+
+  </h2>
+</div>
+<div class="card-back">
+  <h2 class="card-text">ADR Group IT Staffing and Solutions<br><span class="card-text-span">IT Staffing Support</span>
+  <p class="card-text-p">Access top IT talent with ADR Group flexible staffing solutions, ensuring precise SAP staffing for your projects.</p> 
+   <a href =itstaffing>
+  <button class="card-btn">know more</button></a>
+  </h2>
+</div>
+</div>
+</div>
+  
+
+
+<div style="width: 100%;">
+<div style="width:50%;  float: left; background: rgba(0, 128, 0, 0); margin-top: 50px; "> 
+<ul class="progress-bars" style="width: 500px; margin-left: 70px;
+margin-top:40px;">
+  <h3>SAP Implementation</h3>
+  <li>
+    <div class="bar">
+      <div class="progress" data-count="96"></div>
+    </div>
+    <span class='percentage'>96%</span>
+  </li>
+  <h3>IT Staffing</h3>
+  <li>
+    <div class="bar">
+      <div class="progress" data-count="96"></div>
+    </div>
+    <span class='percentage'>96%</span>
+  </li>
+  <h3>Web & Mobile Application</h3>
+  <li>
+    <div class="bar">
+      <div class="progress" data-count="86"></div>
+    </div>
+    <span class='percentage'>86%</span>
+  </li>
+  <h3>Data Analytics</h3>
+  <li>
+    <div class="bar">
+      <div class="progress" data-count="90"></div>
+    </div>
+    <span class='percentage'>90%</span>
+  </li>
+</ul>
+</div>
+</div>
+<div style="  width:50%; height: 500px; background: rgba(0, 0, 255, 0); margin-left: 50%;">
+<h2 class="highlight-text" data-aos="fade-up">Our Expertise</h2>
+<span class="highlight-text-span" data-aos="fade-up" data-aos-delay="100">ADR Group's Proficiency Highlights</span>
+<p class="highlight-text-p" data-aos="fade-up" data-aos-delay="200">
+  At ADR Group, our expertise in SAP and Odoo services, mobile and web application development, and IT staffing 
+  is a testament to our dedication and passion for driving client success. By partnering with us, you’ll experience 
+  the transformative impact of our tailored solutions, designed to boost business performance and achieve sustainable growth.
+</p>
+<a href = sap>
+  <button class="card-btn" style="margin-left: 40%;" data-aos="fade-up" data-aos-delay="300" onclick="window.location.href='your-link-here';">Know More</button></a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</div>
+
+
+
+
+<div class="card2-container" style="margin-top: 10%;">
+<div>
+<div class="card2-content" data-aos="fade-up" data-aos-delay="200">
+  <h2 class="card2-title">Innovative Solutions</h2>
+  <span class="card2-expansion">
+    ADR Group for expert SAP and Odoo ERP services for Automotive, Retail, and Manufacturing provide alternative dispute resolution, and IT staffing solutions, comprehensive support that drives sustainable growth. Partner with ADR Group IT to stay ahead in an ever-changing business landscape.
+  </span>
+</div>
+</div>
+
+<div>
+<div class="card2-content" data-aos="fade-up" data-aos-delay="300">
+  <h2 class="card2-title" style="color:#0a3043;">Expert Guidance</h2>
+  <span class="card2-expansion" style="color:#f9fafc;">
+    With our expertise in SAP services, Odoo services, and IT staffing solutions, ADR Group IT provides the support you need to stay ahead of the competition and achieve long-term growth. Partner with ADR Group for innovative solutions that drive your business forward and ensure sustainable growth.
+  </span>
+</div>
+</div>
+
+<div>
+<div class="card2-content" data-aos="fade-up" data-aos-delay="400">
+  <h2 class="card2-title">Tech Integration</h2>
+  <span class="card2-expansion">
+    Our tailored SAP and Odoo Manufacturing services Solutions and IT staffing solutions enhance efficiency, boost performance, and keep you ahead of the competition in a dynamic market landscape. Trust ADR Group to ensure your business's success and innovative, customized strategies designed for long-term sustainability.
+  </span>
+</div>
+</div>
+</div>
+
+<div class="carousel">
+<div class="carousel-item" >
+<h2 class="carousel2-title">Why Choose Us</h2>
+<h3 class="carousel2-head">Business Growth with ADR Group's Solutions</h3>
+<p class="carousel-content">Experience rapid business growth with ADR Group's tailored SAP and Odoo implementation and expert IT staffing services. ADR Group's SAP services and SAP staffing streamline operations, optimize workflows, and drive efficiency. Our skilled IT professionals ensure seamless project execution and provide continuous support.
+
+Partner with ADR Group to enhance your business performance, achieve operational excellence, and sustain growth and provide alternative dispute resolution SAP staffing and IT staffing in today's competitive market.</p>
+<a href=itstaffing><button class="card-btn" style="margin-left:500px" >Get Start Today</button></a>
+</div>
+<div class="carousel-item">
+<h2 class="carousel2-title">More About Us</h2>
+<h3 class="carousel2-head">We Have A Deep Habit Of Understanding</h3>
+<p class="carousel-content">Whether it's implementing SAP or Odoo solutions for streamlined operations, optimizing IT staffing for efficiency, or leveraging data analytics for informed decision-making, we ensure that every aspect of your business benefits from ADR Group IT deep understanding and technological acumen.
+
+At ADR Group, we pride ourselves on our comprehensive approach to digital transformation. Our expertise in SAP and Odoo services allows businesses to integrate and manage their operations seamlessly. With a dedicated team specializing in IT staffing and SAP staffing, we match the right talent with the right roles, ensuring your projects are staffed with professionals</p>
+<a href= sap><button class="card-btn" style="margin-left:500px">Get Start Today</button></a>
+</div>
+<div>
+<button class="carousel-nav prev">❮</button>
+<button class="carousel-nav next">❯</button>
+</div>
+
+</div>
+
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<div style="text-align:center">
+<h1 class="counter-title" data-aos="fade-right">Building Global Success</h1>
+<p class="counter-head" data-aos="fade-left" data-aos-delay="100">Harnessing Expertise, Expertise, And Diversity For Business Growth</p>
+
+<div id="counters" style="display: flex; justify-content: center; gap: 95px;">
+  <div class="counter-box" data-aos="fade-right" data-aos-delay="200">
+      <div class="icon">
+          <h2 class="caption">Completed Projects</h2>
+          
+      </div>
+      <div id="counter1" class="counter">0</div>
+  </div>
+
+  <div class="counter-box" data-aos="fade-right" data-aos-delay="300">
+      <div class="icon">
+          <h2 class="caption">Consultancy<br></br></h2>
+          
+      </div>
+      <div id="counter2" class="counter">0</div>
+  </div>
+
+  <div class="counter-box" data-aos="fade-right" data-aos-delay="400">
+      <div class="icon">
+          <h2 class="caption">Global Customers</h2>
+          
+      </div>
+      <div id="counter3" class="counter">0</div>
+  </div>
+
+  <div class="counter-box" data-aos="fade-right" data-aos-delay="500">
+      <div class="icon">
+          <h2 class="caption" style = "text-align:centre;">Customization<br></br></h2>
+          
+      </div>
+      <div id="counter4" class="counter">0</div>
+  </div>
+</div>
+
+<script>
+function animateCounter(counterElement, upto) {
+let count = 0;
+let counts = setInterval(function() {
+  count++;
+  counterElement.innerHTML = count;
+
+  // Add a "+" symbol after every 4 counts
+  if (count % 5 === 0) {
+      counterElement.innerHTML += " +";
+  }
+
+  counterElement.classList.add('animate');
+  setTimeout(() => counterElement.classList.remove('animate'), 100);
+
+  if (count === upto) {
+      clearInterval(counts);
+  }
+}, 10);
+}
+
+animateCounter(document.getElementById("counter1"),50);
+animateCounter(document.getElementById("counter2"), 30);
+animateCounter(document.getElementById("counter3"), 20);
+animateCounter(document.getElementById("counter4"), 100);
+
+</script>
+
+</div>
+<div>
+<div class="logos">
+<span class="clients-title" style="font-size: 3rem; margin-left: 450px;" data-aos="fade-up">
+  Our Customers
+</span>
+<h1 class="clients-head" style="text-align: center;" data-aos="fade-up" data-aos-delay="100">
+  Driving technology for leading brands
+</h1>
+  <div class="logo_items">
+  <img src="https://adrgrp.com/wp-content/uploads/2024/07/HT_log.webp">
+  <img src="https://adrgrp.com/wp-content/uploads/2024/07/Kar_tech.webp">
+  <img src="https://adrgrp.com/wp-content/uploads/2024/07/expleo.webp">
+  <img src="https://adrgrp.com/wp-content/uploads/2024/07/hacket.webp">
+  <img src="https://adrgrp.com/wp-content/uploads/2024/07/QK_Logo.webp"> <img src="https://adrgrp.com/wp-content/uploads/2024/07/HT_log.webp">
+  <img src="https://adrgrp.com/wp-content/uploads/2024/07/Kar_tech.webp">
+  <img src="https://adrgrp.com/wp-content/uploads/2024/07/expleo.webp">
+  <img src="https://adrgrp.com/wp-content/uploads/2024/07/hacket.webp">
+  <img src="https://adrgrp.com/wp-content/uploads/2024/07/QK_Logo.webp">
+  
+  </div>
+  
+</div>
+</div>
+
+
+
+<script >
+document.addEventListener('DOMContentLoaded', () => {
+const container = document.querySelector('.progress-bars');
+const progress = document.querySelectorAll('.progress');
+const percentage = document.querySelectorAll('.percentage');
+let hasAnimated = false;
+
+function animateProgressBar() {
+    if (window.pageYOffset + window.innerHeight > container.offsetTop && !hasAnimated) {
+        progress.forEach((prog, index) => {
+            const data = parseInt(prog.dataset.count);
+            prog.style.width = '0%'; // Start with width 0%
+            percentage[index].innerText = '0%'; // Start with 0%
+
+            // Trigger animation
+            setTimeout(() => {
+                prog.style.transition = `width 2s ease-out`;
+                prog.style.width = data + '%';
+
+                // Update percentage count
+                function updateCount() {
+                    let count = parseInt(percentage[index].innerText);
+                    if (count < data) {
+                        count++;
+                        percentage[index].innerText = count + '%';
+                        setTimeout(updateCount, 20); // Faster update for smoother animation
+                    } else {
+                        percentage[index].innerText = data + '%';
+                    }
+                }
+                updateCount();
+            }, 10);
+        });
+        hasAnimated = true;
+    }
+}
+
+window.addEventListener('scroll', animateProgressBar);
+// Trigger animation on page load if already scrolled into view
+animateProgressBar();
+});
+
+
+
+window.onload = function () {
+let slides = document.getElementsByClassName('carousel-item');
+let currentIndex = 0;
+let interval;
+
+function addActive(slide) {
+    slide.classList.add('active');
+}
+
+function removeActive(slide) {
+    slide.classList.remove('active');
+}
+
+function showSlide(index) {
+    removeActive(slides[currentIndex]);
+    currentIndex = index;
+    addActive(slides[currentIndex]);
+}
+
+function nextSlide() {
+    let nextIndex = (currentIndex + 1) % slides.length;
+    showSlide(nextIndex);
+}
+
+function prevSlide() {
+    let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(prevIndex);
+}
+
+function startAutoSlide() {
+    interval = setInterval(nextSlide, 7000);
+}
+
+function stopAutoSlide() {
+    clearInterval(interval);
+}
+
+// Initial display
+addActive(slides[0]);
+startAutoSlide();
+
+// Event listeners for navigation buttons
+document.querySelector('.next').addEventListener('click', function () {
+    stopAutoSlide();
+    nextSlide();
+    startAutoSlide();
+});
+
+document.querySelector('.prev').addEventListener('click', function () {
+    stopAutoSlide();
+    prevSlide();
+    startAutoSlide();
+});
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+const card = document.getElementById('card');
+
+card.addEventListener('click', function() {
+  this.classList.toggle('is-flipped');
+});
+});
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+{% endblock %}

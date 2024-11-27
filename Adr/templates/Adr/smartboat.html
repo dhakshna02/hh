@@ -1,0 +1,442 @@
+{% extends "Adr/base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADR | Smart Boat </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        body {
+            font-family: 'Poppins';
+            margin-top: 80px;
+            padding: 0;
+            
+            color: #333;
+        }
+
+        .hero {
+            background-image:url(http://127.0.0.1:8000/media/smartboat.jpg);
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+            }
+        .features {
+    padding: 60px 20px;
+    background-color: #f9f9f9; 
+    
+}
+
+.features p{
+     text-align: center;
+    
+    font-size: 1.3rem;
+   
+    color: #0a3043;
+ 
+}
+.features h3{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 3.3rem;
+    font-weight: 2.5rem;
+    color: #73b2be;
+    margin-top:80px;
+    text-shadow: 2px 2px #0a3043 ;
+}
+
+.feature-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.feature-left .feature-content {
+    order: 1;
+}
+
+.feature-left .feature-image {
+    order: 2;
+    box-shadow:0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.feature-right .feature-content {
+    order: 2;
+}
+
+.feature-right .feature-image {
+    order: 1;
+    box-shadow:0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.feature-content {
+    flex: 1;
+    max-width: 45%;
+    line-height: 1.6;
+    margin-bottom: 150px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.feature-image {
+    flex: 1;
+    max-width: 30%;
+    max-height: 100%;
+    text-align: center;
+ 
+}
+.feature-image img {
+    max-width: 100%;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(9, 81, 95, 0.977);
+
+    
+}
+  .reliability {
+            display: flex;
+            flex-direction: row;
+            padding: 200px 20px;
+            background-color: #356d6e;
+            text-align: justify;
+            border-top: 5px solid #94d2bd;
+        }
+
+
+
+        /* Animation for Header */
+        headep h1 {
+            animation: fadeInDown 1s ease-out;
+        }
+
+        headep {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .feature-card {
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .feature-card img {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+        .rel-content{
+            flex: 1;
+           
+        }
+        .design-con{
+            flex: 1;
+        }
+
+
+        /* From Uiverse.io by mrhyddenn */ 
+.loader {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  background: black;
+  border-radius: 50%;
+  box-shadow: 25px 25px 75px rgba(0,0,0,0.55);
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: auto;
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  inset: 80px;
+  background: transparent;
+  border: 1px dashed#444;
+  border-radius: 50%;
+  box-shadow: inset -5px -5px 25px rgba(0,0,0,0.25),
+  inset 5px 5px 35px rgba(0,0,0,0.25);
+}
+
+.loader::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px dashed#444;
+  box-shadow: inset -5px -5px 25px rgba(0,0,0,0.25),
+  inset 5px 5px 35px rgba(0,0,0,0.25);
+}
+
+.loader span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background: transparent;
+  transform-origin: top left;
+  animation: radar81 2s linear infinite;
+  border-top: 1px dashed #fff;
+}
+
+.loader span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(34, 93, 88);
+  transform-origin: top left;
+  transform: rotate(-55deg);
+  filter: blur(30px) drop-shadow(20px 20px 20px seagreen);
+}
+
+@keyframes radar81 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.card-btn{
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgba(82, 174, 154, 0.7);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: #03377f;
+    color: #f9fafc;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  
+   }
+   .card-btn:hover{
+    background: rgba(82, 174, 152, 0.998);
+    box-shadow: 0 0 30px 5px rgba(82, 174, 153, 0.7);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  
+   }
+   .card-btn:hover::before {
+    -webkit-animation: sh02 0.3s 0s linear;
+    -moz-animation: sh02 0.3s 0s linear;
+    animation: sh02 0.3s 0s linear;
+  }
+  .card-btn::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: rgb(240, 240, 240);
+    box-shadow: 0 0 50px 30px #e9edef;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }    </style>
+</head>
+
+<body>
+    <section class="hero" data-aos="fade-in">
+        <div class="container">
+             <h2 style=" font-size: 2.6rem;
+      color: #567cc3;">Smart Boat IoT by ADR Group</h2>  
+            
+            <p style="margin-top: 25px;
+      font-size: 1.8rem;
+      color:#f9fafc;
+      text-align: justify;">The Smart Boat IoT application provides an integrated real-time boat monitoring solution for both business and personal use. The platform offers a range of features to ensure the safety, security, and efficient operation of various boats and floating vessels. Owners can remotely check their boat's status through IoT devices, mobile, and web applications</p>
+            <a href="sap" ><button class="card-btn">Get Start Today</button></a>
+        </div>
+    </section>
+    <section class="features">
+            <div class="container">
+             
+                <ul>
+                    <li class="feature-item feature-left" data-aos="fade-right">
+                        <div class="feature-content">
+                            <h3>Battery Monitor</h3>
+                            <p style="text-align:justify"> ●	Continuously monitors engine and house batteries.
+                        <br>●	Alerts users of necessary actions to maintain battery health.
+                        <br>●	Provides real-time updates on battery status, temperature, and abnormal conditions.
+                        <br>●	Supports 12V, 24V, and 48V batteries with alerts for critical levels. Operates in temperatures from -20°C to +85°C.</p>
+                        </div>
+                        <div class="feature-image">
+                            <img class="img-2" src="http://127.0.0.1:8000/media/sb1.webp" alt="Battery Monitor">
+                        </div>
+                    </li>
+                    <li class="feature-item feature-right" data-aos="fade-left">
+                        <div class="feature-image">
+                            <img src="http://127.0.0.1:8000/media/sb2.webp" alt="Location Tracker">
+                        </div>
+                        <div class="feature-content">
+                            <h3>Location Tracker</h3>
+                            <p style="text-align:justify">●	Real-time GPS tracking and geo-fencing.
+                        <br>●	Alerts for movement deviations and dock entry/exit.
+                        <br>●	Visual trip logs for past journeys.
+                        <br>●	Provides real-time updates, geo-fencing with a 1km boundary, and trip logs. Operates in temperatures from -20°C to +85°C.</p>
+                        </div>
+                    </li>
+                    <li class="feature-item feature-left" data-aos="fade-right">
+                        <div class="feature-content">
+                            <h3>Smart Fluid Monitor</h3>
+                            <p style="text-align:justify">●	Monitors water levels in various tanks (drinking, freshwater, wastewater).
+                        <br>●	Sends alerts for minimum/maximum water levels.
+                        <br>●	Monitors various tank levels, sending alerts for levels below 20% or above 100%.
+                        <br>●	Operates in temperatures from -20°C to +85°C.
+</p>
+                        </div>
+                        <div class="feature-image">
+                            <img class="img-2" src="http://127.0.0.1:8000/media/sb3.webp" alt="Smart Fluid Monitor" >
+                        </div>
+                      </li>
+                   
+                    <li class="feature-item feature-right" data-aos="fade-left">
+                        <div class="feature-image">
+                            <img src= "http://127.0.0.1:8000/media/sb4.webp" alt="Bilge Pump Monitor">
+                        </div>
+                        <div class="feature-content">
+                            <h3>Bilge Pump Monitor</h3>
+                            <p style="text-align:justify"> ●	Continuously checks water levels in the bilge.
+                        <br>●	Alerts for bilge pump activity and potential water accumulation issues.
+                        <br>●	Tracks bilge pump activity, alerts for abnormalities, and operates in temperatures from -20°C to +85°C.
+</p>
+                        </div>
+
+                    </li>
+                     <li class="feature-item feature-left" data-aos="fade-right">
+                        <div class="feature-content">
+                            <h3>Security Monitor</h3>
+                            <p style="text-align:justify"> ●	Detects motion and sends alerts for security breaches.
+                        <br>●	Captures and sends photos when motion is detected.
+                        <br>●	Live video surveillance and alarm activation for unauthorized access.
+                        <br>●	Detects motion, captures images, triggers alarms, and provides live video feed.
+                        <br>●	Operates in temperatures from -20°C to +85°C.
+                    </p>
+</p>
+                        </div>
+                        <div class="feature-image"  style="max-width:370px;">
+                            <img   src="http://127.0.0.1:8000/media/sb5.webp" alt="Security Monitor">
+                        </div>
+                    </li>
+                    <li class="feature-item feature-right" data-aos="fade-left">
+                        <div class="feature-image">
+                            <img src="http://127.0.0.1:8000/media/sb6.webp" alt="Security Monitor">
+                        </div>
+                        <div class="feature-content">
+                            <h3>THS Monitor</h3>
+                            <p style="text-align:justify">  ●	Monitors temperature, humidity, and smoke levels in critical areas.
+                        <br>●	Alerts for temperature rises, gas leaks, and humidity changes.
+                        <br>●	Monitors temperature, gas, and humidity with alert notifications.
+                        <br>●	Operates in temperatures from -20°C to +85°C.</p>
+                        </div>
+
+                    </li>
+                     <li class="feature-item feature-left" data-aos="fade-right">
+                        <div class="feature-content">
+                            <h3>Smart Connect</h3>
+                            <p style="text-align:justify"> ●	Remote control for various devices and appliances on the boat.
+<br>●	Allows on/off switching for air conditioners, lights, refrigerators, and more via mobile app.
+<br>●	Allows remote control of appliances, ensuring no conflict with manual operation. 
+<br>●	Operates in temperatures from -20°C to +85°C.
+
+                    </p>
+</p>
+                        </div>
+                        <div class="feature-image" style="max-width:370px;">
+                            <img src="http://127.0.0.1:8000/media/sb7.webp" alt="Smart Connect">
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+<section class="reliability" data-aos="fade-in">
+        <div class="rel-content">
+            <h2 style="text-align: center;">Testing and Reliability</h2>
+            <p>Each module undergoes rigorous testing to ensure safe operation, accurate monitoring, and reliable alerts. Features are tested for proper integration with the mobile app, database storage, and real-time notifications to ensure seamless user experience and dependable boat management.
+                <br>
+                <br>The ADR Group's Smart Boat IoT solutions offer comprehensive monitoring and control, enhancing safety, security, and efficiency for boat owners. For more information, visit our product page.</p>
+        </div>
+        <div class="design-con"> 
+           <div class="loader">
+              </div>
+        </div>
+</section>
+       
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+{% endblock %}

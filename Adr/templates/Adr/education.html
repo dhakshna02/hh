@@ -1,0 +1,467 @@
+{% extends "Adr/base.html "%}
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+  <title>education</title>
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+ 
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    /* Basic Reset */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+ :root {
+  --primary-color: #146d73;
+  --secondary-color: #09466a;
+  --text-light: #f9fafc;
+  --white: #ffffff;}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.hero {
+    background-image:url("https://img.freepik.com/free-vector/geometric-science-education-background-vector-gradient-blue-digital-remix_53876-125993.jpg?ga=GA1.2.1361869439.1722227052&semt=ais_hybrid");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.hero .container {
+    max-width: 1200zpx;
+    padding: 20px;
+}
+.hero h1{
+    font-size: 3rem;
+    font-weight: 2rem;
+    margin-bottom: 40px;
+    color: var(--text-light);
+}
+.hero h2{
+  font-size: 2.6rem;
+  color: white;
+}
+.para{
+  margin-top: 25px;
+  font-size: 1.8rem;
+  color: var(--text-light);
+  text-align: justify;
+}
+.benefits {
+    background-color:rgb(9, 9, 9);;
+    padding: 40px;
+    min-height: 70vh;
+    color: #fff;
+}
+
+.benefits .container {
+    max-width: 1150px; /* Increase max-width for a larger container */
+    margin: 0 auto;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 3fr)); /* Wider grid columns */
+    gap: 80px;
+}
+
+.benefits-list li {
+    padding: 20px; /* Increase padding for larger boxes */
+    background-color:  #52ae9800;;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(6, 120, 141, 0.934);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color:var(--secondary-color);
+    overflow: hidden; /* Ensures the content stays inside the box */
+    position: relative;
+    text-align: justify;
+
+}
+
+.benefits-list li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgb(7, 173, 202);
+}
+
+.benefits-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), rgba(9, 9, 9, 0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.benefits-list li:hover::before {
+    opacity: 1;
+}
+
+.benefits-list li i {
+    font-size: 36px; /* Increase icon size */
+    margin-bottom: 20px;
+    color: #13545b;
+    z-index: 2; /* Ensure it appears above the hover effect */
+    position: relative;
+}
+
+.benefits-list li h3 {
+    font-size: 22px; /* Increase font size for headers */
+    font-weight: bold;
+    margin-bottom: 15px;
+    z-index: 2;
+    position: relative;
+}
+
+.benefits-list li p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+.benefits h2{
+    font-size: 3rem;
+    font-weight: 3rem;
+    color: #f9fafc;
+}
+
+.card-btn{
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid var(--secondary-color);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #0e0e0e;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+
+ }
+ .card-btn:hover{
+  background: var(--secondary-color);
+  box-shadow: 0 0 30px 5px rgba(5, 66, 85, 0.7);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+
+ }
+ .card-btn:hover::before {
+  -webkit-animation: sh02 0.3s 0s linear;
+  -moz-animation: sh02 0.3s 0s linear;
+  animation: sh02 0.3s 0s linear;
+}
+.card-btn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: rgb(240, 240, 240);
+  box-shadow: 0 0 50px 30px #e9edef;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+  .para {
+    font-family: 'Poppins',sans-serif;
+    font-size: 1rem;
+    
+  }
+  .last {
+  background-color: #f9f9f9;
+  padding: 80px 20px;
+  text-align:center;
+}
+
+.last-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.last h1 {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #121212;
+}
+
+.para1 {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 30px;
+}
+.flex-container {
+      display: flex;
+      justify-content: space-between; /* Distributes space evenly between items */
+      align-items: flex-start; /* Aligns items to the top */
+      margin: 20px;
+    }
+    .flex-container .flex-item {
+      flex: 1;
+      margin: 10px;
+    }
+    /* Flexbox Styles for Left and Right Sections */
+    .left-section, .right-section {
+      display: flex;
+      flex-direction: column; /* Align items vertically */
+      justify-content: flex-start; /* Aligns items at the start */
+      padding: 10px;
+    }
+    .left-section {
+      background-color: #eaeaea;
+    }
+    .right-section {
+      background-color: #f5f5f5;
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .flex-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+      }
+    }
+.head{
+animation: head-animation 5s ease-in-out infinite alternate;}
+      
+@keyframes head-animation {
+  0% {
+      transform: translateX(0) scale(1);
+      color: var(--text-light);
+      text-shadow: 0 0 10px var(--primary-color);
+  }
+  50% {
+      transform: translateX(10px) scale(1.1);
+      color: var(--primary-color);
+      text-shadow: 0 0 20px var(--secondary-color) ;
+  }
+  75% {
+      transform: translateX(0) scale(1);
+      color: var(--secondary-color);
+      text-shadow: 0 0 10px var(--primary-color);
+  }
+}
+.content-container{
+    padding: 4%;
+    background-color:  #52ae9800;;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(11, 90, 112, 0.934);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color:var(--secondary-color);
+    overflow: hidden; /* Ensures the content stays inside the box */
+    position: relative;
+    text-align: justify;
+    background:  linear-gradient(135deg, var(--primary-color), rgb(250, 249, 249));
+}
+
+        
+  </style>
+</head>
+<body>
+  <section class="hero" data-aos="fade-in">
+    <div class="container">
+         <h2>ADR Group: Transforming Education with Innovative IT Solutions</h2>  
+        
+                
+        <p class="para">Welcome to ADR Group, where we specialize in delivering advanced IT solutions designed to address
+            the unique challenges and opportunities in the education sector. Our comprehensive suite of
+            services empowers educational institutions to enhance learning experiences, streamline
+            administrative processes, and stay at the forefront of educational technology. Explore how ADR
+            Group can be your strategic partner in unlocking the full potential of IT for your educational
+            institution.</p>
+        <a href="contact"><button class="card-btn">Get Start Today</button></a>
+    </div>
+</section>
+
+<section class="features">
+  <div class="container" style="display: flex;flex-wrap: wrap; justify-content: space-between; width: 100%; font-size: 2.5rem; margin-top:10%;margin-bottom:10%; ">
+    
+    <!-- Left Section -->
+    <div style="width:45%; order: 1; font-size: 1.5rem; "  class="content-container">
+      <h2 class="head" style="color:#0c3d48; font-size:2rem; font-weight:2rem; margin-top: 10%;margin-bottom:10%;;">Key IT Solutions for the Education Sector by ADR Group:</h2>
+    
+          <div data-aos="fade-in" data-aos-delay="100">
+            <p style="color: rgb(9, 9, 9); font-size: 1.3rem; margin-top: 30px; ;">
+            <strong>Learning Management Systems (LMS):</strong>   
+              <br>ADR Group excels in implementing Learning Management Systems tailored for educational
+              institutions. Our solutions focus on providing a centralized platform for course management,
+              content delivery, assessment, and collaboration, enhancing the overall learning experience.
+             
+          
+          </div>
+       
+        
+    </div>
+
+    <!-- Right Section -->
+    <div style="display: flex;flex-wrap: wrap;justify-content: space-between; width:50%; order: 1; font-size: 1.5rem; text-align:justify; " >
+      <ul>
+        <li   data-aos="fade-right" data-aos-delay="100" style="margin-top: 10%;">  
+            <h3 style="color:#124c5a;; font-size: 1.5rem; font-weight: 1rem;">E-learning and Virtual Classroom Integration:</h3>
+            <p style="color:black; font-size: 1.3rem;">Embrace the digital age of education with ADR Group&#39;s e-learning and virtual classroom solutions.
+              We integrate technologies to facilitate remote learning, online collaboration, and interactive virtual
+              classrooms, providing flexibility and accessibility for both students and educators.</p>
+        <li   data-aos="fade-left" data-aos-delay="200"> 
+            <h3 style="color:#124a5a;; font-size: 1.5rem; font-weight: 1rem;">Data Analytics for Educational Insights:</h3>
+            <p style="color:black; font-size: 1.3rem;">Harness the power of data with ADR Group&#39;s analytics solutions. We provide tools to analyze
+              educational data, track student performance, identify trends, and support data-driven decision-
+              making for continuous improvement.</p>
+        <li   data-aos="fade-left" data-aos-delay="200"> 
+            <h3 style="color:#124a5a;; font-size: 1.5rem; font-weight: 1rem;">Student Information Systems (SIS):</h3>
+              <p style="color:black; font-size: 1.3rem;"> Streamline administrative processes with ADR Group&#39;s Student Information Systems. Our solutions
+                cover student enrollment, attendance tracking, grade management, and communication, ensuring
+                efficient and organized management of student data.</p>
+          
+            
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+  <section class="features">
+    <div class="container" style="display: flex; justify-content: space-between; width: 100%; font-size: 2.5rem;">
+  
+      
+      <!-- Left Section -->
+      <div style="display: grid; justify-content: space-between; width: 100%; font-size: 2.5rem;width:50%; order: 1; font-size: 1.5rem; text-align:justify" >
+        <ul>
+          <li   data-aos="fade-right" data-aos-delay="100">  
+              <h3 style="color:#12545a; font-size: 1.5rem; font-weight: 1rem;">Customization for Educational Workflows:</h3>
+              <p style="color:rgb(6, 6, 6); font-size: 1.3rem;">Recognizing that educational workflows vary, ADR Group
+                customizes IT solutions to align with the specific needs and processes of educational institutions,
+                optimizing efficiency and ensuring a seamless learning experience.</p>
+          <li   data-aos="fade-left" data-aos-delay="200"> 
+              <h3 style="color:#124c5a; font-size: 1.5rem; font-weight: 1rem;">Scalable Solutions for Growth:</h3>
+              <p style="color:rgb(11, 11, 11); font-size: 1.3rem;">The field of education is constantly evolving, and our IT solutions are
+                designed to scale with your institution. ADR Group ensures that your IT infrastructure supports
+                growth, expansion, and technological advancements.</p>
+          <li   data-aos="fade-right" data-aos-delay="300">     
+             <h3 style="color:#12425a; font-size: 1.5rem; font-weight: 1rem;">End-to-End Support:</h3>
+              <p style="color:black; font-size: 1.3rem;">From initial consultation to ongoing support, ADR Group provides
+                comprehensive support for educational IT solutions. Our commitment goes beyond implementation
+                – we aim to be your long-term partner in digital transformation.</p>
+            
+              
+          </li>
+        </ul>
+      </div>
+      <!-- Right Section -->
+      
+  
+      <div style="display:flexbox;width:50%; order: 1; font-size: 1.5rem; margin-left: 10%;margin-bottom:10%; "  class="content-container">
+        <h2 class="head" style="color:#064651; font-size:2rem; font-weight:2rem; margin-top: 10%; margin-bottom:10%; ">How ADR Group Supports IT Solutions in the Education Sector:</h2>
+      
+            <div data-aos="fade-in" data-aos-delay="100">
+              <p style="color:rgb(0, 0, 0); font-size: 1.3rem; margin-top: 30px; text-align: justify;"><strong>Education Sector Expertise:</strong> ADR Group understands the unique challenges and requirements of the
+                education sector. Our team comprises experts with in-depth knowledge of educational processes,
+                pedagogical practices, and emerging trends, ensuring that our IT solutions align with the specific
+                needs of educational institutions.</p>
+            
+            </div>
+         
+          
+      </div>
+</section>
+<section class="benefits">
+          
+  <div class="container">
+      <h2 style="color: var(--secondary-color); text-align: justify;">Why Choose ADR Group for IT Solutions in Education:</h2>
+      <ul class="benefits-list">
+          <li data-aos="zoom-in">
+              
+              <h3 >Proven Track Record:</h3>
+              <p>ADR Group has a proven track record of successfully implementing IT solutions
+                for educational institutions. Join a network of schools, colleges, and universities that have embraced
+                digital transformation, improved learning outcomes, and enhanced administrative efficiency with
+                our expertise.</p>
+          </li>
+          <li data-aos="zoom-in">
+              
+              <h3>Security and Compliance:</h3>
+              <p>ADR Group prioritizes the security of your educational data. Our IT
+                solutions adhere to industry standards and compliance requirements, ensuring the confidentiality
+                and integrity of sensitive student and institutional information.</p>
+          </li>
+          
+          <li class="" data-aos="zoom-in">
+         
+              <h3>Continuous Innovation:</h3>
+              <p>Stay ahead of the curve with ADR Group&#39;s commitment to continuous
+                innovation. We explore emerging technologies and educational trends, ensuring that your IT
+                solutions align with the evolving needs of the education sector.
+                Elevate your educational institution with ADR Group&#39;s IT solutions. Contact us today, and let&#39;s
+                embark on a journey to transform learning experiences, streamline administrative processes, and
+                drive success in the digital age of education.</p>
+          </li>
+      </ul>
+  </div>
+</section>
+<section class="last" data-aos="fade-in">
+  <div class="last-container">
+     <h1  style="color:#0f4653">Contact and More Information</h1>
+      <p class="para1">For more details on how ADR Group can enhance your automotive manufacturing operations with SAP and Odoo solutions, please contact us.</p>
+      <a href="#knowmore" target="_blank"><button class="card-btn" style="color:#121212">Know More..</button></a>
+  </div>
+</section>
+
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({
+    duration: 1200,
+    once: true,
+});
+</script>
+</body>
+{% endblock %}

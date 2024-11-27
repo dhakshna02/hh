@@ -1,0 +1,277 @@
+{% extends "Adr/base.html" %}
+
+{% block content %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADR | CONTACTUS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" >
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin-top: 0;
+    padding:o;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact {
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    margin-top:30px;
+    color: #fff;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('http://127.0.0.1:8000/media/contact_us_page.webp') 
+                no-repeat center center/cover;
+}
+
+.contact .content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact .content h2 {
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.contact .content p {
+    font-weight: 300;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.contactInfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactInfo .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.contactInfo .box .icon {
+    min-width: 60px;
+    height: 60px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+    color: #fff;
+}
+
+.contactInfo .box .text {
+    margin-left: 20px;
+}
+
+.contactInfo .box .text h3 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.contactInfo .box .text p {
+    font-size: 16px;
+    color: #fff;
+}
+
+.contactForm {
+    width: 50%;
+    padding: 20px;
+}
+
+.contactForm h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.contactForm .inputBox {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.contactForm .inputBox input, 
+.contactForm .inputBox textarea {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    resize: none;
+}
+
+.contactForm .inputBox span {
+    position: absolute;
+    left: 10px;
+    padding: 0 0;
+    pointer-events: none;
+    font-size: 18px;
+    color: #aaa;
+    transition: 0.5s;
+}
+
+/* From Uiverse.io by mrhyddenn */ 
+button {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+button:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+
+    </style>
+</head>
+<body>
+    <section class="contact">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>Contact us today and let's redefine the future of your business, together.</p>
+        </div> 
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>US&#8209;Address</h3>
+                        <p>ADR Group LLC,<br>5510 Ivy Nole,<br>Cumming,<br>Georgia 30040.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>INDIAN ADDRESS</h3>
+                        <p>AnDnR Soft Solutions Pvt Ltd,<br>No.15, 3rd Floor,<br>2nd Main Road New Colony,<br>Chrompet, Chennai &#8209; 600044.</p>
+                    </div> 
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>EMAIL</h3>
+                        <p>Info@adrgrp.com</p>
+                    </div>
+                </div>   
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>Tel +1 770-415-1003<br>+91 444854 5680</p>
+                    </div>
+                </div>     
+            </div>
+            <div class="contactForm">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <label for="name">FirstName:</label>
+                        <input type="text" placeholder="type name" id="name" name="name" >
+                    </div>
+                    <div class="inputBox">
+                        <label for="email">Email:</label>
+                        <input type="email" placeholder="Enter email" id="email" name="email" >
+                    </div>
+                    <div class="inputBox">
+                        <label for="mesg">Message:</label>
+                        <input type="text" placeholder="type your query" id="mesg" name="mesg" >
+                    </div>
+                    <div class="submit">
+                    <button class="submit" type="submit">Submit</button>
+                </div>
+    
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+{% endblock %}

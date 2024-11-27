@@ -1,0 +1,388 @@
+{% extends "Adr/base.html" %}
+{% block content %}
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADR | Manufacturing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    
+}
+
+.hero {
+    background-image:url() ;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero .container {
+    max-width: 1200px;
+    padding: 20px;
+}
+.hero h1{
+    font-size: 4rem;
+    margin-bottom: 6px;
+    
+    
+
+}
+.hero span{
+  font-size: 2.5rem;
+  font-weight:1.5rem;
+  color: #73b2be;
+  text-shadow:#fff;
+}
+.features {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    
+}
+.features h2{
+    font-size: 2.5rem;
+    font-weight: 2.5rem;
+    text-align: center;
+    
+}
+.features h3{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 2.5rem;
+    color: #73b2be;
+    margin-bottom: 100px;
+}
+
+.feature-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.feature-left .feature-content {
+    order: 1;
+}
+
+.feature-left .feature-image {
+    order: 2;
+    box-shadow:0 4px 15px rgba(0, 0, 0, 0.2); ;
+}
+
+.feature-right .feature-content {
+    order: 2;
+}
+
+.feature-right .feature-image {
+    order: 1;
+    box-shadow:0 4px 15px rgba(0, 0, 0, 0.2); ;
+}
+
+.feature-content {
+    flex: 1;
+    max-width: 45%;
+    line-height: 1.6;
+    margin-bottom: 150px;
+    font-size: large;
+    font-weight: 500;
+}
+
+.feature-image {
+    flex: 1;
+    max-width: 45%;
+    text-align: center;
+}
+
+.feature-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(9, 81, 95, 0.977);
+    
+}
+
+@media (max-width: 768px) {
+    .feature-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .feature-content, .feature-image {
+        max-width: 100%;
+    }
+}
+
+.benefits {
+    background-color:rgb(9, 9, 9);;
+    padding: 40px;
+    min-height: 70vh;
+    color: #fff;
+}
+
+.benefits .container {
+    max-width: 1150px; /* Increase max-width for a larger container */
+    margin: 0 auto;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider grid columns */
+    gap: 40px;
+}
+
+.benefits-list li {
+    padding: 20px; /* Increase padding for larger boxes */
+    background-color:  #52ae9800;;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(224, 234, 236, 0.934);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #73b2be;
+    overflow: hidden; /* Ensures the content stays inside the box */
+    position: relative;
+
+}
+
+.benefits-list li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.benefits-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(43, 88, 88, 0.7), rgba(9, 9, 9, 0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.benefits-list li:hover::before {
+    opacity: 1;
+}
+
+.benefits-list li i {
+    font-size: 36px; /* Increase icon size */
+    margin-bottom: 20px;
+    color: #007bff;
+    z-index: 2; /* Ensure it appears above the hover effect */
+    position: relative;
+}
+
+.benefits-list li h3 {
+    font-size: 22px; /* Increase font size for headers */
+    font-weight: bold;
+    margin-bottom: 15px;
+    z-index: 2;
+    position: relative;
+}
+
+.benefits-list li p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+.benefits h2{
+    font-size: 3rem;
+    font-weight: 3rem;
+    color: #f9fafc;
+}
+button {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgba(82, 174, 154, 0.7);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #f9fafc;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+  
+  button:hover {
+    background: rgba(82, 174, 152, 0.998);
+    box-shadow: 0 0 30px 5px rgba(82, 174, 153, 0.7);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  
+  button:hover::before {
+    -webkit-animation: sh02 0.3s 0s linear;
+    -moz-animation: sh02 0.3s 0s linear;
+    animation: sh02 0.3s 0s linear;
+  }
+  
+  button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: rgb(240, 240, 240);
+    box-shadow: 0 0 50px 30px #e9edef;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+  .para {
+    font-family: 'Poppins',sans-serif;
+    line-height: 40px;
+    font-size: larger;
+    
+  }
+
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <section class="hero" data-aos="fade-in">
+            <div class="container" >
+                <h2 data-aos="fade-right" style="font-size:3rem;">Our SAP and Odoo ERP Solutions</h2>
+                <span>Seamless Integration for <br>Automotive and Manufacturing Excellence</span>
+                <p class="para" data-aos="fade-left" style="text-align: justify;
+                color: white">Transform your automotive and manufacturing operations with ADR Group’s customized SAP and Odoo solutions. Our expert team at ADR Group designs strategies to optimize your production processes, ensuring increased efficiency and productivity.
+
+                By leveraging our extensive experience and innovative approaches, ADR Group enhances your operational performance, allowing you to stay competitive in a rapidly evolving industry</p>
+             
+            </div>
+        </section>
+       
+        <section class="features">
+            <div class="container">
+             
+                <ul>
+                    <li class="feature-item feature-left" data-aos="fade-right">
+                        <div class="feature-content">
+                            <h3>Expert Implementation Services</h3>
+                            <p style="text-align:justify"> ADR Group specializes in seamless SAP and Odoo implementation tailored for automotive manufacturing businesses.Our dedicated professionals bring extensive expertise to ensure smooth integration with your existing systems.
+                            We prioritize seamless transitions to minimize operational disruptions.
+                            Enhance your manufacturing processes to maximize efficiency and productivity.</p>
+                        </div>
+                        <div class="feature-image">
+                            <img class="img-2" src="http://127.0.0.1:8000/media/content_1.jpg" alt="Real-Time Analytics">
+                        </div>
+                    </li>
+                    <li class="feature-item feature-right" data-aos="fade-left">
+                        <div class="feature-image">
+                            <img class="img-2" src="http://127.0.0.1:8000/media/content_2.jpg" alt="Simplified User Experience">
+                        </div>
+                        <div class="feature-content">
+                            <h3>Comprehensive Services for Your Industry</h3>
+                            <p style="text-align:justify">Customized SAP and Odoo solutions designed specifically for automotive manufacturing.
+                              From initial planning to final deployment and ongoing support.
+                              Seamless integration with existing systems to optimize workflow.
+                              Strategies to enhance operational efficiency and reduce costs.
+                              Incorporating the latest technologies to stay ahead in the industry.</p>
+                        </div>
+                    </li>
+                    <li class="feature-item feature-left" data-aos="fade-right">
+                        <div class="feature-content">
+                            <h3>Enhance Efficiency with ADR Group’s Expertise</h3>
+                            <p style="text-align:justify">Streamline manufacturing processes to improve workflow efficiency.
+                              Seamless integration of SAP and Odoo with existing systems for smooth data flow
+                              Continuous monitoring and optimization to enhance overall efficiency.
+                              Comprehensive training and ongoing support to maximize system utilization and efficiency gains.
+                              Introducing innovative technologies and best practices to drive continuous improvement.</p>
+                        </div>
+                        <div class="feature-image">
+                            <img class="img-2" src="http://127.0.0.1:8000/media/content_3.jpg" alt="Advanced Planning and Forecasting" >
+                        </div>
+                      </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="benefits">
+          
+            <div class="container">
+                <h2>Why Choose ADR Group?</h2>
+                <ul class="benefits-list">
+                    <li data-aos="zoom-in">
+                        
+                        <h3>Industry Expertise</h3>
+                        <p>Specializing in SAP and Odoo solutions tailored for automotive manufacturing, leveraging deep industry knowledge.</p>
+                    </li>
+                    <li data-aos="zoom-in">
+                        
+                        <h3>Tailored Solutions</h3>
+                        <p>Customized SAP and Odoo implementations that address unique business challenges and goals.</p>
+                    </li>
+                    <li data-aos="zoom-in">
+                      
+                        <h3>Proven Success</h3>
+                        <p>Demonstrated track record of improving operational efficiency and productivity in manufacturing environments.</p>
+                    </li>
+                    <li  data-aos="zoom-in">
+                   
+                        <h3>Comprehensive Support</h3>
+                        <p>From initial consultation to ongoing maintenance, ensuring seamless integration and continuous improvement.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true,
+        });
+    </script>
+</body>
+
+{% endblock %}

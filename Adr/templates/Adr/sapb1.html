@@ -1,0 +1,443 @@
+{% extends "Adr/base.html" %}
+
+{% block content %}
+
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"/>
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>ADR |SAPB1</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  </head>
+  <style>
+  :root {
+  --primary-color: rgb(20, 75, 86);
+  --secondary-color: #51929f;
+  --text-light: #f9fafc;
+  --white: #ffffff;}
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.hero {
+    background-image:url('http://127.0.0.1:8000/media/sapb1.webp');
+    background-size: cover;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.hero .container {
+    max-width: 1200px;
+    padding: 20px;
+}
+.hero h1{
+    font-size: 3rem;
+    font-weight: 2rem;
+    margin-bottom: 40px;
+    color: var(--text-light);
+    margin-top: 0%;
+}
+.hero h2{
+  font-size: 2.6rem;
+  color: rgb(146, 231, 241);
+  
+  padding-top:20px;
+}
+.para{
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-size: 3rem;
+  color: var(--text-light);
+  text-align: justify;
+}
+.benefits {
+    background-color:rgb(9, 9, 9);;
+    padding: 40px;
+    min-height: 70vh;
+    color: #fff;
+}
+
+.benefits .container {
+    max-width: 1150px; /* Increase max-width for a larger container */
+    margin: 0 auto;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider grid columns */
+    gap: 40px;
+}
+
+.benefits-list li {
+    padding: 20px; /* Increase padding for larger boxes */
+    background-color:  #52ae9800;;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 197, 230, 0.934);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color:var(--secondary-color);
+    overflow: hidden; /* Ensures the content stays inside the box */
+    position: relative;
+    text-align: center;
+
+}
+
+.benefits-list li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgb(108, 160, 228);
+}
+
+.benefits-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), rgba(9, 9, 9, 0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.benefits-list li:hover::before {
+    opacity: 1;
+}
+
+.benefits-list li i {
+    font-size: 36px; /* Increase icon size */
+    margin-bottom: 20px;
+    color: #007bff;
+    z-index: 2; /* Ensure it appears above the hover effect */
+    position: relative;
+}
+
+.benefits-list li h3 {
+    font-size: 22px; /* Increase font size for headers */
+    font-weight: bold;
+    margin-bottom: 15px;
+    z-index: 2;
+    position: relative;
+}
+
+.benefits-list li p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+.benefits h2{
+    font-size: 3rem;
+    font-weight: 3rem;
+    color: #f9fafc;
+}
+
+.card-btn{
+  position: relative;
+  padding: 20px 20px;
+  border-radius: 7px;
+  border: 1px solid var(--secondary-color);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #f9fafc;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 20px;
+
+ }
+ .card-btn:hover{
+  background: var(--secondary-color);
+  box-shadow: 0 0 30px 5px rgba(157, 220, 237, 0.878);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+
+ }
+ .card-btn:hover::before {
+  -webkit-animation: sh02 0.3s 0s linear;
+  -moz-animation: sh02 0.3s 0s linear;
+  animation: sh02 0.3s 0s linear;
+}
+.card-btn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: rgb(240, 240, 240);
+  box-shadow: 0 0 50px 30px #e9edef;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+  .para {
+    font-family: 'Poppins',sans-serif;
+    font-size: 1rem;
+    
+  }
+  .last {
+  background-color: #f9f9f9;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.last-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.last h1 {
+  font-family: 'poppins', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #121212;
+}
+
+
+
+.content-container{
+    padding: 10%;
+    background-color:  #52ae9800;;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 157, 230, 0.934);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color:var(--secondary-color);
+    overflow: hidden; /* Ensures the content stays inside the box */
+    position: relative;
+    text-align: center;
+    background:  linear-gradient(135deg, var(--primary-color), rgb(9, 9, 9));
+
+}
+    .card2-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 550px;
+  gap: 10px;
+  background-color: var(--primary-color);
+
+  > div {
+    flex: 0 0 120px;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 1px 5px 15px #1e0e3e;
+    position: relative;
+    overflow: hidden;
+
+    &:nth-of-type(1) {
+      background: rgba(18, 59, 69, 0.619);
+        
+    }
+    &:nth-of-type(2) {
+      background: rgb(98, 147, 160);
+       
+    }
+    &:nth-of-type(3) {
+      background:rgba(18, 59, 69, 0.619);
+       
+    } &:nth-of-type(4) {
+      background: rgb(98, 147, 160);
+       
+    }
+  
+   
+
+    .card2-content{
+      text-align: justify;
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-bottom: 40px;
+    }
+      
+    .card2-title{
+      margin:30px;
+      color:white;
+      font-size:2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-top:50px;
+      justify-items: center;
+    }
+    .card2-expansion{
+      color: var(--secondary-color);
+      font-size: 1.5rem;
+     text-align: justify;
+      height: 1200px;
+    
+    }
+    .sub1{
+      color:#aaced0;
+    }
+    .sub2{
+      color:#083c3e;
+    }
+    
+    &:hover {
+      flex: 0 0 250px;
+      box-shadow: 1px 3px 15px #7ec9e4;
+      transform: translatey(-10px);
+    }
+
+    &:hover .content {
+      opacity: 1;
+      transform: translatey(0%);
+      visibility: visible;
+    }
+  }
+}
+  </style>
+<section class="hero" >
+  <div class="container">
+       <h1 data-aos="fade-in" data-aos-delay="100">Unlock Your Business Potential with SAP B1</h1>  
+      <h2 data-aos="fade-right" style="font-size: 2.3rem;" >Grow your Business with SAP Business One and ADR Group</h2>
+              
+      <p class="para" data-aos="zoom-in" >At ADR Group, we specialize in providing comprehensive IT solutions to grow your business operations. Our expertise in SAP Business One (SAP B1) is designed to streamline your processes, increase efficiency, and drive growth. Whether you're in the automotive industry, manufacturing, or retail, our tailored solutions are here to meet your unique needs.</p>
+      <a href="contact"><button class="card-btn"  data-aos="fade-up">Get Start Today</button></a>
+  </div>
+</section>
+<div class="card2-container" >
+  <div>
+    <div class="card2-content" data-aos="fade-up" data-aos-delay="200">
+      <h2 class="card2-title">Financial management</h2>
+      <p class="card2-expansion">
+        <span class="sub1">Accounting: </span> Streamline accounting processes and manage your general ledger, journals, and accounts payable and receivable.<br>
+        <span  class="sub1">Controlling:</span> Manage cash flow, track budgets, and monitor project costs to ensure financial health.
+        </p>
+    </div>
+  </div>
+
+  <div>
+    <div class="card2-content" data-aos="fade-up" data-aos-delay="300">
+      <h2 class="card2-title" style="color:#0a3043;">Sales and Customer Management</h2>
+      <span class="card2-expansion" style="color:#f9fafc;">
+        <span class="sub2">Sales:</span> Manage the entire sales process, from initial contact to final sale, and beyond.<br>
+        <span class="sub2">Customer Relationship Management (CRM):</span> Track customer interactions and manage customer data to improve customer satisfaction and loyalty.
+      </span>
+    </div>
+  </div>
+
+  <div>
+    <div class="card2-content" data-aos="fade-up" data-aos-delay="400">
+      <h2 class="card2-title">Purchasing and Inventory Control</h2>
+      <span class="card2-expansion">
+        <span class="sub1">Procurement: </span>
+        Optimize procurement processes, manage supplier relationships, and streamline purchase orders.<br>        
+        <span class="sub1"> Inventory Management: </span>Track inventory levels, manage warehouse operations, and ensure timely replenishment of stock.
+      </span>
+    </div>
+  </div>
+  
+  <div>
+    <div class="card2-content" data-aos="fade-up" data-aos-delay="300">
+      <h2 class="card2-title" style="color:#0a3043;">Production Planning</h2>
+      <span class="card2-expansion" style="color:#f9fafc;">
+        <span class="sub2"> Manufacturing: </span> and manage production processes, including bill of materials, work orders, and production schedules.<br>
+        <span class="sub2">Material Requirements Planning (MRP):</span> Ensure materials are available for production and products are available for delivery.
+      </span>
+    </div>
+  </div>
+  
+</div>
+<section class="benefits">
+          
+  <div class="container">
+      <h2 style="color: var(--secondary-color); text-align: center;">Why Choose ADR Group?</h2>
+      <ul class="benefits-list">
+          <li data-aos="zoom-in">
+              
+              <h3 >Expertise in Automotive and Manufacturing Industries</h3>
+              <p>ADR IT services are crafted with a deep understanding of the automotive and manufacturing sectors. Our SAP B1 solutions are tailored to optimize supply chain management, production planning, and inventory control, ensuring your business runs smoothly and efficiently.</p>
+          </li>
+          <li data-aos="zoom-in">
+              
+              <h3>Tailored IT Solutions</h3>
+              <p>At ADR Group, we understand that every business is unique. Our ADR Group IT experts work closely with you to customize SAP B1 to fit your specific requirements. From initial consultation to implementation and ongoing support, we are committed to providing solutions that drive your success.</p>
+          </li>
+          <li data-aos="zoom-in">
+            
+              <h3>Comprehensive Business Management</h3>
+              <p>SAP Business One provides a complete business management solution, covering financials, sales, customer management, and more. With ADR Group’s solutions you can consolidate your operations into a single, streamlined system, making it easier to manage your business and make informed decisions.  </p>
+          </li>
+          <li  data-aos="zoom-in">
+         
+              <h3>Enhanced Decision Making</h3>
+              <p>Enhanced Decision Making
+                With SAP Business One, you gain access to powerful analytics and reporting tools. Our solutions enable you to generate detailed reports, analyze business performance, and make data-driven decisions that propel your business forward.</p>
+          </li>
+      </ul>
+  </div>
+</section>
+
+<section class="last" data-aos="fade-in" style="background: linear-gradient(135deg, var(--secondary-color), rgb(165, 214, 214));">
+  <div class="last-container">
+     <h1  style="color:var(--primary-color)"  data-aos="fade-in" data-aos-delay="500" >Our Commitment to Your Success</h1>
+      <p class="para1"  data-aos="fade-left" >ADR Group is dedicated to delivering top-notch IT staffing and SAP services to businesses across the USA. Our team of experienced professionals is here to support you every step of the way, from initial planning to implementation and beyond. With our expertise in SAP Business One, you can rest assured that your business is in good hands.</p>
+      <a href="#knowmore" target="_blank"><button class="card-btn" data-aos="fade-up" style="color: var(--primary-color);">Get Start Today</button></a>
+  </div>
+</section><script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({
+    duration: 1200,
+    once: true,
+});
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</html>
+
+{% endblock %}

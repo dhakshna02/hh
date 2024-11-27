@@ -1,0 +1,291 @@
+{% extends "Adr/base.html" %}
+
+{% block content %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+  <title>adrerp</title>
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+ 
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    /* Basic Reset */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins';
+            overflow-x: hidden;
+        }
+        .hero {
+    background-color: #f0f0f0;
+    height: 100vh;
+    padding: 40px 20px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+.hero-heading {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-heading h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    color: #000; /* Adjust color for contrast */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 200px; /* Push the content below the centered heading */
+}
+
+.text-container {
+    flex: 1;
+    padding-right: 70px; /* Spacing between text and image */
+    text-align:left;
+    padding-left: 0px;
+    color: #000; /* Adjust color for contrast */
+}
+
+.image-container {
+    flex: 1;
+    padding-left: 20px; /* Spacing between image and text */
+    text-align: right;
+}
+
+.image-container img {
+    max-width: 200%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.para {
+    font-family: 'Poppins';
+    line-height: 1.8;
+    font-size: 1.2rem;
+    color: #000;
+    font-weight:400;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-container,
+    .image-container {
+        padding: 0;
+    }
+
+    .image-container {
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 40px;
+            text-align: justify;
+        }
+
+        .head {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            font-family: 'Poppins';
+            font-size: 2.5rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .grid-item {
+            background: linear-gradient(145deg, #e0e0e0, #ffffff);
+            padding: 80px;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .grid-item h3 {
+            margin-bottom: 15px;
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            color: #2a2a2a;
+            font-size: 1.8rem;
+        }
+
+        .grid-item p {
+            font-family: 'Poppins', sans-serif;
+            color: #555;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .last {
+            background-color: #f9f9f9;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .last-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .last h2{
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #121212;
+        }
+
+        .para1 {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(45deg, #20c2cd, #357c7e);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-gradient:hover {
+            background: linear-gradient(45deg, #144346, #57cace);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero .content {
+                text-align: center;
+            }
+
+            .hero .image-container {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .last {
+                padding: 40px 20px;
+            }
+
+            .btn-gradient {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+  <section class="hero" data-aos="fade-in">
+    <div class="hero-heading">
+        <h2>ADR Group</h2>
+        <h2>Fast, Secure, And Easy-To-Use ERP Solution</h2>
+    </div>
+    <div class="container">
+        <div class="text-container">
+            <p class="para">ADR Group's ERP system harnesses the power of ever-evolving Python technology to deliver exceptional performance. Powered by Odoo Enterprise Version 17, it ensures rapid functionality and efficiency, tailored for industries like manufacturing and automotive. The robust Python community frequently releases updates, ensuring that our ERP stays at the cutting edge of technology. With strong technical foundation
+            Our system offers top-notch usability that scales seamlessly across all applications, including those requiring alternative dispute resolution capabilities.</p>
+        </div>
+        <div class="image-container" style="margin-right:110px;">
+            <img src="http://127.0.0.1:8000/media/adrerp.webp" alt="ERP Solution Image">
+        </div>
+    </div>
+</section>
+
+
+    <div data-aos="fade-up">
+        <h2 class="head">Experience The ADR Group's ERP Difference</h2>
+        <div class="grid-container">
+            <div class="grid-item" data-aos="zoom-in">
+                <h3>Customization and Access Control</h3>
+                <p>1. Easy to customize to suit your business needs.<br>
+                    2. Advanced access control to manage user permissions.<br>
+                    3. Supports multi-tier organizational structures.<br>
+                    4. Odoo is designed to handle a large number of concurrent users without performance degradation.</p>
+            </div>
+            <div class="grid-item" data-aos="zoom-in" data-aos-delay="100">
+                <h3>Integration and Multi-User Support</h3>
+                <p>1. Integrated apps for a streamlined experience.<br>
+                    2. Web service enabled for easy integration with other systems.<br>
+                    3. Odoo is designed to handle concurrent users.<br>
+                    4. Users can work on the same documents or projects simultaneously.</p>
+            </div>
+            <div class="grid-item" data-aos="zoom-in" data-aos-delay="200">
+                <h3>Multilingual and Multi-Currency Support</h3>
+                <p>1. Supports multiple languages and currencies to accommodate global operations.<br>
+                    2. Individual users can set their preferred language in their profiles.<br>
+                    3. It handles multi-currency accounting by managing gains and losses due to currency fluctuations.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="last" data-aos="fade-in">
+        <div class="last-container">
+            <h2>Contact and More Information</h2>
+            <p class="para1">For more details on how ADR Group can enhance your automotive manufacturing operations with SAP and Odoo solutions, please contact us.</p>
+            <a href="contact" ><button class="btn-gradient">Know More..</button></a>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-in-out',
+            once: true,
+        });
+    </script>
+</body>
+
+{% endblock %}

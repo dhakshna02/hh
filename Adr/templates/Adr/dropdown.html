@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Horizontal List Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --menu-width: 200px;
+    }
+    
+    .menu {
+      display: block;
+      position: relative;
+      cursor: pointer;
+    }
+    
+    .menu-title {
+      display: block;
+      width: var(--menu-width);
+      height: 55px;
+      padding: 12px 0 0;
+      background: #9dc852;
+      text-align: center;
+      color: #ffffff;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
+    }
+    
+    .menu-title:before {
+      content: "";
+      display: block;
+      height: 0;
+      border-top: 5px solid #9dc852;
+      border-left: calc(var(--menu-width) / 2) solid transparent;
+      border-right: calc(var(--menu-width) / 2) solid transparent;
+      border-bottom: 0 solid #dddddd;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 101;
+      transition: border-top-color 0.3s, border-top-width 0.2s ease-in;
+    }
+    
+    .menu-title:hover {
+      background: #8db842;
+    }
+    
+    .menu-title:hover:before {
+      border-top-color: #8db842;
+    }
+    
+    .menu:hover > .menu-title:before {
+      border-top-width: 0;
+      transition: border-top-width 0.2s ease-in;
+    }
+    
+    .menu-dropdown {
+      min-width: 100%;
+      padding: 15px 0;
+      position: fixed;
+      background: #ebebeb;
+      z-index: 100;
+      transition: padding 0.5s, background 0.5s;
+    }
+    
+    .menu-dropdown:after {
+      content: "";
+      display: block;
+      height: 0;
+      border-top: 5px solid #ebebeb;
+      border-left: calc(var(--menu-width) / 2) solid transparent;
+      border-right: calc(var(--menu-width) / 2) solid transparent;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 101;
+      transition: border-top 0.5s;
+    }
+    
+    .menu:not(:hover) > .menu-dropdown {
+      padding: 4px 0;
+      background: #dddddd;
+      z-index: 99;
+    }
+    
+    .menu:not(:hover) > .menu-dropdown:after {
+      border-top-color: #dddddd;
+    }
+    
+    .menu:not(:hover) > .menu-title:after {
+      border-bottom-color: #dddddd;
+    }
+    
+    .menu-dropdown > * {
+      overflow: hidden;
+      height: 30px;
+      padding: 5px 10px;
+      background: rgba(0,0,0,0);
+      white-space: nowrap;
+      transition:
+        height 0.5s cubic-bezier(.73,.32,.34,1.5),
+        padding 0.5s cubic-bezier(.73,.32,.34,1.5),
+        margin 0.5s cubic-bezier(.73,.32,.34,1.5),
+        color 0.2s,
+        background-color 0.2s;
+    }
+    
+    .menu-dropdown > *:hover {
+      background: rgba(0,0,0,0.1);
+    }
+    
+    .menu:not(:hover) > .menu-dropdown > * {
+      visibility: hidden;
+      height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin: 0;
+      color: rgba(25,25,25,0);
+      transition:
+        height 0.5s cubic-bezier(.73,.32,.34,1.5),
+        padding 0.5s cubic-bezier(.73,.32,.34,1.5),
+        margin 0.5s cubic-bezier(.73,.32,.34,1.5),
+        color 0.3s,
+        visibility 0.6s;
+      z-index: 99;
+    }
+    
+    .hList {
+      overflow: hidden;
+    }
+    
+    .hList > * {
+      float: left;
+    }
+    
+    .hList > * + * {
+      margin-left: 0;
+    }
+    </style>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+<body>
+  <ul class="hList">
+    <li>
+      <a href="#animals" class="menu">
+        <h2 class="menu-title">SAP</h2>
+        <ul class="menu-dropdown">
+          <li>SAP S4HANA</li>
+          <li>SAP Successfactors</li>
+          <li>SAP B1</li>
+          <li>SAP Hybris</li>
+        </ul>
+      </a>
+    </li>
+    <li>
+      <a href="#names" class="menu">
+        <h2 class="menu-title menu-title_2nd">names</h2>
+        <ul class="menu-dropdown">
+          <li>Esh</li>
+          <li>Dhakshna</li>
+          <li>Manisha</li>
+          <li>Harini</li>
+        </ul>
+      </a>
+    </li>
+    <li>
+      <a href="#things" class="menu">
+        <h2 class="menu-title menu-title_3rd">Industries</h2>
+        <ul class="menu-dropdown">
+          <li>Manufacturing</li>
+          <li>Automotive</li>
+          <li>Logistics</li>
+          <li>Retail</li>
+          <li>Education</li>
+        </ul>
+      </a>
+    </li>
+</ul>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</body>
+</html>

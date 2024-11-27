@@ -1,0 +1,736 @@
+{% extends "Adr/base.html" %}
+{% block content %} 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADR | Fotopia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+      body {
+    font-family: Arial, sans-serif;
+    margin: ;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.header-section {
+    background: #08393f;
+    color: #fff;
+    margin-top:50px;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-section, .features-section, .benefits-section, .contact-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.feature-item {
+    padding: 20px;
+    background: #f0f0f0;
+    border-radius: 8px;
+}
+
+.footer-section {
+    background: #08393f;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+.about-section .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80%;
+    margin-left:50px;
+    margin-right:50px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left:50px;
+    margin-right:50px;
+}
+
+.about-text {
+    width: 100%;
+    font-size: 700;
+    font-weight: 600;
+    line-height: 2rem;
+}
+
+.about-image {
+    width: 50%;
+   margin-right: 60px;
+}
+.about-text p{
+  margin-top: 30px;
+}
+.about-image img {
+    max-width: 500%;
+    border-radius: none;
+}
+.about-section .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80%;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    width: 100%;
+    font-size: 700;
+    font-weight: 600;
+    line-height: 2rem;
+}
+
+.about-image {
+    width: 50%;
+   margin-left: 4rem;
+}
+.about-text p{
+  margin-top: 30px;
+}
+.about-image img {
+    max-width: 500%;
+    border-radius: none;
+}
+.about-section .block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80%;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    width: 100%;
+    font-size: 700;
+    font-weight: 600;
+    line-height: 2rem;
+}
+
+.about-image {
+    width: 50%;
+   margin-left: 4rem;
+}
+.about-text p{
+  margin-top: 30px;
+  text-align: justify;
+}
+.about-image img {
+    max-width: 500%;
+    border-radius: none;
+}
+.next-section .phrase {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.next-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.next-text {
+    width: 50%;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    text-align: right;
+}
+
+.next-image {
+    width: 50%;
+    margin-right: 2rem;
+}
+
+.next-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.card-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 60px 0;
+        }
+        .card {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            perspective: 1000px;
+        }
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card.is-flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: white;
+        }
+        .card-front {
+            background-color: #08393f;
+        }
+        .card-back {
+            background-color: #08393fe7;
+            transform: rotateY(180deg);
+            text-align: justify;
+        }
+        .card-text {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+       
+        .card-text-p {
+            font-size: 2rem;
+            margin-top: 10px;
+            line-height: 40px;
+            font-size: large;
+            font-weight:500 ;
+        }
+        
+        .card-pic{
+          width:50%;
+          margin-bottom: 40px;
+        }
+        .benefits {
+    background-color: white;
+    padding: 40px;
+    min-height: 70vh;
+    color: #fff;
+}
+
+.benefits .container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.benefits h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #08393f;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+}
+
+.benefits-list li {
+    padding: 20px;
+    background-color:#08393f;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 4, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+    position: relative;
+}
+
+.benefits-list li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.benefits-list li h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.benefits-list li p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+}
+
+.image-wrapper {
+    width: 50%;
+    padding-left: 70px;
+    margin-top: 20px;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.image2-wrapper {
+    width: 50%;
+    padding-right: 70px;
+    margin-top: 70px;
+}
+
+.image2-wrapper img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.image3-wrapper {
+    width: 50%;
+    padding-left: 80px;
+    margin-top: 70px;
+}
+
+.image3-wrapper img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.lastbox {
+    padding: 80px 20px;
+    background-color: #08393f;
+    color: #fff;
+ }       
+.lastbox h2 {
+    font-size: 2.5rem;
+    text-align: justify;
+    margin-bottom: 60px;
+}
+.lastbox-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.lastbox-list li {
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff, #ececec);
+  color: #333;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+.lastbox-list li:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+.lastbox-list li h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.lastbox-list li p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+button {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgba(82, 174, 154, 0.7);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #f9fafc;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+  
+  button:hover {
+    background: rgba(82, 174, 152, 0.998);
+    box-shadow: 0 0 30px 5px rgba(82, 174, 153, 0.7);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  
+  button:hover::before {
+    -webkit-animation: sh02 0.3s 0s linear;
+    -moz-animation: sh02 0.3s 0s linear;
+    animation: sh02 0.3s 0s linear;
+  }
+  
+  button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: rgb(240, 240, 240);
+    box-shadow: 0 0 50px 30px #e9edef;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+ /* Animation for header */
+ @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for sections */
+        @keyframes slideInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-section .container, 
+        .features-grid, 
+        .benefits-list, 
+        .lastbox.container {
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .about-section .about-text {
+            animation: slideInLeft 1.5s ease-out;
+        }
+
+        .about-section .about-image {
+            animation: slideInRight 1.5s ease-out;
+        }
+
+        .next-section .next-text {
+            animation: slideInRight 1.5s ease-out;
+        }
+
+        .next-section .next-image {
+            animation: slideInLeft 1.5s ease-out;
+        }
+
+        .benefits-list li {
+            animation: fadeInUp 1.5s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefits-list li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Adding AOS */
+        .about-section, .features-section, .benefits-section, .lastbox-section {
+            padding: 60px 0;
+            text-align: center;
+            overflow: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-section">
+        
+            <h2>A one stop shop for connecting real estate agents and photographers</h2>
+            
+        
+    </header>
+    <section class="about-section"data-aos="fade-left">
+      <div class="block" >
+          <div class="about-content">
+              <div class="about-text">
+                  <h2>Simplify Scheduling and Booking with Photographer Calendar Integration</h2>
+                  <p>ADR Group's Fotopia is a comprehensive app designed for real estate professionals and photographers. One of its key features is the ability to view a photographer's calendar and book photo shoots directly through the app. This functionality streamlines the booking process, making it easy and efficient for users to schedule real estate photo shoots.</p>
+              </div>
+              <div class="about-image">
+                  <img src="https://img.freepik.com/premium-photo/woman-takes-photo-with-camera_1313501-26345.jpg?ga=GA1.1.1361869439.1722227052&semt=ais_hybrid" alt="Photographer" />
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <section class="next-section" data-aos="fade-right">
+    <div class="phrase">
+        <div class="next-content">
+            <div class="next-image">
+                <img src="https://img.freepik.com/premium-photo/inspiring-professional-business-vision-images_1046319-62178.jpg?ga=GA1.1.1361869439.1722227052&semt=ais_hybrid" alt="Real Estate Photography" />
+            </div>
+            <div class="next-text">
+                <h2>Explore Seamless Real Estate Photography Management</h2>
+                <a href="itstaffing" ><button style="margin-right: 70px;margin-top:20px;color: black;">Get started today</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+  <div class="card-container" data-aos="zoom-in" >
+      <div class="card" id="card1">
+          <div class="card-inner">
+              <div class="card-front">
+                <img class="card-pic" src="https://img.freepik.com/free-photo/woman-holding-professional-camera-photo_23-2148565527.jpg?ga=GA1.1.1361869439.1722227052&semt=ais_hybrid">
+                  <h2 class="card-text">PHOTO COMPANIES</h2>
+                  
+                  
+              </div>
+              <div class="card-back">
+                  <p class="card-text-p">&#8226;&nbsp;<strong><span style= color:#7bdae6>List of Companies:</span></strong> Displays photo companies
+                   <br> &#8226;&nbsp;<strong>Know More:</strong> Detailed info about the company
+                   <br> &#8226;&nbsp;<strong>Wishlist: </strong>Add/remove companies from the wishlist.
+                    <br>&#8226;&nbsp;<strong>Search:</strong> Find companies using the search bar.
+                    <br>&#8226;&nbsp;<strong>Book Now:</strong> Book services from the company or specific photographer</p>
+                  
+              </div>
+          </div>
+      </div>
+      <div class="card" id="card2">
+          <div class="card-inner">
+              <div class="card-front">
+                <img class="card-pic" src="https://img.freepik.com/free-vector/online-delivery-phone-concept-officer-scan-qr-code-from-packaging-recipient-address-location-target-customer-marketing-digital-marketing-promotion-online-stores-vector-illustration_1150-55444.jpg?t=st=1724572942~exp=1724576542~hmac=64a68be40ba2c1181d97ad6d3a2aa527c2c9650493aafe91752909acd6dd284a&w=996">
+                  <h2 class="card-text">ORDER MANAGEMENT</h2>
+                  
+              </div>
+              <div class="card-back">
+                  
+                  <p class="card-text-p">&#8226;&nbsp;<strong>Completed Orders: </strong>Total count and view details
+                    <br>&#8226;&nbsp;<strong>Ongoing Orders:</strong> Total count and view details.
+                    <br>&#8226;&nbsp;Lists all scheduled events synced with the calendar.
+                    <br>&#8226;&nbsp;<strong>Dues Today: </strong>List of due tasks for the day
+                    <br>&#8226;&nbsp;<strong>Click on Image:</strong> View photo details
+                    <br>&#8226;&nbsp;<strong>Book Now:</strong> Book services directly.</p>
+                  
+              </div>
+          </div>
+      </div>
+      <div class="card" id="card3">
+        <div class="card-inner">
+            <div class="card-front">
+              <img class="card-pic" src="https://img.freepik.com/free-photo/benefits-advantage-assests-bonus-wages-concept_53876-15881.jpg?ga=GA1.1.1361869439.1722227052&semt=ais_hybrid">
+                <h2 class="card-text">OTHER BENEFITS</h2>
+                
+            </div>
+            <div class="card-back">
+                
+                <p class="card-text-p">
+                    &#8226;&nbsp;<strong>List of Companies: </strong>Displays photo companies
+                  <br>&#8226;&nbsp;<strong>Know More:</strong> Detailed info about the company
+                  <br>&#8226;&nbsp;Pre designed layout options
+                  <br>&#8226;&nbsp;Domain names & professional email
+                  <br>&#8226;&nbsp;Video Backgrounds
+                  <br>&#8226;&nbsp;Site stats</p>
+                
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- Benefits Section -->
+<section class="benefits" data-aos="zoom-in">
+  <div class="container">
+      <h2>Photographer Calendar Integration</h2>
+      <div class="content-wrapper">
+          <ul class="benefits-list">
+              
+                <li >
+                  <h3>Integration</h3>
+                  <p style="font-size: large;font-weight: 500;">Fotopia seamlessly integrates with photographers' calendars, synchronizing availability in real-time. This ensures the calendar is always up to date with the latest schedule changes, providing users with accurate booking options. Real estate professionals can confidently schedule photo shoots, knowing they have the most current information at their fingertips</p>
+                </li>
+              
+                <li >  
+                  <h3>View Availability</h3>
+                  <p style="font-size: large;font-weight: 500;">Fotopia allows users to view a photographer's calendar directly within the app, showcasing available dates and times for booking. This feature streamlines the scheduling process, enabling real estate professionals to easily select and secure photo shoots, ensuring a smooth and efficient experience from start to finish.</p>
+                </li>
+              
+                <li > 
+                  <h3>Automated Notifications and Reminders</h3>
+                  <p style="font-size: large;font-weight: 500;">Fotopia also features automated notifications and reminders, keeping both photographers and clients informed about upcoming photo shoots. These timely alerts help reduce the risk of missed appointments and ensure everyone is well-prepared, enhancing the overall efficiency and professionalism of the booking process.</p>
+              </li>
+          </ul>
+          <div class="image3-wrapper">
+              <img src="https://img.freepik.com/premium-photo/photo-world-world-photography-by-lake_1131934-5438.jpg?ga=GA1.1.1361869439.1722227052&semt=ais_hybrid" alt="Benefits Image">
+          </div>
+      </div>
+  </div>
+</section>
+<section class="benefits" data-aos="zoom-in">
+  <div class="container">
+    <h2>Simplified Booking Process</h2>
+      <div class="content-wrapper">
+        <div class="image2-wrapper">
+          <img src="https://img.freepik.com/premium-vector/cartoon-drawing-cup-fries-with-face-drawn-it_960117-2137.jpg?ga=GA1.1.1361869439.1722227052&semt=ais_hybrid" alt="Benefits Image">
+        </div>
+          <ul class="benefits-list">
+        
+              
+                <li>
+                  <h3>Select Photographer</h3>
+                  <p style="font-size: large;font-weight: 500;">Users begin by selecting their preferred photographer for the real estate photo shoot. This initial step ensures they choose the best fit for their project, based on availability and photographer profiles.</p>
+                </li>
+                <li>  
+                  <h3>View Calendar & Choose Date and Time</h3>
+                  <p style="font-size: large;font-weight: 500;">After selecting a preferred photographer for their real estate photo shoot, users can view the integrated calendar showing the photographer's availability. They can then browse through the calendar to find an available date and time that fits their schedule.</p>
+                </li>
+                <li>  
+                  <h3>Block Calendar & Confirmation</h3>
+                  <p style="font-size: large;font-weight: 500;"> After selecting a suitable date and time from the integrated calendar, users can block the calendar to reserve the slot for their photo shoot, preventing others from booking the same time. The app then sends a booking confirmation to both the user and the photographer, detailing the scheduled photo shoot.</p>
+                </li>
+          </ul>
+         
+      </div>
+  </div>
+</section>
+<section class="lastbox" >
+  <div class="basket"data-aos="zoom-in">
+      <h2>Why Fotopia web application is the best fit for your business</h2>
+      <ul class="lastbox-list">
+            <li>
+              <h3>Industry Expertise</h3>
+              <p>Benefit from our deep understanding of automotive industry dynamics and our proven track record in ERP implementation.</p>
+            </li>
+            <li>
+              <h3>Scalable Support</h3>
+              <p>From initial consultation through implementation and post-implementation support, ADR Group provides scalable services tailored to your business growth.</p>
+            </li>
+            <li>
+              <h3>Customized Solutions</h3>
+              <p>Our SAP and Odoo solutions are customized to address the specific needs of your automotive enterprise, ensuring optimal results.</p>
+            </li>
+            <li>
+              <h3>Seamless Integration</h3>
+              <p>We ensure smooth integration with your existing systems, minimizing disruption and maximizing operational efficiency.</p>
+            </li>
+      </ul>
+  </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+      duration: 1200,
+      once: false,
+    });
+</script>
+<script>
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', function() {
+        this.classList.toggle('is-flipped');
+      });
+    });
+  </script>
+  
+</body>
+
+{% endblock %}

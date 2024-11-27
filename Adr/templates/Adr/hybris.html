@@ -1,0 +1,469 @@
+{% extends "Adr/base.html" %}
+
+{% block content %}
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADR | Hybris</title>
+    <link rel="stylesheet" href="sap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    
+}
+
+.hero {
+    background-image:url("http://127.0.0.1:8000/media/WhatsApp_Image_2024-09-18_at_14.05.48_33c977ea.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #0d515a;
+    font-size: 2rem;
+}
+
+.hero .container {
+    max-width: 1200px;
+    padding: 20px;
+}
+.hero h1{
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+    
+    
+
+}
+.hero span{
+  font-size: 2.5rem;
+  font-weight:1.5rem;
+  color: #73b2be;
+  text-shadow:#fff;
+}
+
+.card-container{
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-around;
+  perspective: 1000px;
+
+}
+.card{
+  position:relative;
+  width:45%;
+  height:100%;
+  transform-style:preserve-3d;
+  border-radius: 30px;
+  background-color: #244543;
+  transition: transform 0.6s ease-in-out;
+}
+.card-front,
+.card-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-image:url(http://127.0.0.1:8000/media/img_1.png);
+  color: var(--text-light);
+  background-color: #0f7e7a00;
+  border-radius: 90px;
+}
+
+
+.card-back{
+  transform: rotateY(180deg);
+}
+.card-text{
+ margin-top:30px;
+ color:white;
+ font-size:2rem;
+ font-weight: bold;
+ text-align: center; 
+ 
+ }
+ .card-text-span{
+ color:#58909a;
+ font-size: 36.8px;
+ margin-left: 50px;
+ margin-top: 20px;
+ display: inline-block;
+ }
+ .card-text-p{
+ color: white;
+ font-size: 1.3rem;
+ margin-top: 30px;
+ margin-right: 40px;
+ margin-left: 40px ;
+ text-align:justify;
+ }
+ .is-flipped {
+  transform: rotateY(180deg);
+}
+.benefits {
+    background-color:rgba(9, 9, 9, 0);;
+    padding: 40px;
+    min-height: 70vh;
+    color: #28696e;
+    text-align: center;
+}
+
+.benefits .container {
+    max-width: 1150px; /* Increase max-width for a larger container */
+    margin: 0 auto;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider grid columns */
+    gap: 40px;
+}
+
+.benefits-list li {
+    padding: 20px; /* Increase padding for larger boxes */
+    background-color:  #52ae9800;;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(224, 234, 236, 0.934);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #0c4642;
+    overflow: hidden; /* Ensures the content stays inside the box */
+    position: relative;
+
+}
+
+.benefits-list li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.benefits-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(43, 88, 88, 0.7), rgba(9, 9, 9, 0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.benefits-list li:hover::before {
+    opacity: 1;
+}
+
+.benefits-list li i {
+    font-size: 36px; /* Increase icon size */
+    margin-bottom: 20px;
+  
+    z-index: 2; /* Ensure it appears above the hover effect */
+    position: relative;
+}
+
+.benefits-list li h3 {
+    font-size: 22px; /* Increase font size for headers */
+    font-weight: bold;
+    margin-bottom: 15px;
+    z-index: 2;
+    position: relative;
+}
+
+.benefits-list li p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgb(24, 27, 28);
+    z-index: 2;
+    position: relative;
+}
+.benefits h2{
+    font-size: 3rem;
+    font-weight: 3rem;
+
+}
+button {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgba(82, 174, 154, 0.7);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #f9fafc;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+  
+  button:hover {
+    background: rgba(82, 174, 152, 0.998);
+    box-shadow: 0 0 30px 5px rgba(82, 174, 153, 0.7);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  
+  button:hover::before {
+    -webkit-animation: sh02 0.3s 0s linear;
+    -moz-animation: sh02 0.3s 0s linear;
+    animation: sh02 0.3s 0s linear;
+  }
+  
+  button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: rgb(240, 240, 240);
+    box-shadow: 0 0 50px 30px #e9edef;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+  .para {
+    font-family: 'Poppins',sans-serif;
+    line-height: 40px;
+    font-size: larger;
+    
+  }
+  .last {
+  background-color: #f9f9f9;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.last-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.last h1 {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #121212;
+}
+
+.para1 {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+    </style>
+</head>
+<body>
+    
+    <main>
+        <section class="hero" data-aos="fade-right"  >
+            <div class="container" >
+                <h2 data-aos="fade-right" style="width: 45%;">SAP Hybris Solutions by ADR Group</h2><span style="font-size: 1.8rem; margin-left:-30%;margin-right:10%;">Elevating Customer Experience in the Digital Age</span>
+                <p class="para" data-aos="fade-left" style="text-align: justify; width: 45%; margin-left:0%;margin-right:10%;
+                color: rgb(4, 14, 16); font-size:1rem">Welcome to ADR Group, your gateway to SAP Hybris solutions that redefine the way businesses
+engage with their customers. SAP Hybris is not just an e-commerce platform; it&#39;s a comprehensive
+suite of tools designed to deliver seamless, personalized, and immersive customer experiences.
+Explore how ADR Group can be your trusted partner in leveraging SAP Hybris to elevate your brand
+in the digital realm.</p>
+             
+            </div>
+        </section>
+       
+        <section>
+        <div >
+             
+                <h2 style="font-size : 2.5rem; text-align: center;" data-aos="fade-left">Key Features of SAP Hybris Solutions by ADR Group</h2>
+                
+          <div class="card-container" data-aos="zoom-in">
+              <div class="card" id="card1">
+                  <div class="card-front">
+                      <h2 class="card-text" style="text-align:center; font-size: 2.3rem; padding: 100px">
+                        Unified Customer Engagement<br>
+                        <button style="align-items: center; margin-top: -50%;">Click Me</button>
+                    </h2>
+                    
+                  </div>
+                  <div class="card-back">
+                     
+                          <span class="card-text-span" style="text-align:center; margin-top: 20px; margin-left:30px; ">Unified Customer Engagement:</span>
+                          <p class="card-text-p">SAP Hybris unifies customer data and touchpoints, providing a holistic view of customer interactions.
+                            ADR Group ensures a seamless integration that enables personalized and consistent experiences
+                            across various channels, from online to in-store.</p>
+                          
+                      
+                  </div>
+              </div>
+          
+              <div class="card" id="card1">
+                  <div class="card-front">
+                      <h2 class="card-text" style="text-align:center; font-size: 2.3rem; padding: 100px">
+                        
+                        E-Commerce Excellence<br>
+                        <button style="align-items: center; margin-top: -50%;">Click Me</button>
+                    </h2>
+                    
+                  </div>
+                  <div class="card-back">
+                     
+                          <span class="card-text-span" style="text-align:center;font-size: 2.3rem;">
+                            E-Commerce Excellence:</span>
+                          <p class="card-text-p">Transform your online presence with SAP Hybris Commerce. ADR Group specializes in implementing
+                            e-commerce solutions that not only meet but exceed customer expectations, driving conversions
+                            and loyalty.</p>
+                          
+                      
+                  </div>
+              </div>
+          </div>
+          <div class="card-container" data-aos="zoom-in">
+            <div class="card" id="card2">
+                <div class="card-front">
+                    <h2 class="card-text" style="text-align:center; font-size: 2.3rem; padding: 100px">
+                        Omnichannel Capabilities<br>
+                      <button style="align-items: center; margin-top: -50%;">Click Me</button>
+                  </h2>
+                  
+                </div>
+                <div class="card-back">
+                   
+                        <span class="card-text-span" style="text-align:center;font-size: 2.3rem;">Omnichannel Capabilities:</span>
+                        <p class="card-text-p">In the era of multiple touchpoints, SAP Hybris excels in providing omnichannel experiences. ADR
+                            Group ensures that your business is equipped to engage customers seamlessly, whether through
+                            web, mobile, social, or in-store interactions.</p>
+                        
+                    
+                </div>
+            </div>
+        
+            <div class="card" id="card2">
+                <div class="card-front">
+                    <h2 class="card-text" style="text-align:center; font-size: 2.3rem; padding: 100px">
+                        Advanced Marketing and Sales Tools<br>
+                      <button style="align-items: center; margin-top: -50%;">Click Me</button>
+                  </h2>
+                  
+                </div>
+                <div class="card-back">
+                   
+                        <span class="card-text-span" style="text-align:center;font-size: 2.3rem;">Advanced Marketing and Sales Tools:</span>
+                        <p class="card-text-p">SAP Hybris equips businesses with powerful marketing and sales tools. ADR Group leverages these
+                            tools to help you create targeted campaigns, analyze customer behaviors, and drive sales through
+                            personalized strategies.</p>
+                        
+                    
+                </div>
+            </div>
+        </div>
+      </section>
+      
+        
+        <section class="benefits">
+          
+            <div class="container">
+                <h2 style="color:#244543">Why Choose ADR Group for SAP Hybris?</h2>
+                <ul class="benefits-list">
+                    <li data-aos="zoom-in">
+                        
+                        <h3>Expertise in Digital Transformation</h3>
+                        <p>ADR Group is at the forefront of digital transformation. Our
+                            team of experts understands the intricacies of SAP Hybris and can tailor solutions that align with
+                            your business goals and customer expectations.</p>
+                    </li>
+                    <li data-aos="zoom-in">
+                        
+                        <h3>End-to-End Implementation</h3>
+                        <p>From initial assessment to go-live, ADR Group ensures a
+                            comprehensive implementation of SAP Hybris. Our process involves thorough planning,
+                            customization, and integration, resulting in a solution that meets your unique requirements.</p>
+                    </li>
+                    <li data-aos="zoom-in">
+                      
+                        <h3>Continuous Innovation</h3>
+                        <p>Stay ahead in the competitive landscape with ADR Group&#39;s commitment to
+                            continuous innovation. We keep abreast of the latest SAP Hybris updates and trends, ensuring that
+                            your business remains at the cutting edge of customer experience.</p>
+                    </li>
+                    <li  data-aos="zoom-in">
+                   
+                        <h3>Proven Success</h3>
+                        <p>ADR Group has a proven track record of successful SAP Hybris implementations
+                            across various industries. Join the ranks of businesses that have elevated their customer
+                            engagement and achieved digital success with our expertise.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="last" data-aos="fade-in">
+            <div class="last-container">
+               <h3 style="color:#03757f"> Elevate your brand and customer experience with SAP Hybris solutions from ADR Group. Contact us
+                today, and let&#39;s embark on a journey to redefine how your business connects with and delights
+                customers in the digital age.</h3>
+                
+                <a href="sap" ><button style="color:#0c4642" >Know More..</button></a>
+            </div>
+          </section>
+          
+    </main>
+    <script>
+      document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', function() {
+          this.classList.toggle('is-flipped');
+      });
+  });
+  
+  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true,
+        });
+    </script>
+</body>
+{% endblock %}
+

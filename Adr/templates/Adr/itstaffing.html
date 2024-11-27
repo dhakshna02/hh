@@ -1,0 +1,292 @@
+{% extends "Adr/base.html" %}
+
+{% block content %}
+
+<head>
+ <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.hero .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     background-color: #d9d9d9;
+    background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);;
+    width: 100%;
+    margin-top:160px;
+    padding-top:30px;
+
+}
+
+.hero-content {
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+.hero h1{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 2.5rem;
+}
+
+
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-text, .hero-image {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+
+.features {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+.features h2{
+    font-size: 2.5rem;
+    font-weight: 2.5rem;
+    text-align:middle;
+}
+.features h3{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 2.5rem;
+    color: #333;
+    margin-bottom: 100px;
+}
+
+.feature-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.feature-left .feature-content {
+    order: 1;
+}
+
+.feature-left .feature-image {
+    order: 2;
+    box-shadow:0 4px 15px rgba(0, 0, 0, 0.2); ;
+}
+
+.feature-right .feature-content {
+    order: 2;
+}
+
+.feature-right .feature-image {
+    order: 1;
+    box-shadow:0 4px 15px rgba(0, 0, 0, 0.2); ;
+}
+
+.feature-content {
+    flex: 1;
+    max-width: 45%;
+    line-height: 1.6;
+    margin-bottom: 150px;
+    font-size: medium;
+    font-weight: 500;
+    text-align:justify;
+}
+
+.feature-image {
+    flex: 1;
+    max-width: 45%;
+    text-align: center;
+}
+
+.feature-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .feature-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .feature-content, .feature-image {
+        max-width: 100%;
+    }
+}
+.benefits {
+    background-color: #f7f5f5;
+    padding: 60px 20px;
+    color: #0c0c0c;
+    text-align: left;
+}
+
+.benefits .container {
+    max-width: 1150px;
+}
+
+.benefits-content h3 {
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+.benefits-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+  .para {
+    font-family: 'Poppins',sans-serif;
+    line-height:30px ;
+    font-size: medium;
+    font-weight: 500;
+    text-align:left;
+    }
+
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADR | Itstaffing</title>
+    <link rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <section class="hero" data-aos="fade-in">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Specialized IT Staffing</h1>
+                        <h1>Achieve Targets Faster with Expert IT Staffing Solutions</h1>
+                        <p class="para">ADR aims to enable you to achieve your business targets quicker, more cost-effectively, and with greater accuracy. Recognized globally as the best IT staffing providers, we offer a full range of workforce solutions and service delivery models tailored to your needs. Our expertise ensures you are equipped with the right people, skills, and competencies to drive your IT projects to success
+<br><br>From SAP consultants and software developers to cybersecurity experts and testing specialists, our rigorous selection process guarantees top-tier talent. Partner with ADR to build a strong, capable, and dynamic workforce that propels your business forward efficiently and effectively</p>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+        </section>
+        <section class="features">
+            <div class="container">
+                
+                <ul>
+                    <li class="feature-item feature-left" data-aos="fade-right">
+                        <div class="feature-content">
+                            <h3>Empower Your Business with Top Talent</h3>
+                        <p>At ADR Group, we offer comprehensive IT staffing solutions designed to meet your unique business needs. Our expertise lies in connecting you with top-tier IT professionals across various domains, including SAP consultants, software developers, system administrators, cybersecurity experts, and testing specialists. We understand that having the right talent is crucial for driving your projects forward and achieving your strategic objectives.
+<br><br>&nbsp;&nbsp;  Whether you need temporary staff for a specific project or permanent employees to join your team, ADR Group delivers flexible and scalable staffing solutions tailored to your requirements.
+<br>&nbsp; &nbsp; Partner with ADR Group to access a pool of highly qualified IT professionals and empower your business with the expertise needed for success. With our commitment to excellence and client satisfaction, we are dedicated to helping you build a strong, capable, and dynamic workforce.</p>
+                        </div>
+                        <div class="feature-image">
+                            <img class="img-2" src="https://img.freepik.com/free-photo/portrait-caucasian-unset-despair-man-watching-financial-economical-graphs-coronavirus-quarantine-problems_155003-7361.jpg?ga=GA1.1.1361869439.1722227052&semt=ais_hybrid" alt="Real-Time Analytics">
+                        </div>
+                    </li>
+                    <li class="feature-item feature-right" data-aos="fade-left">
+                        <div class="feature-image">
+                            <img class="img-2" src="https://img.freepik.com/free-photo/high-angle-hands-holding-paper_23-2149930977.jpg?ga=GA1.1.1361869439.1722227052&semt=ais_hybrid" alt="Simplified User Experience">
+                        </div>
+                        <div class="feature-content">
+                            <h2>ADR's Comprehensive Workforce Solutions (CWS)</h2>
+                            <p>&#8226;Contract Staffing:<br>
+
+                                Provides high-caliber teams or individual IT professionals for temporary support.
+                                Ideal for short-term projects or addressing temporary resource gaps.
+                                Ensures flexibility in staffing without long-term commitments.<br><br>
+
+                                &#8226; Permanent Placements:<br><br>
+                                
+                                Offers contract-to-hire and direct hire options for long-term staffing needs.
+                                Enables companies to assess candidates before making a permanent commitment.
+                                Ensures stability and continuity in workforce planning.<br><br>
+
+                                &#8226;Flexible Resource Management:<br><br>
+                                
+                                Teams can scale up or down seamlessly based on project demands.
+                                Maintains consistent service delivery and ensures predictable costs.
+                                Ideal for adapting to changing business needs and optimizing resource utilization.</p>
+                        </div>
+                    </li>
+                   
+                </ul>
+            </div>
+        </section>
+        
+        <section class="benefits">
+            <div class="container">
+                <h2>Here are some reasons why many businesses prefer to partner with us</h2>
+                <ul class="benefits-list">
+                    <li data-aos="zoom-in">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h3>Unmatched Market Reach :</h3>
+                        <p> At ADR, our extensive network ensures you access the entire talent pool. While only 2.5% of candidates actively job hunt, many top professionals are open to new opportunities but too busy for job boards.</p>
+                    </li>
+                    <li data-aos="zoom-in">
+                        <i class="fas fa-clock"></i>
+                        <h3>Expertise in HR Recruitment:</h3>
+                        <p>By exclusively focusing on HR professionals, we have honed our expertise in this field. This specialization results in 96.9% of our exclusive placements remaining in their roles after 6 months, compared to one third leaving within the same period when recruited through other methods.</p>
+                    </li>
+                    <li data-aos="zoom-in">
+                        <i class="fas fa-globe"></i>
+                        <h3>Tailored Service :</h3>
+                        <p> At ADR, we know one size doesn't fit all. As an independent recruiter, we provide a bespoke service to meet your specific needs, adapting our recruitment techniques to suit your timelines and budget.</p>
+                    </li>
+                    <li  data-aos="zoom-in">
+                        <i class="fas fa-users"></i>
+                        <h3>Guaranteed Placements:</h3>
+                        <p>Nearly all our exclusive placements pass their probation period. If they don't, we'll find you a replacement at no extra cost. Partnering with us ensures a long-term HR professional for your team.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true,
+        });
+    </script>
+</body>
+
+{% endblock %}

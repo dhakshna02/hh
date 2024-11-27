@@ -1,0 +1,375 @@
+{% extends "Adr/base.html" %}
+
+{% block content %}
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.hero {
+    background:  linear-gradient(135deg, rgb(82, 174, 152), rgb(0, 0, 0));
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero .container {
+    max-width: 1200px;
+    padding: 20px;
+}
+.hero h1{
+    font-size: 2.5rem;
+    font-weight: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.features {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+.features h2{
+    font-size: 2.5rem;
+    font-weight: 2.5rem;
+    text-align: center;
+}
+.features h3{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 2.5rem;
+    color: #333;
+    margin-top:80px;
+    margin-bottom: 60px;
+}
+
+.feature-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.feature-left .feature-content {
+    order: 1;
+}
+
+.feature-left .feature-image {
+    order: 2;
+    box-shadow:0 4px 15px rgba(0, 0, 0, 0.2); ;
+}
+
+.feature-right .feature-content {
+    order: 2;
+}
+
+.feature-right .feature-image {
+    order: 1;
+    box-shadow:0 4px 15px rgba(0, 0, 0, 0.2); ;
+}
+
+.feature-content {
+    flex: 1;
+    max-width: 45%;
+    line-height: 1.6;
+    margin-bottom: 150px;
+    font-size: large;
+    font-weight: 500;
+    text-align:justify;
+}
+
+.feature-image {
+    flex: 1;
+    max-width: 45%;
+    text-align: center;
+}
+
+.feature-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .feature-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .feature-content, .feature-image {
+        max-width: 100%;
+    }
+}
+
+.benefits {
+    background-color:rgba(9, 9, 9, 0.7);;
+    padding: 40px;
+    min-height: 70vh;
+    color: #fff;
+}
+
+.benefits .container {
+    max-width: 1150px; /* Increase max-width for a larger container */
+    margin: 0 auto;
+}
+
+.benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider grid columns */
+    gap: 40px;
+}
+
+.benefits-list li {
+    padding: 20px; /* Increase padding for larger boxes */
+    background-color:  #52ae99;;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+    overflow: hidden; /* Ensures the content stays inside the box */
+    position: relative;
+    
+}
+
+.benefits-list li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.benefits-list li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(82, 174, 153, 0.7), rgba(9, 9, 9, 0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.benefits-list li:hover::before {
+    opacity: 1;
+}
+
+.benefits-list li i {
+    font-size: 36px; /* Increase icon size */
+    margin-bottom: 20px;
+    color: #007bff;
+    z-index: 2; /* Ensure it appears above the hover effect */
+    position: relative;
+}
+
+.benefits-list li h3 {
+    font-size: 22px; /* Increase font size for headers */
+    font-weight: 2.5rem;
+    margin-bottom: 15px;
+    z-index: 2;
+    position: relative;
+}
+
+.benefits-list li p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+.benefits h2{
+    font-size: 3rem;
+    font-weight: 3rem;
+}
+.benefit-para{
+    text-align: justify;
+}
+button {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgba(82, 174, 154, 0.7);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #f9fafc;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+  
+  button:hover {
+    background: rgba(82, 174, 152, 0.998);
+    box-shadow: 0 0 30px 5px rgba(82, 174, 153, 0.7);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  
+  button:hover::before {
+    -webkit-animation: sh02 0.3s 0s linear;
+    -moz-animation: sh02 0.3s 0s linear;
+    animation: sh02 0.3s 0s linear;
+  }
+  
+  button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: rgb(240, 240, 240);
+    box-shadow: 0 0 50px 30px #e9edef;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+  .para {
+    font-family: 'Poppins',sans-serif;
+    line-height: 40px;
+    font-size: larger;
+    
+  }
+</style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADR | S/4HANA</title>
+    <link rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <section class="hero" data-aos="fade-in">
+            <div class="container">
+                <h1>ADR GROUP - SAP S/4HANA</h1>
+                <h1>Transforming Business Operations</h1>
+                <p class="para">We specialize in delivering transformative SAP S/4HANA solutions that propel businesses into the era of the Intelligent Enterprise. SAP S/4HANA is not just an upgrade; it's a revolution in enterprise resource planning, providing real-time, unprecedented agility, and a foundation for innovation. Discover how ADR Group can be your strategic partner in unlocking the full potential of SAP S/4HANA for your organization. Contact us today, and let's embark on a journey to redefine how your organization operates in the digital era.</p>
+               
+            </div>
+        </section>
+       
+        <section class="features">
+            <div class="container">
+                <h2>Key Features of SAP S/4HANA</h2>
+                <ul>
+                    <li class="feature-item feature-left" data-aos="fade-right">
+                        <div class="feature-content">
+                            <h3>Real-Time Analytics</h3>
+                            <p>SAP S/4HANA harnesses the power of real-time analytics, enabling your organization to make informed decisions at the speed of business. ADR Group ensures a seamless migration to S/4HANA, unlocking the full potential of instant insights.</p>
+                        </div>
+                        <div class="feature-image">
+                            <img class="img-2" src="http://127.0.0.1:8000/media/s4hana_1.jpg" alt="Real-Time Analytics">
+                        </div>
+                    </li>
+                    <li class="feature-item feature-right" data-aos="fade-left">
+                        <div class="feature-image">
+                            <img class="img-2" src="http://127.0.0.1:8000/media/s4hana_2.jpg" alt="Simplified User Experience">
+                        </div>
+                        <div class="feature-content">
+                            <h3>Simplified User Experience</h3>
+                            <p>Experience a modern, intuitive user interface that enhances productivity and user satisfaction. ADR Group focuses on user-centric design and training to ensure a smooth transition for your team.</p>
+                        </div>
+                    </li>
+                    <li class="feature-item feature-left" data-aos="fade-right">
+                        <div class="feature-content">
+                            <h3>Advanced Planning and Forecasting</h3>
+                            <p>Leverage advanced planning and forecasting capabilities embedded in SAP S/4HANA. ADR Group tailors these functionalities to meet your specific business needs, providing a foundation for strategic decision-making.</p>
+                        </div>
+                        <div class="feature-image">
+                            <img class="img-2" src="http://127.0.0.1:8000/media/s4hana_3.jpg" alt="Advanced Planning and Forecasting">
+                        </div>
+                    </li>
+                    <li class="feature-item feature-right" data-aos="fade-left">
+                        <div class="feature-image">
+                            <img class="img-2" src="http://127.0.0.1:8000/media/s4hana_4.jpg" alt="Intelligent Automation">
+                        </div>
+                        <div class="feature-content">
+                            <h3>Intelligent Automation</h3>
+                            <p>SAP S/4HANA incorporates intelligent automation, streamlining processes and reducing manual efforts. ADR Group optimizes these features to enhance efficiency, accuracy, and overall operational excellence. </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="benefits">
+            <div class="container">
+                <h2>Benefits of SAP S/4HANA</h2>
+                <ul class="benefits-list">
+                    <li data-aos="zoom-in">
+                        
+                        <h3>Digital Product Expert</h3>
+                        <p class="benefit-para">ADR Group stands at the forefront of digital transformation. Our team of experts possesses deep knowledge and experience in SAP S/4HANA, ensuring that your migration is not just a technological upgrade.</p>
+                    </li>
+                    <li data-aos="zoom-in">
+                        
+                        <h3>Migration Service Expert</h3>
+                        <p class="benefit-para">From system assessment to migration and training, we provide end-to-end services for a successful transition to S/4HANA. We navigate the complexities to minimize downtime and maximize the benefits.</p>
+                    </li>
+                    <li data-aos="zoom-in">
+                        
+                        <h3>Innovation Hub</h3>
+                        <p class="benefit-para">Stay ahead of the curve with ADR Group's commitment to innovation. We continuously explore and adopt the latest advancements in S/4HANA, ensuring that your organization remains at the cutting edge of technology.</p>
+                    </li>
+                    <li  data-aos="zoom-in">
+                        
+                        <h3>Proven Track Record</h3>
+                        <p class="benefit-para">ADR Group boasts a proven track record of successful S/4HANA implementations across diverse industries. Join the ranks of businesses that have embraced the Intelligent Enterprise with confidence and success.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true,
+        });
+    </script>
+</body>
+{% endblock %}

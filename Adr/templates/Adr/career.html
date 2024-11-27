@@ -1,0 +1,471 @@
+{% extends "Adr/base.html" %}
+{% block content %}
+<head>
+	<title>ADR | Carrier </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <meta charset="utf-8">
+	<style>
+		/* Add some basic styling to the page */
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif; /* Add a default font family */
+            background: linear-gradient(135deg, rgba(82, 174, 153, 0.7), rgba(9, 9, 9, 0.7));
+		}
+		
+		/* Style the container */
+		.containerj {
+			width: 100%;
+			height: 330px;
+			background-image: url('https://www.brightview.com/sites/default/files/styles/optimized/public/2020-03/Landscape%20Job%20Interview%20Tips.jpg?itok=rS3cTbU4'); /* Replace with your background image */
+			background-size: 100% 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+            border-bottom: 5px solid #fff;
+			position: relative; /* Add this to allow the background image to be overlaid */
+		}
+		
+		/* Add a pseudo-element to overlay the background image with a semi-transparent layer */
+		.containerj::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.4); /* Adjust the opacity and color to your liking */
+		}
+		
+		/* Style the sections */
+		.section {
+			width: 50%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 1; /* Bring the section to the front to overlay the background image */
+		}
+		
+		/* Style the heading */
+		.heading {
+			font-size: 36px;
+			font-weight: bold;
+			color: rgb(83, 212, 182);
+			text-align: center;
+		}
+        .job{
+            display: flex;
+            background-color: #378794;
+            width: 1200px;
+            height: 220px;
+            margin-top: 40px;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 10px 10px 30px 5px rgba(30, 47, 49, 0.7);
+            transition: transform 0.3s; /* Add this for smooth animation */
+            border-radius: 10px;
+        }
+        .job:hover{
+          border-style: solid;
+          border-radius: 20px;
+          border-color: #e9edef;
+          width: 1400px;
+          height: 250px;
+          transition: .5s;
+
+      }
+        .headerv{
+            display: flex;
+            flex-direction: row;
+            flex:1;
+        }
+        .descv{
+            margin-left: 20px;
+            flex: 1;
+
+        }
+        .know{
+          display: flex;
+          flex-direction: row;
+            flex:1
+            justify-content: end;
+        }
+        .jc{
+    
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .name{
+            display: flex;
+            flex-direction: row;
+            flex:1;
+            justify-content: space-around;
+        }
+        .requirements{
+            display: flex;
+            flex-direction: row;
+            flex: 2;
+        }
+        .time{
+            display: flex;
+            flex:1;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .loc{
+            display: flex;
+            flex:1;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .know-more{
+          margin-left: 900px;
+          margin-bottom: 10px;
+          border-radius: 7px;
+
+        }
+        .exp{
+            display: flex;
+            flex:1;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        button {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgba(23, 39, 35, 0.7);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #f9fafc;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+button:hover {
+  background: rgba(82, 174, 152, 0.998);
+  border: 1px solid rgba(82, 174, 153, 0.7);
+  box-shadow: 0 0 30px 5px rgba(82, 174, 153, 0.7);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+button:hover::before {
+  -webkit-animation: sh02 0.3s 0s linear;
+  -moz-animation: sh02 0.3s 0s linear;
+  animation: sh02 0.3s 0s linear;
+}
+
+button::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: rgb(240, 240, 240);
+  box-shadow: 0 0 50px 30px #e9edef;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.rating {
+  cursor: pointer;
+  width: 600px;
+  margin-left: 400px;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.19), 0 0.3rem 0.3rem rgba(0, 0, 16, 0.23);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.19), 0 0.3rem 0.3rem rgba(0, 0, 16, 0.23);
+  background-color: rgb(255, 255, 255);
+  padding: 0.8rem;
+  width: 400px;
+}
+
+.rating-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0.4rem 0.8rem;
+  width: 400px;
+}
+
+.rating {
+  background-color: rgba(0, 0, 16, 0.8);
+  padding: 0.4rem 0.4rem 0.1rem 0.4rem;
+  border-radius: 2.2rem;
+}
+
+.rating-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.svg {
+  fill: rgb(242, 242, 242);
+  height: 3.6rem;
+  width: 150px;
+  margin: 0.2rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.rating-form-2 svg {
+  height: 3rem;
+  width: 3rem;
+  margin: 0.5rem;
+}
+
+#radios label {
+  position: relative;
+}
+
+.super-happy, [type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.input ,[type="radio"] + svg {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.super-happy[class="super-happy"]:hover + svg,
+.super-happy[class="super-happy"]:checked + svg,
+.super-happy[class="super-happy"]:focus + svg {
+  fill: rgb(0, 204, 79);
+  transition: 1.5s;
+}
+
+.neutral[class="neutral"]:hover + svg,
+.neutral[class="neutral"]:checked + svg,
+.neutral[class="neutral"]:focus + svg {
+  fill: rgb(232, 214, 0);
+  transition: 1.5s;
+}
+
+.super-sad[class="super-sad"]:hover + svg,
+.super-sad[class="super-sad"]:checked + svg,
+.super-sad[class="super-sad"]:focus + svg {
+  fill: rgb(239, 42, 16);
+  transition: 1.5s;
+}
+
+        .notification-box {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            margin-left: 400px;
+            margin-top:20px;
+            margin-bottom: 20px;
+            background: rgba(255, 0, 0, 0.1); /* Semi-transparent red */
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            border-radius: 8px;
+            text-align: center;
+            
+        }
+        .notification-box h1 {
+            font-family: 'Helvetica Neue', sans-serif;
+            color: #d9534f; /* Red color */
+            font-size: 24px;
+            margin: 0;
+        }
+        .notification-box p {
+            font-family: 'Helvetica Neue', sans-serif;
+            color: #333;
+            font-size: 18px;
+            margin: 10px 0 0;
+        }
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+.logoe{
+    margin-left: 20px;
+    display: inline-block;
+    width: 190px;   
+    align-items: center;
+    padding-top: 0px;
+}
+.title{
+    display: inline-block;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}
+.icon{
+    width:15px;
+    display: inline-block;
+    margin-right: 10px;
+
+}
+h2{
+    display: inline;
+    font-weight: 300;
+    font-size: 10px;
+    color: #e9edef;
+}
+
+/* Add this to animate the job division on scroll */
+.job {
+  transform: translateY(0);
+  transition: transform 0.3s;
+}
+
+/* Add this to animate the job division on scroll up */
+.job.scroll-up {
+  transform: translateY(-10px);
+}
+
+/* Add this to animate the job division on scroll down */
+.job.scroll-down {
+  transform: translateY(10px);
+}
+.logoh{
+  margin-top: 10px;
+}
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+</head>
+<body 'style= margin-bottom:75px;' >
+	<div class="containerj">
+		<div class="section">
+			<h1 class="heading">Job Openings</h1>
+		</div>
+	</div>
+    {% if posts %}  
+     {% for post in posts %}
+    <div class="jc">
+    <div class="job">
+      <div class="logoh">
+        <div class="logoc"> 
+          <img class="logoe" src="http://127.0.0.1:8000/media/resume/ADR_logo-removebg_1.png"></div>
+      </div>
+        <div class="headerv">
+            <div class="name">
+                <div class="title">
+                    <h2 style=" color: black;"> {{ post.title }}</h2>
+                </div>
+            </div>
+            <div class="requirements">
+                <div class="time">
+                    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/826/826165.png">
+                    <p style="color: white; margin-top: 13px;">{{ post.time }}</p>
+                </div>
+                <div class="loc">
+                    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/535/535239.png">
+                    <p style="color: white; margin-top: 13px;">{{ post.location }}</p>
+                </div>
+                <div class="exp">
+                    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/3504/3504016.png">
+                    <p style="color: white; margin-top: 13px;">{{ post.experience }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="descv" >
+            <P>{{ post.description }}</P>
+            </div>
+            <div class="know">
+                <a href=jobforms ><button class="know-more" target="blank" >Apply now</button></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+  {% else %}
+  <body>  
+    <div class="notification-box">
+      <h1>SORRY FOR THE INCONVENIENCE</h1>
+      <p>WE HAVE NO JOBS AVAILABLE AT THE MOMENT</p>
+  </div>
+    <div class="rating">
+        <form class="rating-form">
+          <label for="super-happy" class="lb">
+          <input type="radio" name="rating" class="super-happy" id="super-happy" value="super-happy">
+          <svg class="svg" viewBox="0 0 24 24"><path d="M12,17.5C14.33,17.5 16.3,16.04 17.11,14H6.89C7.69,16.04 9.67,17.5 12,17.5M8.5,11A1.5,1.5 0 0,0 10,9.5A1.5,1.5 0 0,0 8.5,8A1.5,1.5 0 0,0 7,9.5A1.5,1.5 0 0,0 8.5,11M15.5,11A1.5,1.5 0 0,0 17,9.5A1.5,1.5 0 0,0 15.5,8A1.5,1.5 0 0,0 14,9.5A1.5,1.5 0 0,0 15.5,11M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"></path></svg>
+          </label>
+          <label for="neutral" class="lb">
+          <input type="radio" name="rating" class="neutral" id="neutral" value="neutral">
+          <svg class="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24"><path d="M8.5,11A1.5,1.5 0 0,1 7,9.5A1.5,1.5 0 0,1 8.5,8A1.5,1.5 0 0,1 10,9.5A1.5,1.5 0 0,1 8.5,11M15.5,11A1.5,1.5 0 0,1 14,9.5A1.5,1.5 0 0,1 15.5,8A1.5,1.5 0 0,1 17,9.5A1.5,1.5 0 0,1 15.5,11M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M9,14H15A1,1 0 0,1 16,15A1,1 0 0,1 15,16H9A1,1 0 0,1 8,15A1,1 0 0,1 9,14Z"></path></svg>
+          </label>
+          <label for="super-sad" class="lb">
+          <input type="radio" name="rating" class="super-sad" id="super-sad" value="super-sad">
+          <svg class="svg" viewBox="0 0 24 24"><path d="M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M16.18,7.76L15.12,8.82L14.06,7.76L13,8.82L14.06,9.88L13,10.94L14.06,12L15.12,10.94L16.18,12L17.24,10.94L16.18,9.88L17.24,8.82L16.18,7.76M7.82,12L8.88,10.94L9.94,12L11,10.94L9.94,9.88L11,8.82L9.94,7.76L8.88,8.82L7.82,7.76L6.76,8.82L7.82,9.88L6.76,10.94L7.82,12M12,14C9.67,14 7.69,15.46 6.89,17.5H17.11C16.31,15.46 14.33,14 12,14Z"></path></svg>
+          </label></form></div>
+         
+  </body>
+  {% endif %} 
+
+    <script>
+      let jobs = document.querySelectorAll('.job');
+      let scrollPosition = 0;
+    
+      window.addEventListener('scroll', () => {
+        let currentPosition = window.scrollY;
+        if (currentPosition > scrollPosition) {
+          jobs.forEach(job => job.classList.add('scroll-down'));
+          jobs.forEach(job => job.classList.remove('scroll-up'));
+        } else {
+          jobs.forEach(job => job.classList.add('scroll-up'));
+          jobs.forEach(job => job.classList.remove('scroll-down'));
+        }
+        scrollPosition = currentPosition;
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+{% endblock %}
