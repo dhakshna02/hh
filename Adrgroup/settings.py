@@ -21,8 +21,8 @@ MEDIA_URL = '/media/'
 # Email setup 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'dhakshna021204@gmail.com'
-EMAIL_HOST_PASSWORD = 'mskf zjne cyab hrba'
+EMAIL_HOST_USER = 'dhakshnamoorthydhandauthapani@gmail.com'
+EMAIL_HOST_PASSWORD = 'jiws qdcv rphm kjbl'
 EMAIL_USE_TLS = True
 
 
@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'Adrgroup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'adr',
+        'NAME':'Adr',
         'USER':'root',
         'PASSWORD': 'Dhak$hna02',
         'HOST':'127.0.0.1', 

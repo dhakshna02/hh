@@ -111,8 +111,8 @@ def jobforms(request):
         email = EmailMessage(
                 'Document Uploaded',
                 f'Your document has been uploaded successfully.\n\n your resume uploaded was {te}',
-                'dhakshna021204@gmail.com',
-                [to,'dhakshnamoorthydhandauthapani@gmail.com']
+                'dhakshnamoorthydhandauthapani@gmail.com',
+                [to,'dhakshna021204@gmail.com']
             )
        
         email.send()  
@@ -141,8 +141,8 @@ def contact(request):
        "Got Your Message – We’ll Be in Touch Soon!",
        f"Hi  {thr},\n\nThank you for contacting ADR Group. We’ve received your query and our support team is already on it! You can expect a response from us shortly.\n\n We’re always here for you!\n\n Your query:{vr}\n\n\n\n Thanks & Regards\n Support Team\n AnDnR Soft Solutions Pvt. Ltd.\n Phone:  +91 44 48545680\n E-mail: info@adrgrp.com",
 
-       "dhakshna021204@gmail.com",
-       [to,"bharathwaj.v@adrgrp.com"]   ,  
+       "dhakshnamoorthydhandauthapani@gmail.com",
+       [to,"dhakshna021204@gmail.com"]   ,  
          
                   
        )
