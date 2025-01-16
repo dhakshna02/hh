@@ -11,32 +11,32 @@
      
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-
-
-
+         
+         
+         
          :root {
           --color-primary: #58909a;
           --color-white: #e9e9e9;
           --color-black: #0a3043;
           --color-black-1: #95a311;
-        }
-        
-        * {
+         }
+   
+         * {
           margin: 0;
           padding: 0;
           box-sizing: border-box;
-        }
-        
-        body {
+         }
+         
+         body {
           font-family: 'Poppins', sans-serif;
          
-        }
-        
-        .logo {
+         }
+         
+         .logo {
           width:200px;
-        }
-        
-        .menu-bar {
+         }
+         
+         .menu-bar {
           background-color: var(--color-black);
           height: 80px;
           width: 100%;
@@ -49,87 +49,159 @@
           top:0;
           z-index: 999;
           font-family: 'Poppins', sans-serif;
-    
-        }
-        
-        .menu-bar ul {
+         
+         }
+         
+         .menu-bar ul {
           list-style: none;
-          display: flex;
-        }
-        
-        .menu-bar ul li {
+         
+         }
+         
+         .menu-bar ul li {
           /* width: 120px; */
           padding: 0px 30px;
           /* text-align: center; */
           font-family: 'Poppins', sans-serif;
           position: relative;
-        }
-        
-        .menu-bar ul li a {
+         }
+         
+         .menu-bar ul li a {
           font-size: 1.3vw;
           color: var(--color-white);
           text-decoration: none;
           font-family: 'Poppins', sans-serif;
           transition: all 0.3s;
-        }
-        
-        .menu-bar ul li a:hover {
+         }
+         
+         .menu-bar ul li a:hover {
           color: var(--color-primary);
-      
-        }
-        
-        .fas {
+         
+         }
+         
+         .fas {
           float: right;
           margin-left: 10px;
           padding-top: 3px;
-        }
-        
-        /* dropdown menu style */
-        .dropdown-menu {
+         }
+         
+         /* dropdown menu style */
+         .dropdown-menu {
           display: none;
           
-        }
-        
-        .menu-bar ul li:hover .dropdown-menu {
+         }
+         
+         .menu-bar ul li:hover .dropdown-menu {
           display:block;
           position: absolute;
           left: 0;
           top: 100%;
           background-color: var(--color-black);
-          transition-duration: 5s ;
+          transition-duration: 10s ;
           transition-timing-function:ease-out;
           border-radius: 15px;
-        }
-        
-        .menu-bar ul li:hover .dropdown-menu ul {
+         }
+         
+         .menu-bar ul li:hover .dropdown-menu ul {
           display: block;
           margin: 10px;
           
-        }
-        
-        .menu-bar ul li:hover .dropdown-menu ul li {
+         }
+         
+         .menu-bar ul li:hover .dropdown-menu ul li {
           width: 150px;
           padding: 10px;
-        }
-        
-        .dropdown-menu-1 {
+         }
+         
+         .dropdown-menu-1 {
           display: none;
-      
-        }
-        
-        .dropdown-menu ul li:hover .dropdown-menu-1 {
+         
+         }
+         
+         .dropdown-menu ul li:hover .dropdown-menu-1 {
           display: block;
           position: absolute;
           left: 150px;
           top: 0;
           background-color: var(--color-black);
           border-radius: 15px;
-        }
-        
-        .man{
+         }
+         
+         .man{
           display:flex;
           justify-content: end;
-        }
+         }
+         /* Hamburger Menu */
+         .nav-toggle {
+           display: none;
+           font-size: 24px;
+           cursor: pointer;
+         }
+         
+         .nav-toggle i {
+           color: black;
+         }
+         
+         /* Responsive Styles */
+         @media screen and (max-width: 900px) {
+           .man {
+             display: none;
+             flex-direction: column;
+             position: absolute;
+             top: 80px;
+             right: 0;
+             width: 100%;
+             height:30vh;
+             background-color: var(--color-black);
+             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+           }
+                 .menu-bar ul li:hover .dropdown-menu {
+                 display:block;
+                 position: absolute;
+                 left: 65%;
+                 top: 100%;
+                 background-color: var(--color-primary);
+                 transition-duration: 10s ;
+                 transition-timing-function:ease-out;
+                 border-radius: 15px;
+                 
+                 }
+                 .menu-bar ul li a {
+                 font-size: 2.7vw;
+                 color: var(--color-white);
+                 text-decoration: none;
+                 font-family: 'Poppins', sans-serif;
+                 transition: all 0.3s;
+                 
+                 }
+                 .menu-bar ul li a:hover {
+                 color: var(--color-primary);
+         
+                 }
+                 .man.active {
+                     display: flex;
+                 }
+         
+                 .man li {
+                     text-align: left;
+                     padding: 10px 0;
+                 }
+         
+                 .nav-toggle {
+                     display: block;
+                 }
+                 
+                 
+                 .dropdown-menu ul li:hover .dropdown-menu-1 {
+                  display: block;
+                  position: absolute;
+                  left: 0%;
+              
+                  top: 0;
+                  background-color: var(--color-black);
+                  border-radius: 15px;
+                } 
+         
+                }       
          
         footer {
           background-color:black;
@@ -307,6 +379,80 @@
           top: 5px;
           margin-left: 20px;
         }
+        @media screen and (max-width : 700px ){
+        
+          footer .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0px 0px;
+        }
+        
+        footer .row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        
+        footer .col-md-3 {
+         
+          color:white;
+          width: 30%;
+          margin: 20px;
+          vertical-align: center;
+         
+        }
+        
+        footer h4 {
+          color:#1bc1b6dd;
+          font-weight: 500;
+          font-size: 1.rem;
+          margin-top: 20px;
+        
+        }
+        
+        footer ul {
+          font-size: 1.3rem;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        
+        footer li {
+          margin-bottom: 10px;
+        }
+        
+        footer li a {
+          color: white;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+        
+        footer li a:hover {
+          color: white;
+        }
+        
+        footer .fa {
+          font-size: 18px;
+          margin-right: 10px;
+        }
+      }
+      @media screeen and (max-width:400px ){
+        footer h4 {
+          color:#1bc1b6dd;
+          font-weight: 500;
+          font-size: 1.rem;
+          margin-top: 20px;
+        
+        }
+        
+        footer ul {
+          font-size: 0.5rem;
+          list-style: none;
+          padding: 10;
+          margin: 10px;
+         
+        }
+      }
         
         #scroll-up-btn {
           position: fixed;
@@ -819,68 +965,74 @@ document.querySelector(".closeBtn").addEventListener("click", function(e) {
   </head>
 <body>
   <header>
-   <div class="menu-bar">
-    <a href = "http://127.0.0.1:8000/"><img class="logo" src="http://127.0.0.1:8000/media/resume/ADR_logo-removebg_1.png" ></a>
-    <ul class="man">
-      <li><a href="about">About</a></li>
-      <li><a href="">What we do <i class="fas fa-caret-down"></i></a>
-
+    <div class="menu-bar">
+      <!-- Logo -->
+      <a href="http://127.0.0.1:8000/"><img class="logo" src="http://127.0.0.1:8000/media/resume/ADR_logo-removebg_1.png"></a>
+  
+      <!-- Hamburger Menu Button (for smaller screens) -->
+      <div class="nav-toggle" id="nav-toggle" >
+        <i class="fas fa-bars"></i>
+      </div>
+  
+      <!-- Navigation Menu -->
+      <ul class="man" id="menu">
+        <li><a href="about">About</a></li>
+        <li>
+          <a href="">What we do <i class="fas fa-caret-down"></i></a>
           <div class="dropdown-menu">
-              <ul>
-                <li>  
-                  <a href="Products">Products<i class="fas fa-caret-right"></i></a>
-                  
-                  <div class="dropdown-menu-1">
-                    <ul>
-                      <li><a href="fotopia">Fotopia</a></li>
-                      <li><a href="smartboat">Smartboat</a></li>
-                      <li><a href="erp">ADR ERP</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <a href="Services">Services <i class="fas fa-caret-right"></i></a>
-                  
-                  <div class="dropdown-menu-1">
-                    <ul>
-                      <li><a href="itstaffing">IT Staffing</a></li>
-                      <li><a href="itesandglobalsupport">ITes and Global Support</a></li>
-                      <li><a href="bigdat">Big Data</a></li>
-                      <li><a href="masterdata">Master Data Management</a></li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-      </li>
-      <li><a href="sap">SAP <i class="fas fa-caret-down"></i></a>
+            <ul>
+              <li>
+                <a href="Products">Products <i class="fas fa-caret-right"></i></a>
+                <div class="dropdown-menu-1">
+                  <ul>
+                    <li><a href="fotopia">Fotopia</a></li>
+                    <li><a href="smartboat">Smartboat</a></li>
+                    <li><a href="erp">ADR ERP</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="Services">Services <i class="fas fa-caret-right"></i></a>
+                <div class="dropdown-menu-1">
+                  <ul>
+                    <li><a href="itstaffing">IT Staffing</a></li>
+                    <li><a href="itesandglobalsupport">ITes and Global Support</a></li>
+                    <li><a href="bigdat">Big Data</a></li>
+                    <li><a href="masterdata">Master Data Management</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="sap">SAP <i class="fas fa-caret-down"></i></a>
           <div class="dropdown-menu">
-              <ul>
-                <li><a href="s4hana">SAP S4HANA</a></li>
-                <li><a href="successfactors">SAP SuccessFactors</a></li>
-                <li><a href="sapb1">SAP B1</a></li>
-                <li><a href="hybris">SAP Hybris</a></li> 
-              </ul>
-            </div>
-      </li>
-      <li><a href ="">Industries<i class="fas fa-caret-down"></i></a>
+            <ul>
+              <li><a href="s4hana">SAP S4HANA</a></li>
+              <li><a href="successfactors">SAP SuccessFactors</a></li>
+              <li><a href="sapb1">SAP B1</a></li>
+              <li><a href="hybris">SAP Hybris</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="#">Industries <i class="fas fa-caret-down"></i></a>
           <div class="dropdown-menu">
-              <ul>
-                <li><a href="manufacturing">Manufacturing</a></li>
-                <li><a href="automotive">Automotive</a></li>
-                <li><a href="logistics">Logistics</a></li>
-                <li><a href="retail">Retail</a></li>
-                <li><a href="education">Education</a></li> 
-              </ul>
-            </div>
-      </li>
-      <li><a href="career">Career</a>
-      </li>
-      <li><a href="contact">Contact us</a></li>
-    </ul>
-  </div> 
-</header> 
-
+            <ul>
+              <li><a href="manufacturing">Manufacturing</a></li>
+              <li><a href="automotive">Automotive</a></li>
+              <li><a href="logistics">Logistics</a></li>
+              <li><a href="retail">Retail</a></li>
+              <li><a href="education">Education</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="career">Career</a></li>
+        <li><a href="contact">Contact us</a></li>
+      </ul>
+    </div>
+  </header>
 
 	<div id="scroll-up-btn" title="Scroll to top">
 		<i class="fas fa-arrow-up" style="place-self: center;"></i>
@@ -1035,6 +1187,14 @@ document.querySelector(".closeBtn").addEventListener("click", function(e) {
     }
   });
 </script>
+<script>
+  // Toggle navigation menu for smaller screens
+document.getElementById('nav-toggle').addEventListener('click', function() {
+const menu = document.getElementById('menu');
+menu.classList.toggle('active');
+});
+
+</script>      
 </body>
 </html>
 
