@@ -82,6 +82,7 @@
           float: right;
           margin-left: 10px;
           padding-top: 3px;
+          visibility: hidden;
          }
          
          /* dropdown menu style */
@@ -124,6 +125,7 @@
           top: 0;
           background-color: var(--color-black);
           border-radius: 15px;
+          
          }
          
          .man{
@@ -131,28 +133,34 @@
           justify-content: end;
          }
          /* Hamburger Menu */
-         .nav-toggle {
+         
+         
+         /* Responsive Styles */
+         @media screen and (max-width: 900px) {
+          .nav-toggle {
            display: none;
            font-size: 24px;
            cursor: pointer;
+           margin-right:8%;
          }
          
          .nav-toggle i {
            color: black;
-         }
-         
-         /* Responsive Styles */
-         @media screen and (max-width: 900px) {
-           .man {
+         }    
+          .man {
              display: none;
              flex-direction: column;
              position: absolute;
-             top: 80px;
+             top: 79px;
              right: 0;
              width: 100%;
-             height:30vh;
+             height:140%;
              background-color: var(--color-black);
-             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+             box-shadow: 0px 5px 100px rgba(0, 0, 0, 0.1);
+           }
+           .menu-bar ul li {
+            height: 500px;
+            margin-top: 400px;
            }
                  .menu-bar ul li:hover .dropdown-menu {
                  display:block;
@@ -163,6 +171,7 @@
                  transition-duration: 10s ;
                  transition-timing-function:ease-out;
                  border-radius: 15px;
+                 margin-top: 59%;
                  
                  }
                  .menu-bar ul li a {
@@ -179,11 +188,14 @@
                  }
                  .man.active {
                      display: flex;
+                     height:100%;
+                     margin-top: 1000px;
                  }
          
                  .man li {
                      text-align: left;
-                     padding: 10px 0;
+                     padding: 30%;
+                     margin-top: 14%;
                  }
          
                  .nav-toggle {
@@ -195,12 +207,19 @@
                   display: block;
                   position: absolute;
                   left: 0%;
+                  padding:50px;
               
                   top: 0;
                   background-color: var(--color-black);
                   border-radius: 15px;
                 } 
-         
+                .menu-bar{
+                  max-width: 101%;
+                }
+                .fas{
+                  display:block;
+                  visibility: visible;
+                }
                 }       
          
         footer {
@@ -379,11 +398,11 @@
           top: 5px;
           margin-left: 20px;
         }
-        @media screen and (max-width : 700px ){
+        @media screen and (max-width : 900px ){
         
           footer .container {
-          max-width: 1200px;
-          margin: 0 auto;
+          max-width: 100%;
+          margin-right: 0 auto;
           padding: 0px 0px;
         }
         
@@ -391,13 +410,14 @@
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
+          margin-right:21%;
         }
         
         footer .col-md-3 {
          
           color:white;
           width: 30%;
-          margin: 20px;
+          margin-right: 0px;
           vertical-align: center;
          
         }
@@ -441,7 +461,8 @@
           color:#1bc1b6dd;
           font-weight: 500;
           font-size: 1.rem;
-          margin-top: 20px;
+          margin-right: 20px;
+          
         
         }
         
@@ -484,16 +505,16 @@
             right: 20px;
             z-index: 9999;
             background: rgb(151, 191, 198);
-            border: none;
+            border-right: 15%;
             border-radius: 50%;
             width: 60px;
             height: 60px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0.2);
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.3s, transform 0.3s;
+            transition: background 0.1s, transform 0.3s;
         }
 
         #init:hover {
@@ -643,9 +664,12 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 400px) {
+        @media (max-width: 900px) {
             .child {
                 width: 90vw;
+            }
+            .init{
+              margin-right: 17%;
             }
         }
       
