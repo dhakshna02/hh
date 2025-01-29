@@ -46,6 +46,16 @@ body {
   color: #73b2be;
   text-shadow:#fff;
 }
+@media screen and (max-width: 900px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero span {
+        font-size: 1.5rem;
+        margin-top: 40px;
+    }
+    
+}
 .features {
     padding: 60px 20px;
     background-color: #f9f9f9;
@@ -65,7 +75,16 @@ body {
     color: #73b2be;
     margin-bottom: 100px;
 }
+@media screen and (max-width: 900px) {
+    .features h2{
+        margin-top: 20px;
+    }
+    .features h3 {
+       margin-top: 20px;
 
+    }
+    
+}
 .feature-item {
     display: flex;
     flex-wrap: wrap;
@@ -82,6 +101,13 @@ body {
 .feature-left .feature-image {
     order: 2;
     box-shadow:0 4px 15px rgba(0, 0, 0, 0.2); ;
+}
+@media screen and (max-width: 900px) {
+    .feature-right .feature-image, .feature-left .feature-image {
+        order: 1;
+        float:none;
+    }
+    
 }
 
 .feature-right .feature-content {
@@ -116,7 +142,7 @@ body {
     
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .feature-item {
         flex-direction: column;
         align-items: flex-start;
@@ -131,6 +157,12 @@ body {
     padding: 40px;
     min-height: 70vh;
     color: #fff;
+}
+@media screen and (max-width: 900px) {
+    .benefits {
+        padding: 20px;
+    }
+    
 }
 
 .benefits .container {
@@ -310,13 +342,14 @@ button {
                         <div class="feature-content">
                             <h3>Expert Implementation Services</h3>
                             <p style="text-align:justify"> ADR Group specializes in seamless SAP and Odoo implementation tailored for automotive manufacturing businesses.Our dedicated professionals bring extensive expertise to ensure smooth integration with your existing systems.
-                            We prioritize seamless transitions to minimize operational disruptions.
-                            Enhance your manufacturing processes to maximize efficiency and productivity.</p>
-                        </div>
-                        <div class="feature-image">
-                            <img class="img-2" src="http://127.0.0.1:8000/media/content_1.jpg" alt="Real-Time Analytics">
-                        </div>
-                    </li>
+                                We prioritize seamless transitions to minimize operational disruptions.
+                                Enhance your manufacturing processes to maximize efficiency and productivity.</p>
+                            </div>
+                            
+                            <div class="feature-image">
+                                <img  class="img-2" src="http://127.0.0.1:8000/media/content_1.jpg" alt="Real-Time Analytics">
+                            </div>
+                      </li>
                     <li class="feature-item feature-right" data-aos="fade-left">
                         <div class="feature-image">
                             <img class="img-2" src="http://127.0.0.1:8000/media/content_2.jpg" alt="Simplified User Experience">
@@ -330,19 +363,22 @@ button {
                               Incorporating the latest technologies to stay ahead in the industry.</p>
                         </div>
                     </li>
-                    <li class="feature-item feature-left" data-aos="fade-right">
-                        <div class="feature-content">
-                            <h3>Enhance Efficiency with ADR Group’s Expertise</h3>
-                            <p style="text-align:justify">Streamline manufacturing processes to improve workflow efficiency.
-                              Seamless integration of SAP and Odoo with existing systems for smooth data flow
-                              Continuous monitoring and optimization to enhance overall efficiency.
-                              Comprehensive training and ongoing support to maximize system utilization and efficiency gains.
-                              Introducing innovative technologies and best practices to drive continuous improvement.</p>
-                        </div>
-                        <div class="feature-image">
-                            <img class="img-2" src="http://127.0.0.1:8000/media/content_3.jpg" alt="Advanced Planning and Forecasting" >
-                        </div>
-                      </li>
+
+                        <li class="feature-item feature-left" data-aos="fade-right">
+                            <div class="feature-content">
+                                <h3>Enhance Efficiency with ADR Group’s Expertise</h3>
+                                <p style="text-align:justify">Streamline manufacturing processes to improve workflow efficiency.
+                                    Seamless integration of SAP and Odoo with existing systems for smooth data flow
+                                    Continuous monitoring and optimization to enhance overall effisciency.
+                                    Comprehensive training and ongoing support to maximize system utilization and efficiency gains.
+                                    Introducing innovative technologies and best practices to drive continuous improvement.</p>
+                                </div>
+                               <div class="feature-image">
+                                    <img class="img-2" src="http://127.0.0.1:8000/media/content_3.jpg" alt="Advanced Planning and Forecasting" >
+                                </div>
+                              
+                       
+                        </li>
                 </ul>
             </div>
         </section>

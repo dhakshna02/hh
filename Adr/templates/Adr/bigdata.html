@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADR|Big Data </title>
+    <title>ADR|Big Data</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
@@ -17,9 +17,15 @@ body {
     overflow-x: hidden; /* Prevent horizontal overflow */
     
 }
+@media screen and (max-width: 900px) {
+    body {
+       float: none;
+    }
+    
+}
 
 .hero {
-    background-image:url(http://127.0.0.1:8000/media/big_dat_3nbYlLX.webp);
+    background-image:url(http://127.0.0.1:8000/media/Data-Management.webp) ;
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -65,6 +71,14 @@ body {
     color: #73b2be;
     margin-bottom: 100px;
 }
+@media screen and (max-width: 900px) {
+    .features h3 {
+        margin-top: 40px;
+        padding: none;
+        margin-bottom: 20px;
+    }
+    
+}
 
 .feature-item {
     display: flex;
@@ -73,6 +87,13 @@ body {
     align-items: center;
     margin-bottom: 40px;
     padding: 0 20px;
+}
+@media screen and (max-width: 900px) {
+    .feature-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
 }
 
 .feature-left .feature-content {
@@ -101,7 +122,13 @@ body {
     font-size: large;
     font-weight: 500;
 }
-
+@media screen and (max-width: 900px) {
+    .feature-content {
+        max-width: 100%;
+        float:none;
+    }
+    
+}
 .feature-image {
     flex: 1;
     max-width: 45%;
@@ -131,6 +158,12 @@ body {
     padding: 40px;
     min-height: 70vh;
     color: #fff;
+}
+@media screen and (max-width: 900px) {
+    .benefits {
+        padding: 20px;
+    }
+    
 }
 
 .benefits .container {
@@ -306,17 +339,19 @@ button {
              
                 <ul>
                     <li class="feature-item feature-left" data-aos="fade-right">
+                        <div class="feature-image">
+                            <img class="img-2" src= "http://127.0.0.1:8000/media/Data-Management.webp"  alt="Real-Time Analytics">
+                        </div>
+                        </li>
+                        <li>
                         <div class="feature-content">
                             <h3>{{ post.subhead2 }}</h3>
                             <p style="text-align:justify"> {{ post.subtxt2 }}</p>
                         </div>
-                        <div class="feature-image">
-                            <img class="img-2" src= "http://127.0.0.1:8000/media/big_dat_fgvslwK.webp"  alt="Real-Time Analytics">
-                        </div>
                     </li>
                     <li class="feature-item feature-right" data-aos="fade-left">
                         <div class="feature-image">
-                            <img class="img-2" src="" alt="Simplified User Experience">
+                            <img class="img-2" src="http://127.0.0.1:8000/media/Data-Management.webp" alt="Simplified User Experience">
                         </div>
                         <div class="feature-content">
                             <h3>{{ post.subhead3 }}</h3>
@@ -324,12 +359,14 @@ button {
                         </div>
                     </li>
                     <li class="feature-item feature-left" data-aos="fade-right">
+                        <div class="feature-image">
+                            <img class="img-2" src="http://127.0.0.1:8000/media/Data-Management.webp" alt="Advanced Planning and Forecasting" >
+                        </div>
+                       </li>
+                       <li> 
                         <div class="feature-content">
                             <h3>{{ post.subhead4 }}</h3>
                             <p style="text-align:justify">{{ post.subtxt4}}</p>
-                        </div>
-                        <div class="feature-image">
-                            <img class="img-2" src="http://127.0.0.1:8000/media/businessman-using-tablet-with-digital-graph-overlay.webp" alt="Advanced Planning and Forecasting" >
                         </div>
                       </li>
                 </ul>
@@ -378,3 +415,4 @@ button {
         <p> No Jobs Available</p>
         {% endif %} 
 {% endblock %}
+    
